@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Most common ITGC mistakes and audit deficiencies by domain — Logical Access, Change Management, Computer Operations, Program Development, and JE Testing — with practical fix guidance.">
+<title>Common ITGC Mistakes | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i>
+    SOX IT Audit
+    <span class="nav-badge v2">v2</span>
+    <span class="nav-badge yr">2026</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="mistakes.html" class="active">Common Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="cyber-sox.html">Cyber → SOX</a>
+    <a href="../index.html#rcm">RCM & Tools</a>
+    <a href="../index.html#glossary">Glossary</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" title="Search (Ctrl+K)" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-section">Main</div>
+  <a href="../index.html">Home</a>
+  <div class="mm-section">Pages</div>
+  <a href="workpapers.html">Evidence Workpapers</a>
+  <a href="app-controls.html">App Controls vs. ITGC</a>
+  <a href="mistakes.html" class="active">Common Mistakes</a>
+  <a href="remediation.html">Remediation Playbook</a>
+  <a href="cyber-sox.html">Cyber → SOX Bridge</a>
+  <div class="mm-section">Reference</div>
+  <a href="../index.html#rcm">RCM & Tools</a>
+  <a href="../index.html#glossary">Glossary</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search pages, controls, standards… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<main>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Common ITGC Mistakes</span></div>
+    <div class="page-eyebrow"><i class="ti ti-alert-triangle"></i> Deficiency patterns</div>
+    <h1 class="page-title">Common ITGC mistakes & how to fix them</h1>
+    <p class="page-sub">The same deficiencies appear in PCAOB inspection reports year after year. This is a practical field guide to the most frequent ITGC failures by domain — what auditors find, why it happens, and exactly how to fix it.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-certificate"></i> PCAOB 2024–2026 findings</span>
+      <span class="meta-pill"><i class="ti ti-shield-x"></i> 30+ deficiency patterns</span>
+      <span class="meta-pill"><i class="ti ti-tool"></i> Fix guidance included</span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="page-section reveal">
+  <div class="card-grid mb-4" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+    <div class="card card-sm" style="text-align:center;border-top:3px solid var(--danger)">
+      <div style="font-size:2rem;font-weight:700;color:var(--danger)">68%</div>
+      <div class="text-sm text-muted">of PCAOB inspections cited IPE validation gaps (2024–25)</div>
+    </div>
+    <div class="card card-sm" style="text-align:center;border-top:3px solid var(--warning)">
+      <div style="font-size:2rem;font-weight:700;color:var(--warning)">#1</div>
+      <div class="text-sm text-muted">Most common finding: terminated user access not revoked</div>
+    </div>
+    <div class="card card-sm" style="text-align:center;border-top:3px solid var(--purple)">
+      <div style="font-size:2rem;font-weight:700;color:var(--purple)">40%</div>
+      <div class="text-sm text-muted">of change management deficiencies relate to emergency change overuse</div>
+    </div>
+    <div class="card card-sm" style="text-align:center;border-top:3px solid var(--accent)">
+      <div style="font-size:2rem;font-weight:700;color:var(--accent)">Year 1</div>
+      <div class="text-sm text-muted">Most MW disclosures occur in the first year of SOX compliance</div>
+    </div>
+  </div>
+</section>
+
+<!-- MISTAKES BY DOMAIN TABS -->
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-alert-circle"></i> By domain</div>
+      <h2 class="section-title">Deficiencies by ITGC domain</h2>
+      <p class="section-sub">Each tab covers the most common failures auditors find, why they occur, and the specific fix for each one.</p>
+    </div>
+
+    <div class="tab-nav" id="mistakeTabs">
+      <button class="tab-btn active" data-tab="m-la"><i class="ti ti-lock"></i> Logical Access</button>
+      <button class="tab-btn" data-tab="m-cm"><i class="ti ti-git-pull-request"></i> Change Mgmt</button>
+      <button class="tab-btn" data-tab="m-co"><i class="ti ti-server-2"></i> Computer Ops</button>
+      <button class="tab-btn" data-tab="m-pd"><i class="ti ti-code"></i> Program Dev</button>
+      <button class="tab-btn" data-tab="m-je"><i class="ti ti-file-invoice"></i> JE Testing</button>
+      <button class="tab-btn" data-tab="m-doc"><i class="ti ti-file-text"></i> Documentation</button>
+    </div>
+
+    <!-- LOGICAL ACCESS -->
+    <div class="tab-panel active" id="tab-m-la">
+      <div class="mistake-card">
+        <h4><i class="ti ti-user-x" style="color:var(--danger)"></i> Terminated users retain access after separation</h4>
+        <p>The single most common ITGC deficiency across all industries. An access listing reviewed quarterly shows users who left the organization 30–90 days ago still have active accounts. The deprovisioning process depends on HR notifying IT, which often breaks down.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Automate deprovisioning via HR system integration. The moment a termination is entered in HR, a workflow triggers immediate access revocation across all in-scope systems. Target: revoke within 24 hours. Test monthly with a terminated employee sample.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">Common MW trigger</span> <span class="badge badge-purple">AS 2201 Para .26</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-shield-off" style="color:var(--danger)"></i> Access reviews completed but not meaningful</h4>
+        <p>Managers certify access lists without genuinely reviewing them — approving everyone on the list in bulk within seconds, or certifying people who no longer report to them. Auditors call this "rubber stamping" and treat it as an operating effectiveness failure even though the review was technically completed.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Require reviewers to see role descriptions, last login date, and employment status for each user. Implement a "certify individually" workflow rather than bulk approval. Train managers on what they're certifying — accountability matters.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-amber">Significant deficiency risk</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-users-group" style="color:var(--danger)"></i> Shared accounts and generic logins</h4>
+        <p>Multiple users sharing one login ("admin", "finance_user", "batch_process") means no individual is accountable for actions taken with that account. Audit logs cannot tie an action to a person. Auditors cannot rely on any log-based control for that account.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Enforce a named-account policy. Each human user gets their own account. For batch processes, create dedicated service accounts with minimal permissions, documented business justification, and quarterly review.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-arrows-right-left" style="color:var(--danger)"></i> Unresolved SoD conflicts with no compensating controls</h4>
+        <p>A user with both AP entry and AP approval access can create a fictitious vendor and approve payments to themselves. SoD conflict matrices are often documented but never acted on — conflicts sit open for quarters without compensating controls.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> For every identified SoD conflict: either remove one of the conflicting roles (preferred), or implement a documented compensating control (e.g., management review of all transactions by this user). Test compensating controls as rigorously as the primary control.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">High fraud risk</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-cpu" style="color:var(--danger)"></i> Non-human identities (NHI) excluded from access reviews</h4>
+        <p>Service accounts, API keys, and bots are provisioned for projects and never decommissioned. They accumulate excessive permissions over time and are never reviewed because nobody included them in the quarterly access review scope.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Build an NHI inventory. Include all service accounts and API keys in quarterly access reviews. Assign a human owner to each NHI. Decommission within 30 days of the project end date.</span></div>
+      </div>
+    </div>
+
+    <!-- CHANGE MANAGEMENT -->
+    <div class="tab-panel" id="tab-m-cm">
+      <div class="mistake-card">
+        <h4><i class="ti ti-clock-x" style="color:var(--danger)"></i> Approval dated after the deployment</h4>
+        <p>A change ticket shows a deployment timestamp of Monday 9pm but an approval timestamp of Tuesday 10am. The auditor samples this change — it's an immediate exception. The change was deployed before authorization was obtained, regardless of whether the change itself was benign.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Implement system-enforced sequential workflow — the deployment step is locked until the approval step is completed. Remove the ability to retroactively edit timestamps. Train developers that "getting approval after" is never acceptable.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">Top inspection finding</span> <span class="badge badge-purple">AS 2201 Para .28</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-alert-triangle" style="color:var(--danger)"></i> Emergency change process used routinely</h4>
+        <p>Emergency changes should be rare (under 5–10% of all changes). When 30–40% of changes are classified as "emergency," it signals that the standard process is being bypassed systematically. This is a design deficiency — the emergency exception has become the normal path.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Define a strict emergency change definition (production outage or active security breach only). Require CISO/CTO approval for emergency classification. Report emergency change rates monthly to management. Any rate above 10% triggers a process review.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-code-plus" style="color:var(--danger)"></i> Developers with production access</h4>
+        <p>When developers can directly deploy to production, there is no separation between those who build code and those who control the production environment. This means a developer could introduce unauthorized changes without detection — a fundamental ITGC failure.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Restrict production access to a dedicated release management team or automate via CI/CD pipelines where only approved builds can deploy. Test by cross-referencing the developer access list to the production environment access list — zero overlap should exist.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">Common MW trigger</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-cloud-off" style="color:var(--danger)"></i> Cloud and SaaS configuration changes not tracked</h4>
+        <p>Organizations track changes to on-premise ERP systems rigorously but forget that Salesforce, Workday, or cloud infrastructure configuration changes also affect financially significant processes. These changes often bypass change management entirely.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Extend change management scope explicitly to include cloud/SaaS configuration changes. Use each platform's audit log as the change population. Require the same ticket-approval-test workflow for SaaS config changes as for on-premise code changes.</span></div>
+      </div>
+    </div>
+
+    <!-- COMPUTER OPERATIONS -->
+    <div class="tab-panel" id="tab-m-co">
+      <div class="mistake-card">
+        <h4><i class="ti ti-database-off" style="color:var(--danger)"></i> Backup job "green" but restore never tested</h4>
+        <p>Backup logs show all jobs completing successfully — but the organization has never tested whether the backups can actually be restored. Auditors test the restore test, not just the backup job. A green backup log is not evidence of recoverability.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Schedule and document quarterly restore tests for all financially significant systems. The test should restore to a non-production environment and verify data integrity. Document the results — a successful restore log is your evidence.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-amber">Frequently inspected</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-server-off" style="color:var(--danger)"></i> Batch job failures not monitored — or alerts not actioned</h4>
+        <p>Either: (a) no monitoring exists and nobody knows a financial batch job failed, or (b) monitoring exists but failed jobs sit in an alert queue nobody checks. Either way, incomplete batch processing means incomplete financial data.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Implement automated alerting with escalation. Each failure alert must be assigned to a named owner with a resolution SLA (e.g., 4 hours for critical). Document resolution in a ticket system. Auditors need a sample of failure → alert → ticket → resolution.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-refresh-off" style="color:var(--danger)"></i> DR plan exists but has never been tested</h4>
+        <p>A disaster recovery plan documented in 2022 that has never been exercised is not a functioning DR control — it's a document. PCAOB requires evidence of an actual test, not just the existence of a plan.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Schedule an annual DR test with clear scope (which systems, what scenario), documented results (what worked, what failed), and management sign-off. Lessons learned must be tracked to closure. This is a detective control — test it like one.</span></div>
+      </div>
+    </div>
+
+    <!-- PROGRAM DEVELOPMENT -->
+    <div class="tab-panel" id="tab-m-pd">
+      <div class="mistake-card">
+        <h4><i class="ti ti-user-code" style="color:var(--danger)"></i> UAT performed by IT — not by business users</h4>
+        <p>IT tests the system themselves and signs off on UAT. This defeats the purpose of UAT, which is to have the business validate that the system works as the business needs it to — not just that it works technically. Auditors inspect who signed the UAT sign-off sheet.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Require that UAT is signed off by named business owners — Controller, VP Finance, or equivalent. IT can support UAT but cannot be the sole approver. Document this requirement in SDLC policy and verify it in every sampled implementation.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-database-import" style="color:var(--danger)"></i> Data migration not reconciled</h4>
+        <p>When a new system goes live, data migrated from the legacy system is not reconciled. Total record counts, key financial balances, and data integrity are not validated before or after cutover. Auditors find this immediately — without a reconciliation, reliance on migrated data cannot be placed.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> For every migration, document a migration plan with: (1) pre-migration extract counts, (2) post-migration load counts, (3) financial balance reconciliation, and (4) business sign-off confirming the data looks right. This is non-negotiable for any SOX-significant system migration.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">Common MW for new systems</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-file-x" style="color:var(--danger)"></i> No post-implementation review performed</h4>
+        <p>Go-live happens, the project team disperses, and nobody formally validates that the controls designed for the new system are operating as intended 60–90 days later. Deficiencies introduced at go-live compound undetected.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Build a 90-day post-implementation review into every significant project plan before go-live. Assign a named owner. The PIR should assess whether controls designed in the system are operating and whether any new risks emerged post-launch.</span></div>
+      </div>
+    </div>
+
+    <!-- JE TESTING -->
+    <div class="tab-panel" id="tab-m-je">
+      <div class="mistake-card">
+        <h4><i class="ti ti-database-x" style="color:var(--danger)"></i> JE population not validated as IPE</h4>
+        <p>The most cited JE testing deficiency in PCAOB inspections. Auditors extract the JE population and begin testing without first validating that the population is complete and accurate. If the GL extract excluded certain ledgers or journal types, the entire test is built on an incomplete foundation.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Before any JE selection, validate the population: (1) reconcile record count to the GL trial balance, (2) document the parameters used in the extract, (3) confirm automated entries are included. Document this validation as a separate step in the workpaper.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-red">#1 JE finding</span> <span class="badge badge-purple">AS 1105.10A</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-clock" style="color:var(--danger)"></i> After-hours entries not segregated for review</h4>
+        <p>All journal entries are tested from a single undifferentiated sample — the after-hours and period-end entries with elevated fraud risk are not explicitly identified and tested. This is a required element of JE fraud risk procedures.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Segment the JE population before sampling: (1) after-hours and weekend entries, (2) period-end entries (last 3 days of month/quarter), (3) entries by infrequent or new preparers. Test each segment with targeted criteria and document the segmentation rationale.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-user-edit" style="color:var(--danger)"></i> JE preparer can also approve — no SoD</h4>
+        <p>The access control over who can post journal entries also needs to be tested as a preventive control. A system that allows self-approval of journal entries has a fundamental SoD conflict that makes every other JE control weaker.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Verify the JE workflow enforces preparer ≠ approver at the system level — not just as a policy. Test this as LA-07 (JE posting access) and document the configuration evidence. Include it in the SoD matrix review.</span></div>
+      </div>
+    </div>
+
+    <!-- DOCUMENTATION -->
+    <div class="tab-panel" id="tab-m-doc">
+      <div class="mistake-card">
+        <h4><i class="ti ti-file-unknown" style="color:var(--danger)"></i> Control narrative doesn't match how the control actually operates</h4>
+        <p>The RCM says the control is performed "monthly by the IT Security team" but the walkthrough reveals it's actually performed quarterly by a different team using a different tool. Outdated documentation creates a walkthrough finding before testing even begins.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Update control narratives at least annually — and immediately after any process change. Assign each control a named owner who certifies the narrative is current. Treat the walkthrough as an opportunity to verify accuracy, not just confirm understanding.</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-amber">Top walkthrough finding</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-writing-off" style="color:var(--danger)"></i> Workpaper has no written conclusion</h4>
+        <p>Testing is documented — procedures, evidence, sample items — but the workpaper ends without a written conclusion on whether the control operated effectively. PCAOB AS 1215 requires the auditor to document their conclusion, not just their procedures.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Every workpaper must end with an explicit conclusion statement: "Based on procedures performed, the [control name] control operated effectively for the period [date] to [date]. No exceptions were noted." Or if exceptions: "Exception noted — see deficiency log ref [#]."</span></div>
+        <div style="margin-top:.5rem"><span class="badge badge-purple">AS 1215</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-clock-x" style="color:var(--danger)"></i> Workpaper completed after the 14-day window</h4>
+        <p>PCAOB AS 1215 requires audit documentation to be assembled and completed within 14 days of the report release date. Documentation completed after this window requires special justification and may still be treated as a documentation deficiency.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> Build the 14-day window into engagement planning. Set internal deadlines for workpaper review that account for the 14-day close. Never rely on "we can finish documentation after fieldwork" — start documentation during fieldwork.</span></div>
+      </div>
+      <div class="mistake-card">
+        <h4><i class="ti ti-user-question" style="color:var(--danger)"></i> Evidence obtained but not tied to control attributes</h4>
+        <p>An auditor obtains a screenshot of an approval email and attaches it to the workpaper — but the workpaper never explains which attribute of the control this evidence supports, or how the auditor evaluated it. The evidence is there; the evaluation isn't.</p>
+        <div class="fix"><i class="ti ti-check-circle"></i><span><strong>Fix:</strong> For each piece of evidence, write one sentence explaining: (1) what attribute it demonstrates, (2) how you evaluated it, and (3) the result. "Obtained approval email dated [date] from [approver name] — confirmed approval was obtained before deployment on [date]. No exception."</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK REFERENCE CHECKLIST -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-checklist"></i> Pre-audit checklist</div>
+    <h2 class="section-title">Auditor's pre-testing checklist — avoid the common mistakes</h2>
+    <p class="section-sub">Run through this before starting fieldwork on any ITGC engagement.</p>
+  </div>
+  <div class="card-grid-2">
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">Before you test any control</h3>
+      <ul class="checklist">
+        <li><i class="ti ti-check"></i>Control narrative reviewed and walkthrough completed</li>
+        <li><i class="ti ti-check"></i>Control objective, risk rating, and assertion documented</li>
+        <li><i class="ti ti-check"></i>Population obtained and IPE validation completed</li>
+        <li><i class="ti ti-check"></i>Sample size calculated and methodology documented</li>
+        <li><i class="ti ti-check"></i>Evidence request sent to control owner with due date</li>
+      </ul>
+    </div>
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">Before you close the workpaper</h3>
+      <ul class="checklist">
+        <li><i class="ti ti-check"></i>All sample items tested and documented</li>
+        <li><i class="ti ti-check"></i>Each piece of evidence tied to a control attribute</li>
+        <li><i class="ti ti-check"></i>Exceptions identified and logged in deficiency register</li>
+        <li><i class="ti ti-check"></i>Written conclusion on operating effectiveness included</li>
+        <li><i class="ti ti-check"></i>Reviewer sign-off obtained with date</li>
+        <li><i class="ti ti-check"></i>Workpaper within 14-day documentation window</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit & ITGC Platform v2</div>
+  <p>Not legal or accounting advice. Verify against your firm's methodology and primary sources.</p>
+  <div class="foot-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="cyber-sox.html">Cyber → SOX</a>
+  </div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+
+<script src="../js/shared.js"></script>
+</body>
+</html>
