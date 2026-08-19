@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOX Scoping Worksheet | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="cyber-sox.html">Cyber→SOX</a>
+    <a href="scoping.html" class="active">Scoping</a>
+    <a href="sample-calc.html">Sample Calc</a>
+    <a href="cloud-itgc.html">Cloud ITGC</a>
+    <a href="vendor-soc1.html">Vendor/SOC1</a>
+    <a href="erp-guides.html">ERP Guides</a>
+    <a href="audit-programs.html">Audit Programs</a>
+    <a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:8px 12px 2px">On this page</div>
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="app-controls.html">App Controls</a><a href="mistakes.html">Mistakes</a>
+  <a href="remediation.html">Remediation</a><a href="cyber-sox.html">Cyber→SOX</a><a href="scoping.html" class="active">Scoping</a>
+  <a href="sample-calc.html">Sample Calc</a><a href="cloud-itgc.html">Cloud ITGC</a><a href="vendor-soc1.html">Vendor/SOC1</a>
+  <a href="erp-guides.html">ERP Guides</a><a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>SOX Scoping Worksheet</span></div>
+    <div class="page-eyebrow"><i class="ti ti-target"></i> Engagement planning</div>
+    <h1 class="page-title">SOX scoping worksheet</h1>
+    <p class="page-sub">Risk-based top-down scoping — score each system to determine if it falls in-scope for ITGC testing. Aligned with PCAOB AS 2201 Para .20–.25 and the SEC's top-down risk-based approach.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-certificate"></i> AS 2201 Para .20–.25</span>
+      <span class="meta-pill"><i class="ti ti-calculator"></i> Interactive scoring</span>
+      <span class="meta-pill"><i class="ti ti-printer"></i> Print-ready</span>
+    </div>
+  </div>
+</div>
+
+<!-- HOW SCOPING WORKS -->
+<section class="page-section reveal">
+  <div class="alert alert-info"><i class="ti ti-info-circle"></i> <strong>PCAOB AS 2201 Para .22:</strong> The auditor must use a top-down approach, starting at the financial statement level, to identify significant accounts, disclosures, and relevant assertions — then identify the IT systems and controls that support them. Not every system is in scope — only those that could contain a material misstatement.</div>
+  <div class="card-grid-3 mt-3">
+    <div class="card card-sm">
+      <div class="ib ib-blue"><i class="ti ti-sitemap"></i></div>
+      <h3 class="sub-title">Step 1 — Start at FS level</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">Identify significant accounts and disclosures in the financial statements. Each significant account traces back to one or more business processes, which trace back to IT systems.</p>
+    </div>
+    <div class="card card-sm">
+      <div class="ib ib-purple"><i class="ti ti-search"></i></div>
+      <h3 class="sub-title">Step 2 — Map systems to processes</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">For each significant process (AP, AR, payroll, GL, etc.) identify which applications, databases, and infrastructure support it. These are your candidate in-scope systems.</p>
+    </div>
+    <div class="card card-sm">
+      <div class="ib ib-green"><i class="ti ti-checklist"></i></div>
+      <h3 class="sub-title">Step 3 — Score each system</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">Score each candidate system across five risk dimensions below. High-scoring systems are in-scope. Document your rationale — auditors will scrutinize exclusions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SCORER -->
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-calculator"></i> Interactive tool</div>
+      <h2 class="section-title">System scoping scorer</h2>
+      <p class="section-sub">Score one system at a time across the five dimensions. The tool calculates a risk score and recommended scoping decision.</p>
+    </div>
+
+    <div class="card-grid-2">
+      <!-- SCORING FORM -->
+      <div class="card">
+        <div class="wp-field mb-2">
+          <label>System name</label>
+          <input type="text" id="sys-name" placeholder="e.g. SAP S/4HANA — AP module" style="width:100%;padding:.6rem .875rem;border-radius:7px;border:1px solid var(--border);background:var(--surface-2);color:var(--text);font-size:.84rem;font-family:'Inter',sans-serif">
+        </div>
+
+        <div class="score-row">
+          <label><strong>Financial statement impact</strong><br><span class="text-xs text-muted">How directly does it affect FS balances?</span></label>
+          <select class="score-select" id="fs-impact" onchange="calcScore()">
+            <option value="3">Direct — posts to GL / generates FS data</option>
+            <option value="2">Indirect — feeds a system that posts to GL</option>
+            <option value="1">Minimal — reference data only</option>
+            <option value="0">None — no connection to FS</option>
+          </select>
+        </div>
+        <div class="score-row">
+          <label><strong>Transaction volume / dollar amount</strong><br><span class="text-xs text-muted">Volume and materiality of transactions processed</span></label>
+          <select class="score-select" id="vol" onchange="calcScore()">
+            <option value="3">High — &gt;$10M or &gt;10K transactions/period</option>
+            <option value="2">Medium — $1M–$10M or 1K–10K transactions</option>
+            <option value="1">Low — &lt;$1M or &lt;1K transactions</option>
+          </select>
+        </div>
+        <div class="score-row">
+          <label><strong>Complexity / uniqueness</strong><br><span class="text-xs text-muted">How complex is the system and its controls?</span></label>
+          <select class="score-select" id="complexity" onchange="calcScore()">
+            <option value="2">High — custom code, complex integrations, or unique controls</option>
+            <option value="1">Medium — standard package with some customisation</option>
+            <option value="0">Low — standard SaaS with minimal customisation</option>
+          </select>
+        </div>
+        <div class="score-row">
+          <label><strong>Prior year findings</strong><br><span class="text-xs text-muted">Were there deficiencies here in the prior year?</span></label>
+          <select class="score-select" id="prior" onchange="calcScore()">
+            <option value="2">Yes — MW or SD identified</option>
+            <option value="1">Yes — CD identified</option>
+            <option value="0">No findings</option>
+          </select>
+        </div>
+        <div class="score-row">
+          <label><strong>Change activity</strong><br><span class="text-xs text-muted">Significant changes to system or process in the period?</span></label>
+          <select class="score-select" id="change" onchange="calcScore()">
+            <option value="2">Major change — new implementation, upgrade, or migration</option>
+            <option value="1">Moderate — significant config or process changes</option>
+            <option value="0">Stable — no significant changes</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary w-full mt-3" onclick="calcScore()"><i class="ti ti-calculator"></i> Calculate scope decision</button>
+      </div>
+
+      <!-- RESULT -->
+      <div class="card" id="scope-result">
+        <div class="eyebrow"><i class="ti ti-chart-bar"></i> Scoping result</div>
+        <div id="result-name" class="sub-title mt-1 mb-2" style="font-size:1rem">—</div>
+        <div class="result-bar"><div class="result-fill" id="result-fill" style="width:0%;background:var(--border)"></div></div>
+        <div style="display:flex;justify-content:space-between;font-size:.72rem;color:var(--text-3);margin-bottom:1rem">
+          <span>0</span><span>Risk score</span><span>12</span>
+        </div>
+        <div id="result-badge" style="margin-bottom:1rem"></div>
+        <div id="result-rationale" style="font-size:.82rem;color:var(--text-2);line-height:1.65"></div>
+        <hr class="divider">
+        <h4 class="sub-title mb-2">Score breakdown</h4>
+        <div id="score-breakdown" style="font-size:.8rem;color:var(--text-2)">Complete the form to see breakdown.</div>
+        <div class="mt-3 no-print">
+          <button class="btn btn-outline btn-sm" onclick="window.print()"><i class="ti ti-printer"></i> Print result</button>
+          <button class="btn btn-outline btn-sm" onclick="addToLog()" style="margin-left:.5rem"><i class="ti ti-plus"></i> Add to scope log</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCOPE LOG -->
+    <div class="card mt-4">
+      <div class="flex justify-between items-center mb-3">
+        <h3 class="sub-title">Scope log — systems evaluated this session</h3>
+        <button class="btn btn-outline btn-sm no-print" onclick="clearLog()"><i class="ti ti-trash"></i> Clear</button>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="scope-table">
+          <thead><tr><th>System</th><th>Score</th><th>FS Impact</th><th>Volume</th><th>Prior findings</th><th>Decision</th></tr></thead>
+          <tbody id="scope-tbody"><tr><td colspan="6" style="color:var(--text-3);font-style:italic;text-align:center;padding:1.5rem">No systems evaluated yet. Use the scorer above.</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOPING RULES -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-book"></i> Scoping rules</div>
+    <h2 class="section-title">Key scoping principles and common errors</h2>
+  </div>
+  <div class="card-grid-2">
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">What always requires scoping consideration</h3>
+      <ul class="checklist">
+        <li><i class="ti ti-check"></i>Primary ERP (SAP, Oracle, NetSuite, etc.)</li>
+        <li><i class="ti ti-check"></i>General ledger and consolidation tools</li>
+        <li><i class="ti ti-check"></i>Payroll system (if material)</li>
+        <li><i class="ti ti-check"></i>Revenue recognition platforms</li>
+        <li><i class="ti ti-check"></i>Treasury and cash management systems</li>
+        <li><i class="ti ti-check"></i>Financial reporting tools (e.g. Hyperion, Anaplan)</li>
+        <li><i class="ti ti-check"></i>Systems feeding automated application controls</li>
+        <li><i class="ti ti-check"></i>Infrastructure hosting in-scope applications</li>
+      </ul>
+    </div>
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">Common scoping mistakes</h3>
+      <ul class="checklist">
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Scoping out a system just because IT says it's "not important"</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Forgetting upstream feeder systems (e.g. billing → AR)</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Excluding cloud SaaS because it "belongs to the vendor"</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Not re-scoping after a major system migration mid-year</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Failing to document why a system was excluded</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Scoping in everything — scope bloat exhausts the team</li>
+        <li><i class="ti ti-x" style="color:var(--danger)"></i>Using prior year scope without re-performing risk assessment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links">
+    <a href="../index.html">Home</a><a href="sample-calc.html">Sample Calc</a><a href="workpapers.html">Workpapers</a><a href="mistakes.html">Common Mistakes</a>
+  </div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+
+<script src="../js/shared.js"></script>
+<script>
+const LABELS = {
+  'fs-impact': ['Direct — posts to GL','Indirect — feeds system','Minimal — reference data','None'],
+  'vol': ['High (&gt;$10M)','Medium ($1M–$10M)','Low (&lt;$1M)'],
+  'complexity': ['High — custom/complex','Medium — standard pkg','Low — standard SaaS'],
+  'prior': ['Yes — MW or SD','Yes — CD','No findings'],
+  'change': ['Major change','Moderate changes','Stable']
+};
+function getVal(id){ return parseInt(document.getElementById(id).value); }
+function getText(id){
+  const el = document.getElementById(id);
+  return el.options[el.selectedIndex].text;
+}
+let scopeLog = [];
+function calcScore(){
+  const name = document.getElementById('sys-name').value.trim() || 'Unnamed system';
+  const fs = getVal('fs-impact'), vol = getVal('vol'), cx = getVal('complexity'), pr = getVal('prior'), ch = getVal('change');
+  const score = fs + vol + cx + pr + ch;
+  const pct = Math.round((score/12)*100);
+  document.getElementById('result-name').textContent = name;
+  document.getElementById('result-fill').style.width = pct+'%';
+
+  let color, badge, rationale, decision;
+  if(score >= 8){
+    color='var(--danger)'; badge='<span class="badge badge-red" style="font-size:.85rem;padding:6px 14px"><i class="ti ti-check"></i> IN SCOPE — High risk</span>';
+    rationale='This system scores high across multiple risk dimensions. Full ITGC testing across all four domains (LA, CM, CO, PD) is required.';
+    decision='IN SCOPE';
+  } else if(score >= 5){
+    color='var(--warning)'; badge='<span class="badge badge-amber" style="font-size:.85rem;padding:6px 14px"><i class="ti ti-alert-triangle"></i> IN SCOPE — Moderate risk</span>';
+    rationale='This system presents moderate SOX risk. In-scope with potential to reduce testing through controls reliance — discuss with engagement leadership.';
+    decision='IN SCOPE';
+  } else if(score >= 2){
+    color='var(--accent)'; badge='<span class="badge badge-blue" style="font-size:.85rem;padding:6px 14px"><i class="ti ti-zoom-question"></i> CONSIDER — Low-moderate risk</span>';
+    rationale='This system is borderline. Consider scoping in if there are no compensating controls elsewhere, or document the rationale for exclusion carefully.';
+    decision='CONSIDER';
+  } else {
+    color='var(--success)'; badge='<span class="badge badge-green" style="font-size:.85rem;padding:6px 14px"><i class="ti ti-x"></i> OUT OF SCOPE — Low risk</span>';
+    rationale='This system presents low SOX risk based on current factors. Document the exclusion rationale. Re-evaluate if any risk factors change during the period.';
+    decision='OUT OF SCOPE';
+  }
+  document.getElementById('result-fill').style.background = color;
+  document.getElementById('result-badge').innerHTML = badge + ' <span style="font-size:.8rem;color:var(--text-3);margin-left:.5rem">Score: '+score+'/12</span>';
+  document.getElementById('result-rationale').textContent = rationale;
+  document.getElementById('score-breakdown').innerHTML =
+    '<div class="score-row"><label>FS impact</label><span>'+fs+'/3 pts — '+getText('fs-impact')+'</span></div>'+
+    '<div class="score-row"><label>Volume / amount</label><span>'+vol+'/3 pts — '+getText('vol')+'</span></div>'+
+    '<div class="score-row"><label>Complexity</label><span>'+cx+'/2 pts — '+getText('complexity')+'</span></div>'+
+    '<div class="score-row"><label>Prior findings</label><span>'+pr+'/2 pts — '+getText('prior')+'</span></div>'+
+    '<div class="score-row"><label>Change activity</label><span>'+ch+'/2 pts — '+getText('change')+'</span></div>';
+  window._lastResult = {name, score, fs, vol, pr, decision};
+}
+function addToLog(){
+  if(!window._lastResult) return calcScore();
+  const r = window._lastResult;
+  scopeLog.push(r);
+  const tbody = document.getElementById('scope-tbody');
+  if(scopeLog.length === 1) tbody.innerHTML='';
+  const color = r.decision==='IN SCOPE'?'badge-red':r.decision==='CONSIDER'?'badge-amber':'badge-green';
+  tbody.innerHTML += `<tr>
+    <td style="color:var(--text);font-weight:500">${r.name}</td>
+    <td><span class="badge badge-gray">${r.score}/12</span></td>
+    <td>${['Direct','Indirect','Minimal','None'][3-r.fs]}</td>
+    <td>${['High','Medium','Low'][3-r.vol]}</td>
+    <td>${['MW/SD','CD','None'][2-r.pr]}</td>
+    <td><span class="badge ${color}">${r.decision}</span></td>
+  </tr>`;
+}
+function clearLog(){ scopeLog=[]; document.getElementById('scope-tbody').innerHTML='<tr><td colspan="6" style="color:var(--text-3);font-style:italic;text-align:center;padding:1.5rem">No systems evaluated yet.</td></tr>'; }
+calcScore();
+</script>
+</body>
+</html>

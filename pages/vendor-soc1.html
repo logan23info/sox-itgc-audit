@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor & SOC 1 Review Guide | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a><a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a>
+    <a href="scoping.html">Scoping</a><a href="sample-calc.html">Sample Calc</a><a href="cloud-itgc.html">Cloud ITGC</a>
+    <a href="vendor-soc1.html" class="active">Vendor/SOC1</a><a href="erp-guides.html">ERP Guides</a>
+    <a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a><a href="remediation.html">Remediation</a>
+  <a href="scoping.html">Scoping</a><a href="sample-calc.html">Sample Calc</a><a href="cloud-itgc.html">Cloud ITGC</a>
+  <a href="vendor-soc1.html" class="active">Vendor/SOC1</a><a href="erp-guides.html">ERP Guides</a>
+  <a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Vendor & SOC 1 Review Guide</span></div>
+    <div class="page-eyebrow"><i class="ti ti-building"></i> Third-party risk</div>
+    <h1 class="page-title">Vendor & SOC 1 review guide</h1>
+    <p class="page-sub">When a vendor processes financially significant data, their controls become your controls. This guide covers how to evaluate SOC 1 reports, identify CUECs, test your implementation, and document reliance — all per PCAOB AS 2601.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-certificate"></i> AS 2601 aligned</span>
+      <span class="meta-pill"><i class="ti ti-building"></i> SOC 1 Type I & II</span>
+      <span class="meta-pill"><i class="ti ti-checklist"></i> CUEC testing</span>
+    </div>
+  </div>
+</div>
+
+<section class="page-section reveal">
+  <div class="alert alert-info"><i class="ti ti-info-circle"></i> <strong>PCAOB AS 2601:</strong> When a service organization processes transactions or maintains records that are part of the company's information systems, the auditor must evaluate the controls at that service organization. A SOC 1 Type II report is the primary mechanism for obtaining this evidence.</div>
+  <div class="card-grid-3 mt-3">
+    <div class="card card-sm" style="border-top:3px solid var(--accent)">
+      <div class="ib ib-blue"><i class="ti ti-file-description"></i></div>
+      <h3 class="sub-title">SOC 1 Type I vs Type II</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6;margin-bottom:.5rem"><strong style="color:var(--text)">Type I:</strong> Controls are suitably designed as of a specific date. No operating effectiveness testing. Limited SOX reliance value.</p>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6"><strong style="color:var(--text)">Type II:</strong> Controls operated effectively over a period (minimum 6 months). This is what SOX auditors need. Confirm the period covers your fiscal year.</p>
+    </div>
+    <div class="card card-sm" style="border-top:3px solid var(--success)">
+      <div class="ib ib-green"><i class="ti ti-users"></i></div>
+      <h3 class="sub-title">Carve-out vs. inclusive method</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6;margin-bottom:.5rem"><strong style="color:var(--text)">Carve-out (common):</strong> Vendor's controls excluded from your scope. You test CUECs on your side. Vendor's SOC 1 is supplementary evidence.</p>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6"><strong style="color:var(--text)">Inclusive (rare):</strong> Vendor's controls included in your integrated audit scope. Requires coordination with the vendor's auditor.</p>
+    </div>
+    <div class="card card-sm" style="border-top:3px solid var(--warning)">
+      <div class="ib ib-amber"><i class="ti ti-alert-triangle"></i></div>
+      <h3 class="sub-title">What CUECs are</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">Complementary User Entity Controls — controls the SOC 1 report assumes <em>your</em> organization is operating. If you don't test your CUECs, you cannot rely on the SOC 1 report. This is the most commonly missed step.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-list-check"></i> Step-by-step</div>
+      <h2 class="section-title">How to review a SOC 1 report</h2>
+    </div>
+    <div class="step-list">
+      <div class="step-item"><div class="step-num">1</div><div><h4>Obtain the current SOC 1 Type II report</h4><p>Request from the vendor. Confirm it is a Type II (not Type I). Verify the report period covers your entire fiscal year — if there's a gap (e.g. report covers Jan–Sep but your FY ends Dec), request a bridge letter for the gap period or perform additional procedures.</p></div></div>
+      <div class="step-item"><div class="step-num">2</div><div><h4>Confirm the opinion is unqualified</h4><p>Check Section 4 (the auditor's opinion). A qualified opinion means the service auditor found exceptions — these must be evaluated for impact on your controls. A qualified opinion is not automatically a deal-breaker but requires escalation and documentation.</p></div></div>
+      <div class="step-item"><div class="step-num">3</div><div><h4>Map vendor controls to your ITGC domains</h4><p>In Section 5 (control description) and Section 6 (test results), identify which controls relate to Logical Access, Change Management, Computer Operations, and Program Development for the systems your company uses. Not all vendor controls are relevant to your scope.</p></div></div>
+      <div class="step-item"><div class="step-num">4</div><div><h4>Review test results for exceptions</h4><p>For each relevant control, check whether the service auditor noted any exceptions. An exception means the control did not operate effectively 100% of the time. Evaluate the nature, frequency, and financial impact of each exception before concluding on reliance.</p></div></div>
+      <div class="step-item"><div class="step-num">5</div><div><h4>Identify and list all CUECs</h4><p>CUECs are listed in Section 3 of the report. Extract every CUEC that relates to your use of the vendor's system. These are controls the report assumes you are operating. Each CUEC becomes a testing item in your own audit program.</p></div></div>
+      <div class="step-item"><div class="step-num">6</div><div><h4>Test each CUEC</h4><p>For each CUEC: document the control you have in place, obtain evidence it operated effectively, and note it in your workpaper. Common CUECs include: access reviews for your user accounts in the vendor system, review of exception reports produced by the vendor, and monitoring of data feeds between systems.</p></div></div>
+      <div class="step-item"><div class="step-num">7</div><div><h4>Document the reliance conclusion</h4><p>Write a formal conclusion: the SOC 1 Type II report for [Vendor] for the period [X] to [Y] was reviewed. The opinion was unqualified. [N] exceptions were noted — impact assessed as [immaterial / requires additional testing]. CUECs identified and tested — see workpaper ref [X]. Reliance on vendor controls is [placed / not placed] for the following reasons: [...]</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-table"></i> Common vendors</div>
+    <h2 class="section-title">SOC 1 availability by common vendor type</h2>
+  </div>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Vendor type</th><th>Examples</th><th>SOC 1 available?</th><th>Typical CUECs</th><th>Gap period risk</th></tr></thead>
+      <tbody>
+        <tr><td style="color:var(--text);font-weight:600">Payroll processor</td><td>ADP, Paychex, Workday HCM</td><td><span class="badge badge-green">Yes — Type II</span></td><td>Employee data accuracy reviews; manual payroll adjustment review; terminated employee notification</td><td><span class="badge badge-amber">Medium</span> — usually annual report</td></tr>
+        <tr><td style="color:var(--text);font-weight:600">ERP SaaS</td><td>NetSuite, Sage Intacct, SAP RISE</td><td><span class="badge badge-green">Yes — Type II</span></td><td>User access reviews; data migration validation; interface reconciliation</td><td><span class="badge badge-green">Low</span> — usually quarterly</td></tr>
+        <tr><td style="color:var(--text);font-weight:600">Cloud infrastructure</td><td>AWS, Azure, GCP</td><td><span class="badge badge-green">SOC 1 + SOC 2</span></td><td>IAM configuration; MFA enforcement; encryption key management; backup monitoring</td><td><span class="badge badge-green">Low</span> — biannual or quarterly</td></tr>
+        <tr><td style="color:var(--text);font-weight:600">Financial close tool</td><td>BlackLine, Trintech, Fluence</td><td><span class="badge badge-green">Yes — Type II</span></td><td>Journal entry workflow approvals; reconciliation sign-off; period-end lock controls</td><td><span class="badge badge-amber">Medium</span></td></tr>
+        <tr><td style="color:var(--text);font-weight:600">Payment processor</td><td>Stripe, Adyen, Braintree</td><td><span class="badge badge-amber">PCI DSS + SOC 2; SOC 1 varies</span></td><td>Revenue reconciliation; refund approval process; exception report review</td><td><span class="badge badge-red">High</span> — verify availability</td></tr>
+        <tr><td style="color:var(--text);font-weight:600">Custom software vendor</td><td>Industry-specific SaaS</td><td><span class="badge badge-red">Often no SOC 1</span></td><td>N/A — must perform direct testing or require vendor to obtain one</td><td><span class="badge badge-red">High</span> — may require complementary work</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-warn mt-3"><i class="ti ti-alert-triangle"></i> <strong>No SOC 1 available?</strong> If a vendor processes financially material data but has no SOC 1, you have three options: (1) perform direct testing at the vendor site, (2) request the vendor obtain a SOC 1 as a contractual requirement, or (3) design compensating controls on your side that reduce reliance on the vendor's unattested controls. All three options require documentation and discussion with your external auditor.</div>
+</section>
+</main>
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="cloud-itgc.html">Cloud ITGC</a><a href="erp-guides.html">ERP Guides</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+<script src="../js/shared.js"></script>
+</body>
+</html>

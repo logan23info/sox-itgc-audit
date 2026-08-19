@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cyber to SOX ITGC bridge — how SOC 2, ISO 27001, NIST CSF, and CIS Controls map to SOX IT General Controls. Leverage existing security work for SOX credit.">
+<title>Cyber → SOX ITGC Bridge | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i>
+    SOX IT Audit
+    <span class="nav-badge v2">v2</span>
+    <span class="nav-badge yr">2026</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="mistakes.html">Common Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="cyber-sox.html" class="active">Cyber → SOX</a>
+    <a href="../index.html#rcm">RCM & Tools</a>
+    <a href="../index.html#glossary">Glossary</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" title="Search (Ctrl+K)" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mm-section">Main</div>
+  <a href="../index.html">Home</a>
+  <div class="mm-section">Pages</div>
+  <a href="workpapers.html">Evidence Workpapers</a>
+  <a href="app-controls.html">App Controls vs. ITGC</a>
+  <a href="mistakes.html">Common Mistakes</a>
+  <a href="remediation.html">Remediation Playbook</a>
+  <a href="cyber-sox.html" class="active">Cyber → SOX Bridge</a>
+  <div class="mm-section">Reference</div>
+  <a href="../index.html#rcm">RCM & Tools</a>
+  <a href="../index.html#glossary">Glossary</a>
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search pages, controls, standards… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<main>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Cyber → SOX ITGC Bridge</span></div>
+    <div class="page-eyebrow"><i class="ti ti-arrows-cross"></i> Framework mapping</div>
+    <h1 class="page-title">Cyber → SOX ITGC bridge</h1>
+    <p class="page-sub">Security teams running SOC 2, ISO 27001, or NIST programs are already doing much of the work that SOX ITGC requires. This page maps exactly where the frameworks overlap — so you can leverage existing evidence, reduce duplication, and close the remaining gaps.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-brand-aws"></i> SOC 2 mapped</span>
+      <span class="meta-pill"><i class="ti ti-certificate"></i> ISO 27001 mapped</span>
+      <span class="meta-pill"><i class="ti ti-shield-bolt"></i> NIST CSF mapped</span>
+      <span class="meta-pill"><i class="ti ti-list-check"></i> CIS Controls mapped</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHY IT MATTERS -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-link"></i> Why this matters</div>
+    <h2 class="section-title">Security work and SOX ITGC are more aligned than most teams realize</h2>
+  </div>
+  <div class="card-grid mb-4">
+    <div class="card card-sm">
+      <div class="ib ib-green"><i class="ti ti-recycle"></i></div>
+      <h3 class="sub-title">Leverage existing evidence</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">If your security team already runs access reviews, manages change tickets, and monitors system availability — that evidence may satisfy SOX ITGC requirements with minimal additional work. Test once, use many times.</p>
+    </div>
+    <div class="card card-sm">
+      <div class="ib ib-blue"><i class="ti ti-users"></i></div>
+      <h3 class="sub-title">Align security and audit teams</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">Security teams often don't know what auditors need. Audit teams often don't know what security already does. This bridge translates between the two — enabling collaboration instead of duplication.</p>
+    </div>
+    <div class="card card-sm">
+      <div class="ib ib-amber"><i class="ti ti-alert-triangle"></i></div>
+      <h3 class="sub-title">Know where the gaps are</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.6">Not all cybersecurity controls satisfy SOX ITGC requirements — and not all SOX controls have cybersecurity equivalents. Understanding the gaps prevents false assumptions about compliance coverage.</p>
+    </div>
+  </div>
+  <div class="alert alert-warn"><i class="ti ti-alert-triangle"></i> <strong>Critical caveat:</strong> Mapping frameworks is not the same as claiming compliance. A SOC 2 Type II report does not automatically satisfy SOX ITGC requirements — it must be evaluated for the specific controls, population, and period. Always discuss framework reliance with your external auditors before assuming coverage.</div>
+</section>
+
+<!-- FRAMEWORK CROSSWALK TABS -->
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-arrows-cross"></i> Framework mappings</div>
+      <h2 class="section-title">SOX ITGC mapped to security frameworks</h2>
+    </div>
+    <div class="tab-nav" id="cyberTabs">
+      <button class="tab-btn active" data-tab="cy-soc2"><i class="ti ti-cloud"></i> SOC 2</button>
+      <button class="tab-btn" data-tab="cy-iso"><i class="ti ti-certificate"></i> ISO 27001</button>
+      <button class="tab-btn" data-tab="cy-nist"><i class="ti ti-shield-bolt"></i> NIST CSF</button>
+      <button class="tab-btn" data-tab="cy-cis"><i class="ti ti-list-numbers"></i> CIS Controls</button>
+      <button class="tab-btn" data-tab="cy-gaps"><i class="ti ti-alert-circle"></i> Gaps & limits</button>
+    </div>
+
+    <!-- SOC 2 -->
+    <div class="tab-panel active" id="tab-cy-soc2">
+      <div class="alert alert-info"><i class="ti ti-info-circle"></i> SOC 2 Trust Services Criteria (TSC) cover security, availability, processing integrity, confidentiality, and privacy. The CC (Common Criteria) series overlaps most heavily with SOX ITGC. A SOC 2 Type II report covers the period — not a point in time — making it more relevant for SOX reliance than a Type I.</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>SOX ITGC domain</th><th>SOC 2 TSC reference</th><th>Overlap level</th><th>Evidence that may carry over</th><th>What SOX adds</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Logical Access (LA)</td>
+              <td><span class="mono-id">CC6.1–CC6.8</span><br>Logical & Physical Access</td>
+              <td><span class="badge badge-green">High</span></td>
+              <td>Access provisioning/deprovisioning logs, access review certifications, MFA configuration evidence</td>
+              <td>SOX requires <em>financially significant</em> system focus; NHI governance; SoD conflict matrix specific to financial roles</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Change Management (CM)</td>
+              <td><span class="mono-id">CC7.1–CC7.2</span><br>System Operations & Change</td>
+              <td><span class="badge badge-green">High</span></td>
+              <td>Change tickets, approval workflows, SDLC documentation, release management evidence</td>
+              <td>SOX requires UAT by business users (not just IT); emergency change rate tracking; financial system scope only</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Computer Operations (CO)</td>
+              <td><span class="mono-id">CC7.3–CC7.5</span><br>Monitoring & Incident Response</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>Incident management logs, system monitoring dashboards, availability reports</td>
+              <td>SOX focuses on <em>financial</em> batch jobs specifically; backup restore testing (often absent in SOC 2); DR plan annual test</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Program Development (PD)</td>
+              <td><span class="mono-id">CC8.1</span><br>Change to Infrastructure/Data</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>SDLC policies, project gate approvals, code review procedures</td>
+              <td>SOX requires business owner UAT sign-off; data migration reconciliation; post-implementation review specific to financial systems</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Journal Entry (JE)</td>
+              <td>No direct SOC 2 equivalent</td>
+              <td><span class="badge badge-red">Low</span></td>
+              <td>GL system access controls (from CC6) may partially support</td>
+              <td>JE testing is a SOX-specific fraud risk procedure — no SOC 2 equivalent. Must be performed separately under AS 2110.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card mt-3" style="background:var(--success-bg);border-color:rgba(13,148,97,.2)">
+        <h3 class="sub-title mb-1" style="color:var(--success)">Using a SOC 1 report instead</h3>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.7">If a vendor processes financially material data, their SOC 1 Type II report (not SOC 2) is what matters for SOX reliance. SOC 1 reports are specifically designed to cover controls relevant to ICFR. Evaluate the CUECs listed in each vendor's SOC 1 and test your implementation of every CUEC — this is a requirement, not optional. See the <a href="../index.html#standards">Standards Tracker</a> for AS 2601 guidance.</p>
+      </div>
+    </div>
+
+    <!-- ISO 27001 -->
+    <div class="tab-panel" id="tab-cy-iso">
+      <div class="alert alert-info"><i class="ti ti-info-circle"></i> ISO/IEC 27001:2022 reorganized its Annex A controls into four themes (Organizational, People, Physical, Technological). The Technological controls (Annex A.8) overlap most heavily with SOX ITGC, particularly access management, change management, and monitoring.</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>SOX ITGC domain</th><th>ISO 27001:2022 Annex A</th><th>Overlap level</th><th>Key ISO controls</th><th>What SOX adds</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Logical Access (LA)</td>
+              <td><span class="mono-id">A.5.15–A.5.18</span><br><span class="mono-id">A.8.2–A.8.5</span></td>
+              <td><span class="badge badge-green">High</span></td>
+              <td>Access rights management (A.5.15), privileged access (A.8.2), user authentication (A.8.5), identity management (A.5.16)</td>
+              <td>SOX requires financial system scoping; SoD focused on financial roles; quarterly access review frequency</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Change Management (CM)</td>
+              <td><span class="mono-id">A.8.32</span><br>Change Management</td>
+              <td><span class="badge badge-green">High</span></td>
+              <td>A.8.32 covers planning, testing, authorization, and documentation of changes to information systems</td>
+              <td>SOX adds business UAT requirement; emergency change rate monitoring; financially significant system focus only</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Computer Operations (CO)</td>
+              <td><span class="mono-id">A.8.6, A.8.14, A.8.15</span><br>Capacity, Redundancy, Logging</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>Capacity management (A.8.6), redundancy (A.8.14), audit log management (A.8.15)</td>
+              <td>SOX focuses on batch job completion monitoring; DR testing is required annually with documented results; backup restore testing</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Program Development (PD)</td>
+              <td><span class="mono-id">A.8.25–A.8.29</span><br>Secure Development</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>Secure development lifecycle (A.8.25), separation of dev/test/prod (A.8.31), application security testing (A.8.29)</td>
+              <td>SOX requires business owner UAT sign-off; data migration reconciliation; post-implementation review</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- NIST CSF -->
+    <div class="tab-panel" id="tab-cy-nist">
+      <div class="alert alert-info"><i class="ti ti-info-circle"></i> NIST CSF 2.0 (released February 2024) added a sixth function — Govern — and reorganized content across Identify, Protect, Detect, Respond, and Recover. The Protect (PR) and Detect (DE) functions align most closely with SOX ITGC.</div>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>SOX ITGC domain</th><th>NIST CSF 2.0 function / category</th><th>Overlap</th><th>Key subcategories</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Logical Access (LA)</td>
+              <td><span class="badge badge-blue">PR.AA</span> Identity Management, Authentication, and Access Control</td>
+              <td><span class="badge badge-green">High</span></td>
+              <td>PR.AA-01 (identities managed), PR.AA-02 (authentication), PR.AA-03 (users provisioned), PR.AA-05 (access permissions managed), PR.AA-06 (physical access)</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Change Management (CM)</td>
+              <td><span class="badge badge-blue">PR.IP</span> Information Protection Processes and Procedures</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>PR.IP-03 (configuration management), DE.CM-01 (networks monitored), GV.OC-02 (internal & external stakeholders)</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Computer Operations (CO)</td>
+              <td><span class="badge badge-blue">DE.CM</span> Continuous Monitoring</td>
+              <td><span class="badge badge-amber">Medium</span></td>
+              <td>DE.CM-03 (personnel activity monitored), DE.CM-06 (external service provider activity), RS.CO (communications)</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">Program Development (PD)</td>
+              <td><span class="badge badge-blue">GV.SC</span> Cybersecurity Supply Chain Risk Management</td>
+              <td><span class="badge badge-amber">Low-medium</span></td>
+              <td>GV.SC-06 (due diligence performed), PR.IP-02 (system development life cycle managed)</td>
+            </tr>
+            <tr>
+              <td style="color:var(--text);font-weight:600">SOX cybersecurity risk (new)</td>
+              <td><span class="badge badge-teal">GV.RM</span> Risk Management Strategy</td>
+              <td><span class="badge badge-green">New overlap</span></td>
+              <td>GV.RM-06 (risk appetite established). SEC 2023 cybersecurity disclosure rules now require material cybersecurity incidents to be disclosed under 8-K — bridging cyber risk directly to financial reporting.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CIS CONTROLS -->
+    <div class="tab-panel" id="tab-cy-cis">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>CIS Control v8</th><th>Title</th><th>SOX ITGC mapping</th><th>Evidence that may carry over</th></tr></thead>
+          <tbody>
+            <tr><td class="mono-id">CIS 5</td><td style="color:var(--text)">Account Management</td><td><span class="badge badge-blue">LA — Logical Access</span></td><td>User account inventory, privileged account monitoring, inactive account reports</td></tr>
+            <tr><td class="mono-id">CIS 6</td><td style="color:var(--text)">Access Control Management</td><td><span class="badge badge-blue">LA — Logical Access</span></td><td>MFA configuration evidence, access reviews, least privilege enforcement documentation</td></tr>
+            <tr><td class="mono-id">CIS 4</td><td style="color:var(--text)">Secure Configuration of Enterprise Assets</td><td><span class="badge badge-green">CM — Change Management</span></td><td>Configuration baseline documents, configuration change logs, deviation reports</td></tr>
+            <tr><td class="mono-id">CIS 2</td><td style="color:var(--text)">Inventory and Control of Software Assets</td><td><span class="badge badge-green">CM / PD</span></td><td>Software inventory, patch status reports, unauthorized software detection logs</td></tr>
+            <tr><td class="mono-id">CIS 7</td><td style="color:var(--text)">Continuous Vulnerability Management</td><td><span class="badge badge-green">CM — Patch Management</span></td><td>Vulnerability scan reports, patch SLA compliance rates, remediation tracking</td></tr>
+            <tr><td class="mono-id">CIS 8</td><td style="color:var(--text)">Audit Log Management</td><td><span class="badge badge-amber">CO — Operations</span></td><td>Audit log configuration evidence, log retention documentation, SIEM coverage reports</td></tr>
+            <tr><td class="mono-id">CIS 11</td><td style="color:var(--text)">Data Recovery</td><td><span class="badge badge-amber">CO — Backup & Recovery</span></td><td>Backup job logs, recovery test results, RTO/RPO documentation</td></tr>
+            <tr><td class="mono-id">CIS 16</td><td style="color:var(--text)">Application Software Security</td><td><span class="badge badge-purple">PD — Program Development</span></td><td>SDLC security gate evidence, code review records, penetration test results</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- GAPS & LIMITS -->
+    <div class="tab-panel" id="tab-cy-gaps">
+      <div class="section-header" style="margin-bottom:1.5rem">
+        <h3 class="sub-title">Where cybersecurity frameworks do NOT cover SOX ITGC requirements</h3>
+        <p class="text-sm" style="color:var(--text-2)">These are the areas where security program evidence cannot substitute for SOX-specific testing. Understand these gaps before claiming coverage.</p>
+      </div>
+      <div class="card-grid-2 mb-4">
+        <div class="card card-sm" style="border-left:4px solid var(--danger)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-file-invoice" style="color:var(--danger)"></i> Journal entry testing</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">No cybersecurity framework includes JE testing — it's a SOX-specific fraud risk procedure. Must be performed from scratch under AS 2110 for every SOX engagement. Cannot be substituted by security controls.</p>
+        </div>
+        <div class="card card-sm" style="border-left:4px solid var(--danger)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-users-group" style="color:var(--danger)"></i> Financial role SoD analysis</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">CIS and ISO address role management broadly. SOX requires a specific SoD conflict analysis for financial roles — AP vs. GL, developer vs. production, cash entry vs. cash approval. Security frameworks don't define these financial-specific conflicts.</p>
+        </div>
+        <div class="card card-sm" style="border-left:4px solid var(--warning)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-user-check" style="color:var(--warning)"></i> Business owner UAT sign-off</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">Security frameworks test systems for security attributes. SOX requires business users (finance, accounting) to certify that new systems work correctly for their financial reporting needs. Security testing evidence does not satisfy this.</p>
+        </div>
+        <div class="card card-sm" style="border-left:4px solid var(--warning)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-database-import" style="color:var(--warning)"></i> Data migration reconciliation</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">Security frameworks address data migration from a security perspective. SOX requires financial balance reconciliation — pre/post record counts tied to the GL — which security teams typically do not perform or document.</p>
+        </div>
+        <div class="card card-sm" style="border-left:4px solid var(--purple)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-file-text" style="color:var(--purple)"></i> IPE validation (AS 1105.10A)</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">The PCAOB requirement to validate system-generated reports used in controls is unique to SOX auditing. No security framework requires this — and most security teams have never heard of it. Must be built into the SOX program separately.</p>
+        </div>
+        <div class="card card-sm" style="border-left:4px solid var(--purple)">
+          <h4 style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.4rem"><i class="ti ti-scope" style="color:var(--purple)"></i> Financially significant system scoping</h4>
+          <p class="text-sm" style="color:var(--text-2);line-height:1.6">Security programs typically cover all systems. SOX ITGC scoping is a top-down risk-based exercise that identifies only systems supporting financially significant processes. Security coverage of all systems does not imply SOX ITGC coverage of the right systems.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRACTICAL GUIDE -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-rocket"></i> Practical guidance</div>
+    <h2 class="section-title">How to leverage security work for SOX — practical steps</h2>
+  </div>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div>
+        <h4>Map your in-scope SOX systems to your security program coverage</h4>
+        <p>Create a matrix: list every SOX in-scope system and check whether it's covered by your SOC 2 attestation, ISO 27001 scope, or continuous monitoring program. Gaps in coverage are areas where SOX testing must be done independently.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div>
+        <h4>Identify which security controls produce usable SOX evidence</h4>
+        <p>Not all security controls produce evidence in the format SOX auditors need. Access review certifications from your IAM tool may be usable — a penetration test report is not direct ITGC evidence. Evaluate each control's output, not just its existence.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div>
+        <h4>Discuss reliance with your external auditor before the engagement begins</h4>
+        <p>Never assume your external auditor will accept security evidence as SOX evidence without discussion. Agree on what evidence they will accept, what format, and what period it needs to cover. This conversation saves significant rework.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">4</div>
+      <div>
+        <h4>Build a unified evidence calendar</h4>
+        <p>Align security and SOX evidence collection cycles. If quarterly access reviews produce evidence for both SOC 2 and SOX, schedule them so the evidence covers both periods. Avoid collecting the same evidence twice for different programs.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">5</div>
+      <div>
+        <h4>Build SOX-specific procedures for the gaps</h4>
+        <p>After mapping overlap, identify the gaps (JE testing, SoD analysis, business UAT, IPE validation, data migration reconciliation). Build dedicated SOX procedures for each gap. These must be performed regardless of security program maturity.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEC 2023 CYBERSECURITY RULES -->
+  <div class="card mt-4" style="border-left:4px solid var(--teal)">
+    <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem">
+      <div class="ib ib-teal" style="margin-bottom:0"><i class="ti ti-building-bank"></i></div>
+      <h3 style="font-size:.975rem;font-weight:700;color:var(--text)">SEC 2023 cybersecurity disclosure rules — the new SOX-cyber connection</h3>
+    </div>
+    <p class="text-sm" style="color:var(--text-2);line-height:1.7;margin-bottom:.75rem">The SEC's 2023 cybersecurity disclosure rules (effective December 2023) created a formal link between cybersecurity and financial reporting. Public companies must now disclose:</p>
+    <ul class="bullet-list mb-2">
+      <li><strong style="color:var(--text)">Form 8-K:</strong> Material cybersecurity incidents within 4 business days of determining materiality</li>
+      <li><strong style="color:var(--text)">Annual 10-K (Item 1C):</strong> Cybersecurity risk management program, governance, and board oversight</li>
+      <li><strong style="color:var(--text)">Board expertise:</strong> Whether any board member has cybersecurity expertise (and if so, how it informs oversight)</li>
+    </ul>
+    <p class="text-sm" style="color:var(--text-2);line-height:1.7">This means: a material cybersecurity incident is now potentially a material weakness trigger. If a breach compromised the integrity of financial reporting systems, the resulting control failures must be evaluated under PCAOB AS 2201.62–.70. The cyber team and the SOX program need to be connected — not siloed.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit & ITGC Platform v2</div>
+  <p>Not legal or accounting advice. Verify against your firm's methodology and primary sources.</p>
+  <div class="foot-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="mistakes.html">Common Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+  </div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+
+<script src="../js/shared.js"></script>
+</body>
+</html>

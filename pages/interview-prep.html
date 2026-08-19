@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Question Bank | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a><a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a>
+    <a href="scoping.html">Scoping</a><a href="sample-calc.html">Sample Calc</a>
+    <a href="erp-guides.html">ERP Guides</a><a href="audit-programs.html">Audit Programs</a>
+    <a href="interview-prep.html" class="active">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a><a href="scoping.html">Scoping</a>
+  <a href="sample-calc.html">Sample Calc</a><a href="erp-guides.html">ERP Guides</a>
+  <a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html" class="active">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box"><input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off"><div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div></div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Interview Prep</span></div>
+    <div class="page-eyebrow"><i class="ti ti-school"></i> Career tools</div>
+    <h1 class="page-title">SOX IT audit interview question bank</h1>
+    <p class="page-sub">Flashcard-style prep for IT audit, internal audit, and SOX advisory interviews. Click any card to reveal the answer. Use the tabs to focus by domain or level.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-cards"></i> 40+ questions</span>
+      <span class="meta-pill"><i class="ti ti-layers"></i> By domain & level</span>
+      <span class="meta-pill"><i class="ti ti-device-mobile"></i> Mobile-friendly</span>
+    </div>
+  </div>
+</div>
+
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="tab-nav" id="ipTabs">
+      <button class="tab-btn active" data-tab="ip-core"><i class="ti ti-star"></i> Core concepts</button>
+      <button class="tab-btn" data-tab="ip-la"><i class="ti ti-lock"></i> Logical Access</button>
+      <button class="tab-btn" data-tab="ip-cm"><i class="ti ti-git-pull-request"></i> Change Mgmt</button>
+      <button class="tab-btn" data-tab="ip-deficiency"><i class="ti ti-alert-triangle"></i> Deficiencies</button>
+      <button class="tab-btn" data-tab="ip-senior"><i class="ti ti-award"></i> Senior-level</button>
+    </div>
+
+    <div class="tab-host" id="flashcard-host">
+    <!-- CORE CONCEPTS -->
+    <div class="tab-panel active" id="tab-ip-core">
+      <div id="fc-core-wrap"></div>
+    </div>
+    <div class="tab-panel" id="tab-ip-la">
+      <div id="fc-la-wrap"></div>
+    </div>
+    <div class="tab-panel" id="tab-ip-cm">
+      <div id="fc-cm-wrap"></div>
+    </div>
+    <div class="tab-panel" id="tab-ip-deficiency">
+      <div id="fc-def-wrap"></div>
+    </div>
+    <div class="tab-panel" id="tab-ip-senior">
+      <div id="fc-sr-wrap"></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITTEN Q&A REFERENCE -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-book-2"></i> Written reference</div>
+    <h2 class="section-title">Key definitions — know these cold</h2>
+  </div>
+  <div class="card-grid-2">
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">The 10 definitions every SOX IT auditor must know</h3>
+      <ul class="bullet-list">
+        <li><strong style="color:var(--text)">ITGC:</strong> Controls that apply to all IT systems and protect the infrastructure that application controls depend on</li>
+        <li><strong style="color:var(--text)">IPE:</strong> Information produced by the entity — system-generated reports used in controls that must be validated for completeness and accuracy</li>
+        <li><strong style="color:var(--text)">SoD:</strong> No individual can both initiate and approve a transaction (prevents concealment of errors or fraud)</li>
+        <li><strong style="color:var(--text)">Control deficiency:</strong> A gap in design or operation that doesn't meet the MW/SD threshold</li>
+        <li><strong style="color:var(--text)">Significant deficiency:</strong> Less severe than MW but important enough to communicate to the audit committee</li>
+        <li><strong style="color:var(--text)">Material weakness:</strong> Reasonable possibility of material misstatement not caught on a timely basis — requires public disclosure</li>
+        <li><strong style="color:var(--text)">Walkthrough:</strong> Tracing one transaction end-to-end to confirm design understanding per AS 2201.34</li>
+        <li><strong style="color:var(--text)">Operating effectiveness:</strong> The control operated as designed consistently throughout the audit period</li>
+        <li><strong style="color:var(--text)">Design effectiveness:</strong> The control, if operated properly, is capable of preventing or detecting a material misstatement</li>
+        <li><strong style="color:var(--text)">CUEC:</strong> Complementary User Entity Controls — controls the SOC 1 assumes your organization is operating</li>
+      </ul>
+    </div>
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">Numbers to memorize</h3>
+      <ul class="bullet-list">
+        <li><strong style="color:var(--text)">Daily controls:</strong> 25 items sample (high risk: 30–40)</li>
+        <li><strong style="color:var(--text)">Weekly controls:</strong> 10 items sample</li>
+        <li><strong style="color:var(--text)">Monthly controls:</strong> 3–5 items</li>
+        <li><strong style="color:var(--text)">Quarterly controls:</strong> 2 items</li>
+        <li><strong style="color:var(--text)">Annual controls:</strong> 1 item</li>
+        <li><strong style="color:var(--text)">14 days:</strong> Documentation completion deadline (AS 1215)</li>
+        <li><strong style="color:var(--text)">4 business days:</strong> SEC 8-K deadline for material cybersecurity incidents</li>
+        <li><strong style="color:var(--text)">AS 2201:</strong> The PCAOB standard for integrated audits of ICFR</li>
+        <li><strong style="color:var(--text)">AS 2315:</strong> PCAOB standard for audit sampling</li>
+        <li><strong style="color:var(--text)">AS 1105.10A:</strong> IPE validation requirement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="audit-programs.html">Audit Programs</a><a href="mistakes.html">Common Mistakes</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+
+<script src="../js/shared.js"></script>
+<script>
+const DECKS = {
+  core: [
+    {q:"What are the four ITGC domains?", a:"Logical Access (LA), Change Management (CM), Computer Operations (CO), and Program Development (PD). Some firms add a fifth: Journal Entry (JE) testing."},
+    {q:"What is the difference between design effectiveness and operating effectiveness?", a:"Design: the control, if operated properly, is capable of preventing/detecting misstatement. Operating: the control actually ran as designed throughout the audit period. You must test both."},
+    {q:"What is IPE and why does it matter?", a:"Information Produced by the Entity — system-generated reports used as inputs to controls. If the report is wrong, the control fails even if the human reviewer did their job. Must be validated for completeness and accuracy per AS 1105.10A before every control that uses one."},
+    {q:"What is a walkthrough and what standard requires it?", a:"Tracing one transaction end-to-end through the process to confirm your understanding of control design. Required by PCAOB AS 2201.34 for all significant processes."},
+    {q:"What is the top-down approach to SOX scoping?", a:"Start at the financial statement level → identify significant accounts → identify business processes → identify supporting IT systems. Only systems that could affect material FS amounts are in scope. Per AS 2201 Para .22."},
+    {q:"What is the difference between ITGC and application controls?", a:"ITGC apply across the entire IT environment and protect infrastructure integrity. Application controls operate within a specific application and ensure individual transactions are processed correctly. ITGC failure can invalidate application controls."},
+    {q:"What is an IT-dependent manual control (ITDM)?", a:"A control performed by a human, but relying on a system-generated report (IPE). Testing requires both: (1) IPE validation, and (2) sampling the human review step. The most commonly misclassified control type."},
+  ],
+  la: [
+    {q:"What is SoD and give a real example of a conflict?", a:"Segregation of Duties — no single person can both execute and conceal a transaction. Example: a user who can both create vendors in AP and approve vendor payments could create a fictitious vendor and pay themselves."},
+    {q:"What evidence do you need to test user deprovisioning?", a:"(1) List of terminated employees from HR for the period, (2) user access list from the system on the termination date or shortly after, (3) evidence access was revoked within the policy SLA (typically 24 hours). Cross-reference these three sources."},
+    {q:"What makes an access review 'rubber stamping' and why is it a deficiency?", a:"When a manager certifies access in bulk without genuinely reviewing each user — approving everyone on the list within seconds, or approving people who no longer report to them. It's an operating effectiveness failure because the control didn't achieve its objective."},
+    {q:"How do you test whether privileged access is appropriately controlled?", a:"(1) Identify all privileged accounts (admin, root, DBA, etc.), (2) verify each has documented business justification, (3) confirm no routine business activity is performed using privileged accounts, (4) verify privileged actions are logged, (5) confirm no shared privileged accounts."},
+    {q:"What is a non-human identity (NHI) and why is it an ITGC risk?", a:"Service accounts, API keys, Lambda execution roles, managed identities — automated accounts used by systems. They outnumber human users, accumulate excessive permissions, and are rarely reviewed. If not governed, they represent a backdoor bypass of access controls."},
+  ],
+  cm: [
+    {q:"What is the most common change management deficiency you'd find?", a:"Approval timestamped after the deployment. The ticket shows deployment at 9pm Monday and approval at 10am Tuesday. Even if the change itself was harmless, the control (authorization before deployment) failed."},
+    {q:"What is a SoD violation in change management?", a:"A developer who can both write code and deploy it to production. There's no independent check on what they deploy. This breaks the CM control because one person controls the entire change pathway."},
+    {q:"How many emergency changes are too many?", a:"Any rate above 10% of total changes warrants scrutiny. Above 30% is a clear design deficiency — the emergency exception has become the normal process, meaning standard authorization controls are routinely bypassed."},
+    {q:"How do you test change management for a cloud environment?", a:"Obtain the IaC pipeline logs (Terraform/CloudFormation). Verify all production deployments came through the pipeline, not the console. Cross-reference with CloudTrail/Activity Log. Any direct console change outside the pipeline = exception. Check pipeline approval gates exist and were triggered."},
+    {q:"What is UAT and who must perform it for SOX purposes?", a:"User Acceptance Testing — validating that a new system works correctly for the business. For SOX, UAT must be performed by business users (finance, accounting) — not IT. The sign-off must come from a named business owner, not a technical team. IT testing alone does not satisfy this requirement."},
+  ],
+  deficiency: [
+    {q:"What is the difference between a control deficiency, significant deficiency, and material weakness?", a:"CD: gap that doesn't meet SD/MW threshold. No audit committee communication required. SD: important enough for audit committee to know; communicate in writing before fiscal year-end. MW: reasonable possibility of material misstatement; requires public 10-K disclosure and CEO/CFO §302 certification modification."},
+    {q:"When you find an exception in testing, what do you do first?", a:"(1) Confirm it's a real exception — not a documentation gap, (2) determine the nature and cause, (3) evaluate pervasiveness (one instance vs. systemic), (4) classify as CD/SD/MW per AS 2201.62–.70, (5) document in the deficiency log, (6) escalate per firm methodology, (7) determine if compensating controls exist."},
+    {q:"A developer had production access for 3 months. How would you classify this?", a:"Likely Significant Deficiency at minimum, potentially Material Weakness. Key factors: (a) was there a compensating control (monitoring, approval trail)? (b) did they make any changes? (c) is this systemic? A developer with unmonitored prod access and no compensating controls = MW risk."},
+    {q:"What is a compensating control and when is it sufficient?", a:"A control that reduces the risk of the primary control's failure. It's sufficient when: (1) it's tested and operating effectively, (2) it addresses the same risk as the failed control, (3) it provides equivalent assurance. A compensating control does not close a deficiency — it reduces its severity."},
+    {q:"What makes a material weakness remediable before year-end?", a:"The remediated control must have been implemented and operating effectively for a sufficient period — typically a full quarter. Both management and the external auditor must agree the root cause is fixed, not just the symptom. External auditors require evidence of sustained operation."},
+  ],
+  senior: [
+    {q:"How do you assess whether ITGC failures cascade to financial statement risk?", a:"Ask: if this ITGC failed, which application controls that depend on it are now unreliable? Which financial statement assertions (completeness, accuracy, existence) does this affect? What is the potential dollar impact? Can management rely on the numbers produced by this system? ITGC failure doesn't automatically mean FS misstatement — it means you can't rely on the systems to detect or prevent one."},
+    {q:"An external auditor disagrees with your deficiency classification. How do you handle it?", a:"(1) Understand their basis — what additional facts or risk factors are they weighing? (2) Present your evidence and reasoning clearly. (3) Escalate within your own team for a second opinion. (4) Document the disagreement and the final resolution clearly. Ultimately, in an integrated audit, the external auditor's classification governs what goes in the 10-K. In an internal audit context, your CAE and the audit committee make the call."},
+    {q:"What questions do you ask when a company says they don't need an ITGC over a system because 'the vendor handles it'?", a:"(1) Is there a SOC 1 Type II covering the relevant period? (2) Was the SOC 1 opinion unqualified? (3) What CUECs does the report identify — and have we tested our compliance with each one? (4) Does the report cover the specific controls we're relying on? (5) If no SOC 1 exists, what alternative procedures are available?"},
+    {q:"How do you scope ITGC testing for a company that has migrated to a new ERP mid-year?", a:"Both the old and new systems are in scope for the portions of the year they were active. You need: (1) ITGC testing for the old system covering its operation period, (2) ITGC testing for the new system, (3) data migration reconciliation (the most commonly missed item), (4) UAT evidence for the new system, (5) evaluation of any control gaps during the transition period."},
+    {q:"What is the difference between a SOC 1 and a SOC 2 and which matters more for SOX?", a:"SOC 1 (SSAE 18): assesses controls relevant to user entities' internal control over financial reporting. SOC 2: assesses controls relevant to security, availability, processing integrity, confidentiality, and privacy. For SOX specifically, a SOC 1 is what you need — it's designed for ICFR reliance. SOC 2 may provide supplementary evidence but cannot substitute for a SOC 1 when the vendor processes financially material transactions."},
+  ]
+};
+
+function buildDeck(domId, cards) {
+  const wrap = document.getElementById(domId);
+  if(!wrap) return;
+  let idx = 0;
+  const total = cards.length;
+
+  function render() {
+    const c = cards[idx];
+    wrap.innerHTML = `
+      <div style="max-width:680px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:1rem;font-size:.8rem;color:var(--text-3)">Card ${idx+1} of ${total} — click card to reveal answer</div>
+        <div class="flashcard-wrap" id="fc-${domId}" onclick="this.classList.toggle('flipped')">
+          <div class="flashcard-inner">
+            <div class="flashcard-face flashcard-front">
+              <div class="eyebrow mb-2" style="font-size:.7rem"><i class="ti ti-help-circle"></i> Interview question</div>
+              <div style="font-size:1rem;font-weight:600;color:var(--text);line-height:1.5">${c.q}</div>
+              <div style="font-size:.75rem;color:var(--text-3);margin-top:1rem"><i class="ti ti-hand-click"></i> Tap to reveal answer</div>
+            </div>
+            <div class="flashcard-face flashcard-back">
+              <div class="eyebrow mb-2" style="font-size:.7rem"><i class="ti ti-check"></i> Strong answer</div>
+              <div style="font-size:.875rem;color:var(--text-2);line-height:1.65;text-align:left">${c.a}</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-counter">
+          ${cards.map((_,i)=>`<div class="card-dot${i===idx?' active':''}" onclick="goCard_${domId}(${i})"></div>`).join('')}
+        </div>
+        <div style="display:flex;gap:.6rem;justify-content:center;margin-top:1rem">
+          <button class="btn btn-outline btn-sm" onclick="prevCard_${domId}()"><i class="ti ti-arrow-left"></i> Prev</button>
+          <button class="btn btn-outline btn-sm" onclick="shuffleCard_${domId}()"><i class="ti ti-arrows-shuffle"></i> Shuffle</button>
+          <button class="btn btn-primary btn-sm" onclick="nextCard_${domId}()">Next <i class="ti ti-arrow-right"></i></button>
+        </div>
+      </div>`;
+  }
+  window['nextCard_'+domId] = () => { idx=(idx+1)%total; render(); };
+  window['prevCard_'+domId] = () => { idx=(idx-1+total)%total; render(); };
+  window['goCard_'+domId] = (i) => { idx=i; render(); };
+  window['shuffleCard_'+domId] = () => {
+    for(let i=cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]];}
+    idx=0; render();
+  };
+  render();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildDeck('fc-core-wrap', [...DECKS.core]);
+  buildDeck('fc-la-wrap', [...DECKS.la]);
+  buildDeck('fc-cm-wrap', [...DECKS.cm]);
+  buildDeck('fc-def-wrap', [...DECKS.deficiency]);
+  buildDeck('fc-sr-wrap', [...DECKS.senior]);
+});
+</script>
+</body>
+</html>

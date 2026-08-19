@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud ITGC — AWS, Azure, GCP | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="scoping.html">Scoping</a>
+    <a href="sample-calc.html">Sample Calc</a>
+    <a href="cloud-itgc.html" class="active">Cloud ITGC</a>
+    <a href="vendor-soc1.html">Vendor/SOC1</a>
+    <a href="erp-guides.html">ERP Guides</a>
+    <a href="audit-programs.html">Audit Programs</a>
+    <a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="app-controls.html">App Controls</a><a href="mistakes.html">Mistakes</a>
+  <a href="remediation.html">Remediation</a><a href="cyber-sox.html">Cyber→SOX</a><a href="scoping.html">Scoping</a>
+  <a href="sample-calc.html">Sample Calc</a><a href="cloud-itgc.html" class="active">Cloud ITGC</a><a href="vendor-soc1.html">Vendor/SOC1</a>
+  <a href="erp-guides.html">ERP Guides</a><a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Cloud ITGC</span></div>
+    <div class="page-eyebrow"><i class="ti ti-cloud"></i> Cloud environments</div>
+    <h1 class="page-title">Cloud ITGC — AWS, Azure & GCP</h1>
+    <p class="page-sub">ITGC for cloud-native environments differs significantly from on-premise. Shared responsibility, IAM complexity, infrastructure-as-code, and serverless architectures each require specific control approaches and evidence patterns.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-brand-aws"></i> AWS</span>
+      <span class="meta-pill"><i class="ti ti-brand-azure"></i> Azure</span>
+      <span class="meta-pill"><i class="ti ti-brand-google"></i> GCP</span>
+      <span class="meta-pill"><i class="ti ti-shield-lock"></i> Shared responsibility</span>
+    </div>
+  </div>
+</div>
+
+<!-- SHARED RESPONSIBILITY -->
+<section class="page-section reveal">
+  <div class="alert alert-warn"><i class="ti ti-alert-triangle"></i> <strong>Critical principle:</strong> Cloud providers are responsible for security <em>of</em> the cloud (physical infrastructure, hypervisor, managed services). Your company is responsible for security <em>in</em> the cloud (IAM, configuration, application, data). ITGC testing must focus on what your company controls — not what the provider handles.</div>
+  <div class="card-grid-3 mt-3">
+    <div class="card card-sm" style="border-top:3px solid var(--warning)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.6rem"><span class="cloud-badge cloud-aws">AWS</span><h3 class="sub-title" style="margin:0">AWS key services for ITGC</h3></div>
+      <ul class="bullet-list">
+        <li><strong>IAM</strong> — users, roles, policies, permission boundaries</li>
+        <li><strong>CloudTrail</strong> — API activity logging (the ITGC evidence source)</li>
+        <li><strong>Config</strong> — configuration change tracking</li>
+        <li><strong>Organizations / SCPs</strong> — cross-account access control</li>
+        <li><strong>CodePipeline / CodeDeploy</strong> — CI/CD change management</li>
+        <li><strong>CloudWatch</strong> — monitoring and alerting</li>
+        <li><strong>Backup</strong> — managed backup with restore testing</li>
+      </ul>
+    </div>
+    <div class="card card-sm" style="border-top:3px solid var(--accent)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.6rem"><span class="cloud-badge cloud-azure">Azure</span><h3 class="sub-title" style="margin:0">Azure key services for ITGC</h3></div>
+      <ul class="bullet-list">
+        <li><strong>Entra ID (AAD)</strong> — identity, MFA, RBAC, PIM</li>
+        <li><strong>Activity Log / Monitor</strong> — audit trail for all control plane changes</li>
+        <li><strong>Policy</strong> — configuration enforcement and compliance</li>
+        <li><strong>Management Groups</strong> — cross-subscription governance</li>
+        <li><strong>DevOps Pipelines</strong> — CI/CD with approvals and gates</li>
+        <li><strong>Defender for Cloud</strong> — security posture and alerts</li>
+        <li><strong>Backup / Site Recovery</strong> — backup and DR</li>
+      </ul>
+    </div>
+    <div class="card card-sm" style="border-top:3px solid var(--success)">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:.6rem"><span class="cloud-badge cloud-gcp">GCP</span><h3 class="sub-title" style="margin:0">GCP key services for ITGC</h3></div>
+      <ul class="bullet-list">
+        <li><strong>IAM</strong> — service accounts, roles, org policies</li>
+        <li><strong>Cloud Audit Logs</strong> — Admin Activity and Data Access logs</li>
+        <li><strong>Asset Inventory</strong> — configuration change history</li>
+        <li><strong>Organization Policies</strong> — constraint enforcement</li>
+        <li><strong>Cloud Build / Cloud Deploy</strong> — CI/CD change management</li>
+        <li><strong>Security Command Center</strong> — threat detection and posture</li>
+        <li><strong>Backup and DR</strong> — managed backup service</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTROLS BY DOMAIN TABS -->
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-layers"></i> By ITGC domain</div>
+      <h2 class="section-title">Cloud controls by ITGC domain</h2>
+    </div>
+    <div class="tab-nav" id="cloudTabs">
+      <button class="tab-btn active" data-tab="cl-la"><i class="ti ti-lock"></i> Logical Access</button>
+      <button class="tab-btn" data-tab="cl-cm"><i class="ti ti-git-pull-request"></i> Change Mgmt</button>
+      <button class="tab-btn" data-tab="cl-co"><i class="ti ti-server-2"></i> Operations</button>
+      <button class="tab-btn" data-tab="cl-pd"><i class="ti ti-code"></i> Program Dev</button>
+    </div>
+
+    <div class="tab-host">
+    <div class="tab-panel active" id="tab-cl-la">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Control</th><th>AWS evidence</th><th>Azure evidence</th><th>GCP evidence</th><th>Common gap</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--text);font-weight:600">Privileged access restricted</td><td>IAM policies; no root account keys; Admin role assignments via IAM</td><td>Entra ID PIM — just-in-time elevation; RBAC Owner role assignments</td><td>Owner/Editor role bindings; service account key audit</td><td>Root/owner accounts used routinely instead of role-based access</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">MFA enforced for console</td><td>IAM MFA policy; CloudTrail MFA login events; Organizations SCP</td><td>Entra ID Conditional Access — MFA required for admin portal sign-in</td><td>Org policy constraints; 2SV enforcement via Google Admin</td><td>MFA enforced at identity provider but not validated in cloud console</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Access reviews performed</td><td>IAM Access Analyzer; credential report; last-used data from IAM</td><td>Entra ID Access Reviews — built-in quarterly review workflow</td><td>IAM Recommender; Policy Analyzer; role binding export</td><td>Access review covers users but misses service accounts / API keys</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Terminated users deprovisioned</td><td>IAM user list reconciled to HR; SSO group membership</td><td>Entra ID lifecycle — auto-disable on HR trigger via SCIM</td><td>Google Workspace SCIM / Okta integration to GCP org</td><td>Contractor and third-party accounts not in HR system — missed in deprovisioning</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">SoD between prod and dev</td><td>Separate AWS accounts per environment; cross-account role restrictions</td><td>Separate subscriptions; Azure DevOps service connections with approval gates</td><td>Separate projects; org policy preventing prod service account use in dev</td><td>Developers have direct prod IAM role via group membership inheritance</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-cl-cm">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Control</th><th>AWS evidence</th><th>Azure evidence</th><th>GCP evidence</th><th>Common gap</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--text);font-weight:600">All infra changes via IaC</td><td>CloudFormation / Terraform — all changes in version control; direct console changes blocked via SCP</td><td>ARM templates / Bicep / Terraform in Azure DevOps; Azure Policy deny direct creation</td><td>Deployment Manager / Terraform in Cloud Build; org policy restrictions</td><td>Console "quick fixes" bypass the IaC pipeline — no audit trail</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Pipeline requires approval</td><td>CodePipeline approval action; CODEOWNERS in GitHub with required reviews</td><td>Azure DevOps environment approval gates; branch policies requiring PR approval</td><td>Cloud Deploy approval stages; CODEOWNERS enforcement in Cloud Source Repos</td><td>Approval step exists but the approver is the same person as the deployer</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Production deploys logged</td><td>CloudTrail — CodeDeploy events; deployment IDs in CloudWatch Logs</td><td>Azure DevOps deployment history; Activity Log deployment events</td><td>Cloud Audit Logs — Cloud Deploy release history with approver attribution</td><td>Application deployments logged but infrastructure config changes are not</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Emergency access controlled</td><td>Break-glass IAM role with CloudTrail alert on assumption; root account MFA vault</td><td>PIM privileged role activation with justification and time-limit; alert on activation</td><td>Privileged Access Manager (PAM) — time-bound grants with approval</td><td>Break-glass account credentials stored in a shared spreadsheet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-cl-co">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Control</th><th>AWS evidence</th><th>Azure evidence</th><th>GCP evidence</th><th>Common gap</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--text);font-weight:600">Automated job monitoring</td><td>CloudWatch Events / EventBridge rules; Step Functions execution history; SNS failure alerts</td><td>Azure Monitor alerts; Logic Apps run history; Data Factory pipeline monitoring</td><td>Cloud Scheduler + Cloud Monitoring alerts; Workflows execution logs</td><td>Job runs monitored for success but partial failures (wrong row count) not detected</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Backups configured and tested</td><td>AWS Backup policy; backup vault; restore test documented in Systems Manager</td><td>Azure Backup policy; Recovery Services Vault; restore test run and documented</td><td>Cloud Backup policies; restore test results in Operations Console</td><td>Automated backup exists but restore test has never been performed</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Audit logs retained</td><td>CloudTrail — 1+ year retention; S3 log bucket with MFA delete and versioning</td><td>Azure Monitor diagnostic settings — Log Analytics Workspace with 90-day retention minimum</td><td>Cloud Audit Logs — Admin Activity logs retained 400 days by default; Data Access logs require explicit configuration</td><td>Logs retained in cloud console but not exported to immutable storage — can be deleted by admin</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">DR plan tested annually</td><td>DR runbook in AWS Systems Manager; annual failover test to secondary region documented</td><td>Azure Site Recovery — failover test executed with documented results; RTO/RPO validated</td><td>DR runbook; GCP failover test executed with Cloud Spanner / Cloud SQL multi-region</td><td>DR plan documents exist but test results are not dated and signed off</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-cl-pd">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead><tr><th>Control</th><th>AWS evidence</th><th>Azure evidence</th><th>GCP evidence</th><th>Common gap</th></tr></thead>
+          <tbody>
+            <tr><td style="color:var(--text);font-weight:600">Dev/test/prod separation</td><td>Separate AWS accounts per environment enforced by Organizations; no cross-account dev access to prod</td><td>Separate Azure subscriptions; management group policies preventing dev-to-prod service connections</td><td>Separate GCP projects per environment; org policy constraints on cross-project access</td><td>Environments share a single AWS account — separation is only by tag, not account boundary</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Security scanning in pipeline</td><td>CodeGuru / third-party SAST in CodePipeline; ECR image scanning before push to prod</td><td>Defender for DevOps in Azure DevOps; container scanning in ACR before AKS deployment</td><td>Cloud Build security steps; Artifact Registry vulnerability scanning; Binary Authorization</td><td>Scanning runs but results are not blocking — developers can deploy with known high vulnerabilities</td></tr>
+            <tr><td style="color:var(--text);font-weight:600">Business UAT for new systems</td><td>Not cloud-platform-specific — need documented business sign-off in change ticket before prod deploy</td><td>Azure DevOps work item linked to deployment with business approver field</td><td>Cloud Deploy release notes with business sign-off attached; Jira ticket with approval</td><td>Technical testing documented but no evidence that finance/business users validated output</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- NON-HUMAN IDENTITIES -->
+<section class="page-section reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-robot"></i> Emerging focus area</div>
+    <h2 class="section-title">Non-human identities (NHI) — the biggest cloud ITGC gap</h2>
+  </div>
+  <div class="alert alert-danger"><i class="ti ti-alert-circle"></i> NHI — service accounts, API keys, Lambda execution roles, managed identities — now outnumber human users by 10:1 in most cloud environments and are the fastest-growing source of ITGC deficiencies. PCAOB inspectors are increasingly flagging NHI exclusions from access reviews.</div>
+  <div class="card-grid-2 mt-3">
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">NHI types by platform</h3>
+      <ul class="bullet-list">
+        <li><span class="cloud-badge cloud-aws">AWS</span> IAM roles, Lambda execution roles, EC2 instance profiles, access keys</li>
+        <li><span class="cloud-badge cloud-azure">Azure</span> Managed identities, service principals, app registrations, client secrets</li>
+        <li><span class="cloud-badge cloud-gcp">GCP</span> Service accounts, service account keys, Workload Identity Federation</li>
+      </ul>
+    </div>
+    <div class="card card-sm">
+      <h3 class="sub-title mb-2">Required NHI controls</h3>
+      <ul class="checklist">
+        <li><i class="ti ti-check"></i>Complete NHI inventory — every service account has a named human owner</li>
+        <li><i class="ti ti-check"></i>NHIs included in quarterly access reviews (not just human accounts)</li>
+        <li><i class="ti ti-check"></i>API keys rotated on schedule (AWS: no long-term keys; use roles)</li>
+        <li><i class="ti ti-check"></i>Unused NHIs decommissioned within 30 days of project end</li>
+        <li><i class="ti ti-check"></i>NHI permissions follow least-privilege — not admin or wildcard policies</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="vendor-soc1.html">Vendor/SOC1</a><a href="cyber-sox.html">Cyber→SOX</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+<script src="../js/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Printable Audit Programs | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a><a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a>
+    <a href="scoping.html">Scoping</a><a href="sample-calc.html">Sample Calc</a>
+    <a href="vendor-soc1.html">Vendor/SOC1</a><a href="erp-guides.html">ERP Guides</a>
+    <a href="audit-programs.html" class="active">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a><a href="scoping.html">Scoping</a>
+  <a href="vendor-soc1.html">Vendor/SOC1</a><a href="erp-guides.html">ERP Guides</a>
+  <a href="audit-programs.html" class="active">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box"><input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off"><div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div></div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Audit Programs</span></div>
+    <div class="page-eyebrow"><i class="ti ti-clipboard-list"></i> Fieldwork tools</div>
+    <h1 class="page-title">Printable ITGC audit programs</h1>
+    <p class="page-sub">Structured step-by-step test programs for each ITGC domain. Each program covers what to request, what to test, and what conclusion to draw. Print directly or reference in fieldwork.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-printer"></i> Print-ready</span>
+      <span class="meta-pill"><i class="ti ti-certificate"></i> AS 2201 aligned</span>
+      <span class="meta-pill"><i class="ti ti-layout-grid"></i> 5 domain programs</span>
+    </div>
+  </div>
+</div>
+
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="tab-nav" id="apTabs">
+      <button class="tab-btn active" data-tab="ap-la"><i class="ti ti-lock"></i> LA</button>
+      <button class="tab-btn" data-tab="ap-cm"><i class="ti ti-git-pull-request"></i> CM</button>
+      <button class="tab-btn" data-tab="ap-co"><i class="ti ti-server-2"></i> CO</button>
+      <button class="tab-btn" data-tab="ap-pd"><i class="ti ti-code"></i> PD</button>
+      <button class="tab-btn" data-tab="ap-je"><i class="ti ti-file-invoice"></i> JE</button>
+    </div>
+
+    <div class="tab-host">
+    <!-- LA PROGRAM -->
+    <div class="tab-panel active" id="tab-ap-la">
+      <div class="flex justify-between items-center mb-3 no-print">
+        <h3 class="sub-title">Logical Access — audit program</h3>
+        <button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print program</button>
+      </div>
+      <div class="card">
+        <div class="wp-grid-3 mb-3">
+          <div class="wp-field"><label>Prepared by</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Period</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>System(s) in scope</label><div class="field-val editable">_____________</div></div>
+        </div>
+        <div class="ap-step"><div class="ap-num">1</div><div><strong>Obtain user access population (IPE)</strong><br><span style="color:var(--text-2)">Request full user list for all in-scope systems. Validate completeness against HR headcount. Document parameters used in extract. Note: this population is IPE — validate before sampling.</span></div><div class="ap-ref">AS 1105.10A</div></div>
+        <div class="ap-step"><div class="ap-num">2</div><div><strong>Test user provisioning — new users</strong><br><span style="color:var(--text-2)">Sample new users added during the period. For each: obtain access request, confirm appropriate approver, verify access granted matches what was requested. Test timeliness (same-day or next-business-day standard).</span></div><div class="ap-ref">LA-01</div></div>
+        <div class="ap-step"><div class="ap-num">3</div><div><strong>Test user deprovisioning — terminations</strong><br><span style="color:var(--text-2)">Obtain list of terminated employees from HR during the period. Cross-reference to system user list. Verify access was revoked within the policy SLA (typically 24 hours). Any terminated user with active access = exception.</span></div><div class="ap-ref">LA-03</div></div>
+        <div class="ap-step"><div class="ap-num">4</div><div><strong>Test periodic access review</strong><br><span style="color:var(--text-2)">Obtain access review certifications for the period (quarterly or semi-annual). For each: verify reviewer is appropriate (manager, not IT), review was completed on time, and any identified inappropriate access was revoked within SLA. Validate that IPE report used in the review was also validated.</span></div><div class="ap-ref">LA-02</div></div>
+        <div class="ap-step"><div class="ap-num">5</div><div><strong>Test privileged access controls</strong><br><span style="color:var(--text-2)">Identify all privileged/admin accounts. Verify: (a) each has a named business justification, (b) privileged accounts are not used for routine tasks, (c) privileged actions are logged, (d) no shared privileged accounts exist.</span></div><div class="ap-ref">LA-04</div></div>
+        <div class="ap-step"><div class="ap-num">6</div><div><strong>Test SoD conflict resolution</strong><br><span style="color:var(--text-2)">Obtain the SoD conflict matrix. For each open conflict: verify either (a) role was remediated, or (b) a compensating control exists and is tested. Document unmitigated conflicts as potential deficiencies.</span></div><div class="ap-ref">LA-05</div></div>
+        <div class="ap-step"><div class="ap-num">7</div><div><strong>Conclude and document exceptions</strong><br><span style="color:var(--text-2)">Summarize all exceptions. Classify each as CD / SD / MW per AS 2201.62–.70. Refer exceptions to deficiency log. Write overall conclusion on operating effectiveness of LA controls for the period.</span></div><div class="ap-ref">AS 2201.62</div></div>
+      </div>
+    </div>
+
+    <!-- CM PROGRAM -->
+    <div class="tab-panel" id="tab-ap-cm">
+      <div class="flex justify-between items-center mb-3 no-print">
+        <h3 class="sub-title">Change Management — audit program</h3>
+        <button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print program</button>
+      </div>
+      <div class="card">
+        <div class="wp-grid-3 mb-3">
+          <div class="wp-field"><label>Prepared by</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Period</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Systems in scope</label><div class="field-val editable">_____________</div></div>
+        </div>
+        <div class="ap-step"><div class="ap-num">1</div><div><strong>Obtain change population (IPE)</strong><br><span style="color:var(--text-2)">Request all changes deployed to production during the period from the change management system. Validate population: reconcile ticket count to deployment logs. Document extract parameters. Note emergency change percentage — flag if &gt;10%.</span></div><div class="ap-ref">AS 1105.10A</div></div>
+        <div class="ap-step"><div class="ap-num">2</div><div><strong>Test standard change authorization</strong><br><span style="color:var(--text-2)">Select sample of standard changes. For each: verify (a) ticket created before deployment, (b) approval obtained from appropriate approver before deployment, (c) approval timestamp precedes deployment timestamp. One approval-after-deployment = exception.</span></div><div class="ap-ref">CM-01</div></div>
+        <div class="ap-step"><div class="ap-num">3</div><div><strong>Test testing and UAT evidence</strong><br><span style="color:var(--text-2)">For the same sample: verify testing was performed in non-production environment and evidence exists. For financially significant changes: verify business user (not IT) signed off on UAT before production deployment.</span></div><div class="ap-ref">CM-02</div></div>
+        <div class="ap-step"><div class="ap-num">4</div><div><strong>Test emergency change process</strong><br><span style="color:var(--text-2)">Select all emergency changes (or sample if &gt;25). Verify: (a) emergency classification is justified (outage or security breach), (b) retrospective approval obtained within policy SLA (typically 24–48 hrs), (c) emergency change rate is documented and reported to management.</span></div><div class="ap-ref">CM-03</div></div>
+        <div class="ap-step"><div class="ap-num">5</div><div><strong>Test developer access to production</strong><br><span style="color:var(--text-2)">Cross-reference the developer team list to production environment access list. Zero overlap expected. Any developer with production access = immediate exception (MW risk). Document evidence and escalate.</span></div><div class="ap-ref">CM-04</div></div>
+        <div class="ap-step"><div class="ap-num">6</div><div><strong>Conclude and document exceptions</strong><br><span style="color:var(--text-2)">Summarize all exceptions. Any approval-after-deployment or developer prod access should be evaluated for MW. Write overall conclusion on CM operating effectiveness.</span></div><div class="ap-ref">AS 2201.62</div></div>
+      </div>
+    </div>
+
+    <!-- CO PROGRAM -->
+    <div class="tab-panel" id="tab-ap-co">
+      <div class="flex justify-between items-center mb-3 no-print"><h3 class="sub-title">Computer Operations — audit program</h3><button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print</button></div>
+      <div class="card">
+        <div class="wp-grid-3 mb-3">
+          <div class="wp-field"><label>Prepared by</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Period</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Systems in scope</label><div class="field-val editable">_____________</div></div>
+        </div>
+        <div class="ap-step"><div class="ap-num">1</div><div><strong>Obtain batch job inventory</strong><br><span style="color:var(--text-2)">Obtain list of all financially significant batch jobs. Confirm completeness with IT and finance. This is the population — validate it as IPE by reconciling to scheduler configuration.</span></div><div class="ap-ref">CO-01</div></div>
+        <div class="ap-step"><div class="ap-num">2</div><div><strong>Test batch job monitoring — success</strong><br><span style="color:var(--text-2)">Select sample of days during the period (25 for daily monitoring). For each: obtain the job execution log. Verify all financially significant jobs ran and completed successfully. Note any failures.</span></div><div class="ap-ref">CO-01</div></div>
+        <div class="ap-step"><div class="ap-num">3</div><div><strong>Test failure response</strong><br><span style="color:var(--text-2)">For any failures identified: verify (a) alert was generated, (b) incident ticket was created, (c) resolution completed within SLA, (d) re-run or remediation was documented. No ticket for a failure = exception.</span></div><div class="ap-ref">CO-02</div></div>
+        <div class="ap-step"><div class="ap-num">4</div><div><strong>Test backup controls</strong><br><span style="color:var(--text-2)">Obtain backup job logs for the period. Verify: (a) all in-scope systems backed up per schedule, (b) backup completion confirmed (not just initiated), (c) restore test performed and documented within the year with results signed off.</span></div><div class="ap-ref">CO-03</div></div>
+        <div class="ap-step"><div class="ap-num">5</div><div><strong>Test DR plan</strong><br><span style="color:var(--text-2)">Obtain DR plan and most recent test results. Verify: (a) test was performed within the audit period or prior 12 months, (b) results are documented with RTO/RPO validation, (c) lessons learned tracked to closure. A plan without a test result is not evidence.</span></div><div class="ap-ref">CO-04</div></div>
+      </div>
+    </div>
+
+    <!-- PD PROGRAM -->
+    <div class="tab-panel" id="tab-ap-pd">
+      <div class="flex justify-between items-center mb-3 no-print"><h3 class="sub-title">Program Development — audit program</h3><button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print</button></div>
+      <div class="card">
+        <div class="wp-grid-3 mb-3">
+          <div class="wp-field"><label>Prepared by</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Period</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Projects in scope</label><div class="field-val editable">_____________</div></div>
+        </div>
+        <div class="ap-step"><div class="ap-num">1</div><div><strong>Identify significant implementations</strong><br><span style="color:var(--text-2)">Obtain list of all system implementations, upgrades, and significant configuration changes affecting financially significant systems during the period. This is the population — each item is a testing candidate.</span></div><div class="ap-ref">PD-01</div></div>
+        <div class="ap-step"><div class="ap-num">2</div><div><strong>Test SDLC phase gate approvals</strong><br><span style="color:var(--text-2)">For each significant project: verify evidence of SDLC phase gates — requirements approval, design approval, test plan approval, go/no-go decision. Each gate requires a named approver with a date before the next phase began.</span></div><div class="ap-ref">PD-02</div></div>
+        <div class="ap-step"><div class="ap-num">3</div><div><strong>Test business user UAT</strong><br><span style="color:var(--text-2)">For each project: obtain UAT sign-off documentation. Verify the sign-off is from a business user (finance/accounting), not IT. Verify it is dated before go-live. Verify a test script and results document exist.</span></div><div class="ap-ref">PD-03</div></div>
+        <div class="ap-step"><div class="ap-num">4</div><div><strong>Test data migration reconciliation</strong><br><span style="color:var(--text-2)">For any project involving data migration: verify (a) pre-migration extract count, (b) post-migration load count, (c) financial balance reconciliation (key account balances agree), (d) business sign-off that data looks correct.</span></div><div class="ap-ref">PD-04</div></div>
+        <div class="ap-step"><div class="ap-num">5</div><div><strong>Test post-implementation review</strong><br><span style="color:var(--text-2)">For significant implementations: verify a post-implementation review was performed 60–90 days after go-live. Review should assess whether designed controls are operating and whether new risks emerged.</span></div><div class="ap-ref">PD-05</div></div>
+      </div>
+    </div>
+
+    <!-- JE PROGRAM -->
+    <div class="tab-panel" id="tab-ap-je">
+      <div class="flex justify-between items-center mb-3 no-print"><h3 class="sub-title">Journal Entry Testing — audit program</h3><button class="print-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print</button></div>
+      <div class="card">
+        <div class="alert alert-warn mb-3"><i class="ti ti-alert-triangle"></i> JE testing is a required fraud risk procedure under AS 2110.61, not an optional ITGC test. IPE validation is mandatory before any selection.</div>
+        <div class="wp-grid-3 mb-3">
+          <div class="wp-field"><label>Prepared by</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>Period</label><div class="field-val editable">_____________</div></div>
+          <div class="wp-field"><label>GL system</label><div class="field-val editable">_____________</div></div>
+        </div>
+        <div class="ap-step"><div class="ap-num">1</div><div><strong>Obtain and validate JE population (IPE)</strong><br><span style="color:var(--text-2)">Extract all JEs for the period. Document extract parameters (date range, entity, ledger, type). Reconcile: total JE amount to trial balance; record count to GL system total. Confirm automated entries included. Any difference requires investigation.</span></div><div class="ap-ref">AS 1105.10A</div></div>
+        <div class="ap-step"><div class="ap-num">2</div><div><strong>Segment the population by risk</strong><br><span style="color:var(--text-2)">Stratify: (a) after-hours/weekend entries, (b) period-end entries (last 3 days of month/quarter/year), (c) round-dollar or unusual amounts, (d) entries by infrequent or new preparers, (e) entries that bypass normal workflow. Document count and $ amount of each segment.</span></div><div class="ap-ref">AS 2110.61</div></div>
+        <div class="ap-step"><div class="ap-num">3</div><div><strong>Test high-risk segments</strong><br><span style="color:var(--text-2)">For after-hours and period-end segments: test all or a large targeted sample. For each: obtain supporting documentation, verify approver is different from preparer, verify account coding is appropriate, flag any unusual descriptions or accounts.</span></div><div class="ap-ref">JE-01 to JE-05</div></div>
+        <div class="ap-step"><div class="ap-num">4</div><div><strong>Test random general sample</strong><br><span style="color:var(--text-2)">Select a random sample from the remaining population. Apply the same testing criteria. Document results. Any entry without adequate support or with approver = preparer is an exception.</span></div><div class="ap-ref">JE-06</div></div>
+        <div class="ap-step"><div class="ap-num">5</div><div><strong>Evaluate and conclude</strong><br><span style="color:var(--text-2)">Summarize all exceptions. Evaluate whether any indicate fraud risk indicators (fictitious entries, entries to unusual accounts, systematic patterns). Conclude on JE control environment. Document whether any exceptions require escalation per fraud reporting obligations.</span></div><div class="ap-ref">AS 2110</div></div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="workpapers.html">Workpapers</a><a href="sample-calc.html">Sample Calc</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+<script src="../js/shared.js"></script>
+</body>
+</html>

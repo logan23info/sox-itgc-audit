@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Size Calculator | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="workpapers.html">Workpapers</a>
+    <a href="app-controls.html">App Controls</a>
+    <a href="mistakes.html">Mistakes</a>
+    <a href="remediation.html">Remediation</a>
+    <a href="cyber-sox.html">Cyber→SOX</a>
+    <a href="scoping.html">Scoping</a>
+    <a href="sample-calc.html" class="active">Sample Calc</a>
+    <a href="cloud-itgc.html">Cloud ITGC</a>
+    <a href="vendor-soc1.html">Vendor/SOC1</a>
+    <a href="erp-guides.html">ERP Guides</a>
+    <a href="audit-programs.html">Audit Programs</a>
+    <a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="app-controls.html">App Controls</a><a href="mistakes.html">Mistakes</a>
+  <a href="remediation.html">Remediation</a><a href="cyber-sox.html">Cyber→SOX</a><a href="scoping.html">Scoping</a>
+  <a href="sample-calc.html" class="active">Sample Calc</a><a href="cloud-itgc.html">Cloud ITGC</a><a href="vendor-soc1.html">Vendor/SOC1</a>
+  <a href="erp-guides.html">ERP Guides</a><a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div>
+  </div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>Sample Size Calculator</span></div>
+    <div class="page-eyebrow"><i class="ti ti-calculator"></i> Testing methodology</div>
+    <h1 class="page-title">Sample size calculator</h1>
+    <p class="page-sub">PCAOB AS 2315 aligned sample sizes by control frequency and risk rating — with uplift factors, justification text, and a full reference table. Never guess your sample size again.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-certificate"></i> PCAOB AS 2315</span>
+      <span class="meta-pill"><i class="ti ti-calculator"></i> Interactive</span>
+      <span class="meta-pill"><i class="ti ti-printer"></i> Print-ready</span>
+    </div>
+  </div>
+</div>
+
+<section class="page-section reveal">
+  <div class="card-grid-2">
+    <!-- CALCULATOR -->
+    <div class="card">
+      <div class="eyebrow mb-3"><i class="ti ti-sliders"></i> Calculator inputs</div>
+      <div class="score-row">
+        <label><strong>Control frequency</strong><br><span class="text-xs text-muted">How often does the control operate?</span></label>
+        <select class="score-select" id="freq" onchange="calcSample()">
+          <option value="daily">Daily (250×/year)</option>
+          <option value="weekly">Weekly (52×/year)</option>
+          <option value="monthly">Monthly (12×/year)</option>
+          <option value="quarterly">Quarterly (4×/year)</option>
+          <option value="annual">Annual (1×/year)</option>
+        </select>
+      </div>
+      <div class="score-row">
+        <label><strong>Risk rating</strong><br><span class="text-xs text-muted">Based on scoping and control risk assessment</span></label>
+        <select class="score-select" id="risk" onchange="calcSample()">
+          <option value="high">High risk</option>
+          <option value="medium">Medium risk</option>
+          <option value="low">Low risk</option>
+        </select>
+      </div>
+      <div class="score-row">
+        <label><strong>Control type</strong><br><span class="text-xs text-muted">Affects minimum requirements</span></label>
+        <select class="score-select" id="ctype" onchange="calcSample()">
+          <option value="key">Key / primary control</option>
+          <option value="secondary">Secondary / compensating control</option>
+          <option value="itdm">IT-dependent manual (ITDM)</option>
+        </select>
+      </div>
+      <div class="score-row">
+        <label><strong>New or redesigned control?</strong><br><span class="text-xs text-muted">Add 25% uplift for untested controls</span></label>
+        <select class="score-select" id="newctl" onchange="calcSample()">
+          <option value="no">No — established control</option>
+          <option value="yes">Yes — new or redesigned</option>
+        </select>
+      </div>
+      <div class="score-row">
+        <label><strong>Prior year exceptions?</strong><br><span class="text-xs text-muted">Add 40% uplift if exceptions found last year</span></label>
+        <select class="score-select" id="priorex" onchange="calcSample()">
+          <option value="no">No exceptions</option>
+          <option value="yes">Yes — exceptions in prior period</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="card">
+      <div class="eyebrow mb-3"><i class="ti ti-chart-bar"></i> Recommended sample size</div>
+      <div class="calc-output text-center">
+        <div class="big-num" id="sample-num">25</div>
+        <div class="big-label" id="sample-label">items (base)</div>
+        <div class="result-bar mt-2"><div class="result-fill" id="sample-bar" style="width:50%;background:var(--accent)"></div></div>
+      </div>
+      <div id="sample-breakdown" class="mt-3" style="font-size:.82rem;color:var(--text-2);line-height:1.7"></div>
+      <div class="alert alert-info mt-3" id="sample-justification" style="font-size:.79rem"></div>
+      <button class="btn btn-outline btn-sm mt-2 no-print" onclick="window.print()"><i class="ti ti-printer"></i> Print for workpaper</button>
+    </div>
+  </div>
+</section>
+
+<!-- FULL REFERENCE TABLE -->
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-table"></i> Full reference table</div>
+      <h2 class="section-title">Sample sizes — all frequencies and risk levels</h2>
+      <p class="section-sub">Base samples before uplift factors. Always apply uplift for new controls (+25%), prior exceptions (+40%), or ITDM controls (+IPE validation step).</p>
+    </div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Frequency</th><th>Occurrences/year</th><th>Low risk</th><th>Medium risk</th><th>High risk</th><th>PCAOB basis</th></tr></thead>
+        <tbody>
+          <tr><td style="color:var(--text);font-weight:600">Daily</td><td>~250</td><td><span class="badge badge-green">20</span></td><td><span class="badge badge-amber">25</span></td><td><span class="badge badge-red">30–40</span></td><td class="text-xs text-muted">AS 2315.23 — statistical or non-statistical</td></tr>
+          <tr><td style="color:var(--text);font-weight:600">Weekly</td><td>~52</td><td><span class="badge badge-green">8</span></td><td><span class="badge badge-amber">10</span></td><td><span class="badge badge-red">15</span></td><td class="text-xs text-muted">AS 2315 Para .24</td></tr>
+          <tr><td style="color:var(--text);font-weight:600">Monthly</td><td>12</td><td><span class="badge badge-green">3</span></td><td><span class="badge badge-amber">4</span></td><td><span class="badge badge-red">5</span></td><td class="text-xs text-muted">AS 2315 Para .24</td></tr>
+          <tr><td style="color:var(--text);font-weight:600">Quarterly</td><td>4</td><td><span class="badge badge-green">1</span></td><td><span class="badge badge-amber">2</span></td><td><span class="badge badge-red">2</span></td><td class="text-xs text-muted">AS 2315 Para .24</td></tr>
+          <tr><td style="color:var(--text);font-weight:600">Annual</td><td>1</td><td><span class="badge badge-green">1</span></td><td><span class="badge badge-amber">1</span></td><td><span class="badge badge-red">1</span></td><td class="text-xs text-muted">Inspect the one occurrence</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-grid-3 mt-4">
+      <div class="card card-sm" style="border-top:3px solid var(--warning)">
+        <h3 class="sub-title">+25% uplift when:</h3>
+        <ul class="bullet-list">
+          <li>Control is new or redesigned this year</li>
+          <li>Control owner changed during the period</li>
+          <li>Significant process change occurred</li>
+        </ul>
+      </div>
+      <div class="card card-sm" style="border-top:3px solid var(--danger)">
+        <h3 class="sub-title">+40% uplift when:</h3>
+        <ul class="bullet-list">
+          <li>Exceptions found in prior period testing</li>
+          <li>Elevated fraud risk indicators present</li>
+          <li>Control relies on judgement-heavy review</li>
+        </ul>
+      </div>
+      <div class="card card-sm" style="border-top:3px solid var(--purple)">
+        <h3 class="sub-title">For ITDM controls, also:</h3>
+        <ul class="bullet-list">
+          <li>Validate the IPE per AS 1105.10A first</li>
+          <li>Sample the human review step separately</li>
+          <li>Test the report parameters and completeness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="scoping.html">Scoping</a><a href="workpapers.html">Workpapers</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+<script src="../js/shared.js"></script>
+<script>
+const BASE = {daily:{high:30,medium:25,low:20},weekly:{high:15,medium:10,low:8},monthly:{high:5,medium:4,low:3},quarterly:{high:2,medium:2,low:1},annual:{high:1,medium:1,low:1}};
+const OCCUR = {daily:250,weekly:52,monthly:12,quarterly:4,annual:1};
+const FREQ_LABEL = {daily:'Daily',weekly:'Weekly',monthly:'Monthly',quarterly:'Quarterly',annual:'Annual'};
+function calcSample(){
+  const freq=document.getElementById('freq').value, risk=document.getElementById('risk').value;
+  const ctype=document.getElementById('ctype').value, newc=document.getElementById('newctl').value, prex=document.getElementById('priorex').value;
+  let base=BASE[freq][risk], note=[], uplift=1;
+  if(newc==='yes'){uplift+=0.25;note.push('+25% — new/redesigned control');}
+  if(prex==='yes'){uplift+=0.40;note.push('+40% — prior period exceptions');}
+  const final=Math.ceil(base*uplift);
+  const maxSample=50;
+  document.getElementById('sample-num').textContent=final;
+  document.getElementById('sample-label').textContent='items recommended';
+  document.getElementById('sample-bar').style.width=Math.min(100,(final/maxSample)*100)+'%';
+  let breakdown=`<strong>Base sample</strong> (${FREQ_LABEL[freq]}, ${risk} risk): <strong>${base}</strong>`;
+  if(note.length) breakdown+='<br>Uplift factors: '+note.join(', ')+`<br><strong>Final sample: ${final}</strong>`;
+  if(ctype==='itdm') breakdown+='<br><span style="color:var(--warning)"><i class="ti ti-alert-triangle"></i> ITDM control — IPE validation required before sampling.</span>';
+  document.getElementById('sample-breakdown').innerHTML=breakdown;
+  const justText=`Sample size of ${final} items selected for ${FREQ_LABEL[freq].toLowerCase()} control (population ~${OCCUR[freq]} occurrences). Selection based on PCAOB AS 2315 non-statistical sampling guidance. ${risk.charAt(0).toUpperCase()+risk.slice(1)} risk rating applied. ${note.length?'Uplift applied for: '+note.join('; ')+'.':'No uplift factors applicable.'} Sample was randomly selected from the full population.`;
+  document.getElementById('sample-justification').innerHTML='<i class="ti ti-quote"></i> <strong>Workpaper justification text:</strong><br>"'+justText+'"';
+}
+calcSample();
+</script>
+</body>
+</html>

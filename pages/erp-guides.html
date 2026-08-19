@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERP Control Guides — SAP, Oracle, NetSuite | SOX IT Audit Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="../css/shared.css">
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-brand"><i class="ti ti-shield-check" style="color:var(--accent);font-size:1.2rem"></i> SOX IT Audit <span class="nav-badge v2">v2</span><span class="nav-badge yr">2026</span></a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a><a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a>
+    <a href="scoping.html">Scoping</a><a href="sample-calc.html">Sample Calc</a><a href="cloud-itgc.html">Cloud ITGC</a>
+    <a href="vendor-soc1.html">Vendor/SOC1</a><a href="erp-guides.html" class="active">ERP Guides</a>
+    <a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="ti ti-search"></i></button>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"><i class="ti ti-sun" id="themeIcon"></i></button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html">Home</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;border-top:1px solid var(--border);margin-top:.25rem">All pages</div>
+  <a href="workpapers.html">Workpapers</a><a href="mistakes.html">Mistakes</a><a href="scoping.html">Scoping</a>
+  <a href="cloud-itgc.html">Cloud ITGC</a><a href="vendor-soc1.html">Vendor/SOC1</a><a href="erp-guides.html" class="active">ERP Guides</a>
+  <a href="audit-programs.html">Audit Programs</a><a href="interview-prep.html">Interview Prep</a>
+</div>
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box"><input type="search" class="search-input" id="searchInput" placeholder="Search platform… (Esc to close)" autocomplete="off"><div class="search-results" id="searchResults"><div class="search-empty">Start typing to search.</div></div></div>
+</div>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+<main>
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a><i class="ti ti-chevron-right"></i><span>ERP Control Guides</span></div>
+    <div class="page-eyebrow"><i class="ti ti-database"></i> ERP-specific guidance</div>
+    <h1 class="page-title">ERP control guides — SAP, Oracle & NetSuite</h1>
+    <p class="page-sub">Each ERP has unique terminology, transaction codes, and evidence sources for ITGC testing. This guide covers what to request, where to find it, and common deficiency patterns for the three most common SOX ERPs.</p>
+    <div class="page-meta">
+      <span class="meta-pill"><i class="ti ti-brand-sap"></i> SAP</span>
+      <span class="meta-pill"><i class="ti ti-database"></i> Oracle EBS / Fusion</span>
+      <span class="meta-pill"><i class="ti ti-cloud"></i> NetSuite</span>
+    </div>
+  </div>
+</div>
+
+<section class="page-section alt-bg full reveal">
+  <div class="section-inner">
+    <div class="tab-nav" id="erpTabs">
+      <button class="tab-btn active" data-tab="erp-sap"><i class="ti ti-brand-sap"></i> SAP</button>
+      <button class="tab-btn" data-tab="erp-oracle"><i class="ti ti-database"></i> Oracle</button>
+      <button class="tab-btn" data-tab="erp-netsuite"><i class="ti ti-cloud"></i> NetSuite</button>
+    </div>
+
+    <div class="tab-host">
+    <!-- SAP -->
+    <div class="tab-panel active" id="tab-erp-sap">
+      <div class="alert alert-info mb-3"><i class="ti ti-info-circle"></i> SAP uses transaction codes (t-codes) and authorization objects to control access. SoD conflicts are managed via the GRC (Governance, Risk & Compliance) module. Evidence is typically extracted from SM20 (Security Audit Log), SU01 (user master), and SUIM (user information system).</div>
+      <div class="card-grid-2">
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">Logical Access — key evidence</h3>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Evidence needed</th><th>Where to get it (t-code)</th></tr></thead>
+              <tbody>
+                <tr><td>User list with roles/profiles</td><td class="mono-id">SUIM → Users by Role</td></tr>
+                <tr><td>User last login dates</td><td class="mono-id">SM04 / AL08 / SUIM</td></tr>
+                <tr><td>Role authorizations</td><td class="mono-id">PFCG → Role Maintenance</td></tr>
+                <tr><td>SoD conflict report</td><td class="mono-id">GRC → Access Risk Analysis</td></tr>
+                <tr><td>Super user / SAP_ALL assignments</td><td class="mono-id">SUIM → Users with Critical Auth</td></tr>
+                <tr><td>Security audit log</td><td class="mono-id">SM20 / SM19</td></tr>
+                <tr><td>Fiori app authorization</td><td class="mono-id">PFCG → Business Roles (S/4)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">Change Management — key evidence</h3>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Evidence needed</th><th>Where to get it</th></tr></thead>
+              <tbody>
+                <tr><td>Transport request log (DEV→QAS→PRD)</td><td class="mono-id">SE01 / SE09 / SE10</td></tr>
+                <tr><td>Transport documentation / approval</td><td class="mono-id">CHARM (SAP Solution Manager)</td></tr>
+                <tr><td>Developer access to production</td><td class="mono-id">SU01 — developer user IDs vs PRD client</td></tr>
+                <tr><td>Emergency transport ("hot-pack")</td><td class="mono-id">CHARM emergency change category</td></tr>
+                <tr><td>Basis team production access</td><td class="mono-id">SUIM — SAP_SYSTEM_DISPLAY role</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <h3 class="sub-title mb-2">SAP-specific common deficiencies</h3>
+        <div class="card-grid-3">
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>SAP_ALL in production</h4><p>The SAP_ALL profile grants every authorization in the system. Even one user with this profile is an immediate high-risk finding. No business justification exists for SAP_ALL in production.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Remove SAP_ALL from all production user IDs. Use specific roles with minimum necessary t-codes only.</span></div></div>
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>Developers with PRD access</h4><p>Developers need DEV client access, not production. When the same user ID exists in both DEV and PRD, SoD between change creation and promotion is broken.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Maintain separate user IDs per client, or confirm developer IDs are locked in PRD. Test with SUIM cross-client comparison.</span></div></div>
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>GRC but no mitigation controls</h4><p>GRC identifies SoD conflicts but management signs off on them without implementing compensating controls. The conflicts accumulate unaddressed year after year.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Every open SoD conflict must have a documented, tested mitigation control or role remediation with a closure date.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORACLE -->
+    <div class="tab-panel" id="tab-erp-oracle">
+      <div class="alert alert-info mb-3"><i class="ti ti-info-circle"></i> Oracle EBS uses responsibilities and functions for access control. Oracle Fusion (Cloud) uses roles, data security policies, and the Security Console. Evidence sources differ significantly between EBS and Fusion — confirm which version is in scope.</div>
+      <div class="card-grid-2">
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">Oracle EBS — key evidence sources</h3>
+          <ul class="bullet-list">
+            <li><strong>User responsibilities</strong> — FND_USER_RESP_GROUPS table or Security Console</li>
+            <li><strong>Concurrent program access</strong> — SRS (Standard Report Submission) by responsibility</li>
+            <li><strong>Last login date</strong> — FND_LOGINS or OAM System Dashboard</li>
+            <li><strong>SoD conflicts</strong> — Oracle GRC (Governance, Risk, Compliance) module reports</li>
+            <li><strong>Change management</strong> — Patch log from AD_APPLIED_PATCHES; custom object change history</li>
+            <li><strong>Audit trail</strong> — AuditTrail+ configuration; Oracle Audit Vault</li>
+          </ul>
+        </div>
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">Oracle Fusion Cloud — key evidence sources</h3>
+          <ul class="bullet-list">
+            <li><strong>User role assignments</strong> — Security Console → Manage Users; BICC extract</li>
+            <li><strong>Duty roles and data security</strong> — Security Console → Manage Roles; Role Hierarchy report</li>
+            <li><strong>Sign-in audit</strong> — Audit Reports under Tools → Audit Reports</li>
+            <li><strong>Change management</strong> — Oracle sandbox promotion log; Update Manager patch history</li>
+            <li><strong>SoD analysis</strong> — Oracle Risk Management Cloud (RMC) — access risk analysis</li>
+            <li><strong>SOC 1 report</strong> — Oracle's SSAE 18 SOC 1 Type II covers hosted infrastructure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card mt-3">
+        <h3 class="sub-title mb-2">Oracle-specific common deficiencies</h3>
+        <div class="card-grid-2">
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>System Administrator responsibility over-assigned</h4><p>The Oracle EBS "System Administrator" responsibility provides access to user management, concurrent programs, and profile options — a critical SoD conflict if assigned alongside financial transaction roles.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Restrict System Administrator to IT team only. No user with financial transaction responsibilities should hold it. Test via FND_USER_RESP_GROUPS cross-reference.</span></div></div>
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>Custom responsibilities not reviewed</h4><p>Standard responsibilities are well documented, but custom responsibilities created for specific users or sites are often excluded from access reviews — they don't appear in standard reports.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Extract all responsibilities including custom ones (CUSTOM% prefix). Include in access review population. Validate that custom responsibilities have documented business justification.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NETSUITE -->
+    <div class="tab-panel" id="tab-erp-netsuite">
+      <div class="alert alert-info mb-3"><i class="ti ti-info-circle"></i> NetSuite is a multi-tenant SaaS ERP. Oracle provides a SOC 1 Type II for the platform infrastructure. Your company controls roles, permissions, and data within the tenant. Evidence is obtained from the NetSuite UI, SuiteAnalytics, and audit trail reports.</div>
+      <div class="card-grid-2">
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">Key evidence sources in NetSuite</h3>
+          <ul class="bullet-list">
+            <li><strong>User list with roles</strong> — Setup → Users/Roles → Manage Users; export to CSV</li>
+            <li><strong>Role permissions</strong> — Setup → Users/Roles → Manage Roles → Permissions tab</li>
+            <li><strong>Login audit trail</strong> — Setup → Audit Trail → User Login Audit</li>
+            <li><strong>Change audit trail</strong> — Setup → Audit Trail → System Notes → by record type</li>
+            <li><strong>Custom scripting changes</strong> — Customization → SuiteScript → list of deployed scripts with modified dates</li>
+            <li><strong>User last login</strong> — User record → Last Login field; export via SuiteAnalytics</li>
+          </ul>
+        </div>
+        <div class="card card-sm">
+          <h3 class="sub-title mb-2">NetSuite-specific common deficiencies</h3>
+          <div class="mistake-card" style="margin:0;margin-bottom:.6rem"><h4><i class="ti ti-x" style="color:var(--danger)"></i>Administrator role over-assigned</h4><p>The NetSuite Administrator role grants full system access. Multiple users often have it for convenience. Any user with this role can approve their own journal entries, override restrictions, and modify other users.</p><div class="fix"><i class="ti ti-check-circle"></i><span>Restrict Administrator to 1–2 named IT owners. Finance users should have custom roles with only the minimum necessary permissions. Test quarterly.</span></div></div>
+          <div class="mistake-card" style="margin:0"><h4><i class="ti ti-x" style="color:var(--danger)"></i>SuiteScript changes deployed without approval</h4><p>Custom scripts (SuiteScript) can modify financial calculations, approval workflows, and data transformations. Changes deployed directly to production without a change ticket bypass the CM control.</p><div class="fix"><i class="ti ti-check-circle"></i><span>All SuiteScript deployments require a change ticket with business approval. Test via the deployment log and cross-reference to change management system.</span></div></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit Platform v2 · 2026</div>
+  <p>Not legal or accounting advice. Verify against primary sources.</p>
+  <div class="foot-links"><a href="../index.html">Home</a><a href="vendor-soc1.html">Vendor/SOC1</a><a href="workpapers.html">Workpapers</a></div>
+  <p style="margin-top:.75rem;font-size:.73rem;color:var(--text-3)">© 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" style="color:var(--text-3)">GitHub</a></p>
+</footer>
+<script src="../js/shared.js"></script>
+</body>
+</html>

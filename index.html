@@ -1,0 +1,1986 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SOX IT Audit & ITGC Reference Platform — comprehensive guide integrating PCAOB, COSO, COBIT, IIA, and SEC frameworks for auditors and compliance professionals.">
+<meta property="og:title" content="SOX IT Audit & ITGC Platform 2026 — v2">
+<meta property="og:description" content="The complete field guide for SOX IT Audit & ITGC. PCAOB · COSO · COBIT · IIA · SEC integrated. Interactive RCM, SoD matrix, JE testing, deficiency tool, audit programs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sox-itgc-audit.vercel.app">
+<meta name="twitter:card" content="summary_large_image">
+<title>SOX IT Audit & ITGC Platform 2026 — v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root {
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --surface-2: #f0f2f7;
+  --border: #e2e6ef;
+  --border-strong: #c8cfe0;
+  --text: #0f1623;
+  --text-2: #3d4a63;
+  --text-3: #6b7a99;
+  --accent: #1a5cff;
+  --accent-bg: #eef3ff;
+  --accent-text: #1a3d99;
+  --success: #0d9461;
+  --success-bg: #e8f7f0;
+  --warning: #b45309;
+  --warning-bg: #fef3cd;
+  --danger: #cc2929;
+  --danger-bg: #fde8e8;
+  --purple: #6b3fa0;
+  --purple-bg: #f0eaff;
+  --teal: #0e7490;
+  --teal-bg: #e0f7fa;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --shadow: 0 1px 4px rgba(15,22,35,0.07), 0 4px 16px rgba(15,22,35,0.05);
+  --shadow-lg: 0 4px 24px rgba(15,22,35,0.10), 0 1px 4px rgba(15,22,35,0.06);
+  --nav-h: 64px;
+  --transition: 0.18s ease;
+}
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --surface: #161b27;
+  --surface-2: #1e2538;
+  --border: #2a3148;
+  --border-strong: #3d4d6a;
+  --text: #e8edf7;
+  --text-2: #a8b4cc;
+  --text-3: #6b7a99;
+  --accent: #4d85ff;
+  --accent-bg: #0f1e40;
+  --accent-text: #7aaeff;
+  --success: #10b981;
+  --success-bg: #052e1a;
+  --warning: #f59e0b;
+  --warning-bg: #2a1a00;
+  --danger: #f87171;
+  --danger-bg: #2d0f0f;
+  --purple: #a78bfa;
+  --purple-bg: #1a0f33;
+  --teal: #22d3ee;
+  --teal-bg: #042730;
+  --shadow: 0 1px 4px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.2);
+  --shadow-lg: 0 4px 24px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.25);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: background var(--transition), color var(--transition); }
+a { color: var(--accent); text-decoration: none; }
+img { max-width: 100%; }
+code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: var(--nav-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background var(--transition), border-color var(--transition);
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1rem; color: var(--text); }
+.nav-brand .badge { background: var(--accent); color: #fff; font-size: 0.65rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 0.25rem; }
+.nav-links a { font-size: 0.875rem; color: var(--text-2); padding: 6px 12px; border-radius: 7px; transition: background var(--transition), color var(--transition); font-weight: 500; }
+.nav-links a:hover { background: var(--surface-2); color: var(--text); }
+.nav-links a.active { background: var(--accent-bg); color: var(--accent-text); }
+.nav-right { display: flex; align-items: center; gap: 0.75rem; }
+.theme-btn {
+  width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface-2); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--text-2); font-size: 1.1rem; transition: all var(--transition);
+}
+.theme-btn:hover { background: var(--border); color: var(--text); }
+.hamburger { display: none; width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); cursor: pointer; align-items: center; justify-content: center; color: var(--text-2); font-size: 1.2rem; }
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 1rem; flex-direction: column; gap: 0.25rem; z-index: 99;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 0.9rem; color: var(--text-2); padding: 10px 14px; border-radius: 8px; font-weight: 500; }
+.mobile-menu a:hover { background: var(--surface-2); color: var(--text); }
+
+/* MAIN LAYOUT */
+main { padding-top: var(--nav-h); }
+section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+section.full { max-width: 100%; padding-left: 0; padding-right: 0; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* HERO */
+#hero {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 4rem 2rem 6rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.03;
+  background-image: linear-gradient(var(--text) 1px, transparent 1px), linear-gradient(90deg, var(--text) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+[data-theme="dark"] .hero-grid-bg { opacity: 0.06; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--accent-bg); color: var(--accent-text);
+  font-size: 0.8rem; font-weight: 600; padding: 5px 14px;
+  border-radius: 99px; border: 1px solid rgba(26,92,255,0.2);
+  margin-bottom: 1.5rem; letter-spacing: 0.03em; text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700; line-height: 1.15; letter-spacing: -0.03em;
+  color: var(--text); margin-bottom: 1.25rem; max-width: 820px;
+}
+.hero-title span { color: var(--accent); }
+.hero-sub {
+  font-size: 1.15rem; color: var(--text-2); max-width: 600px;
+  margin-bottom: 2.5rem; line-height: 1.7;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem; }
+.btn { display: inline-flex; align-items: center; gap: 7px; padding: 11px 22px; border-radius: var(--radius); font-size: 0.9rem; font-weight: 600; cursor: pointer; border: none; transition: all var(--transition); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #1348cc; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26,92,255,0.3); }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+.btn-outline:hover { background: var(--surface-2); transform: translateY(-1px); }
+.hero-stats {
+  display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+  padding-top: 2.5rem; border-top: 1px solid var(--border); width: 100%; max-width: 700px;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 1.75rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 0.8rem; color: var(--text-3); font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* FRAMEWORK PILLS */
+.framework-bar {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 2rem;
+}
+.fw-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 14px; border-radius: 99px; font-size: 0.78rem; font-weight: 600;
+  border: 1px solid; letter-spacing: 0.02em;
+}
+.fw-pill.pcaob { background: var(--accent-bg); color: var(--accent-text); border-color: rgba(26,92,255,0.2); }
+.fw-pill.coso  { background: var(--success-bg); color: var(--success); border-color: rgba(13,148,97,0.2); }
+.fw-pill.cobit { background: var(--purple-bg); color: var(--purple); border-color: rgba(107,63,160,0.2); }
+.fw-pill.iia   { background: var(--warning-bg); color: var(--warning); border-color: rgba(180,83,9,0.2); }
+.fw-pill.sec   { background: var(--danger-bg); color: var(--danger); border-color: rgba(204,41,41,0.2); }
+
+/* TABS */
+.tab-nav {
+  display: flex; gap: 0; background: var(--surface-2); border-radius: var(--radius-lg);
+  padding: 4px; flex-wrap: wrap; margin-bottom: 2.5rem; border: 1px solid var(--border);
+}
+.tab-btn {
+  flex: 1; min-width: 120px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 9px 16px; border-radius: 8px; cursor: pointer;
+  border: none; background: transparent; color: var(--text-3);
+  font-size: 0.85rem; font-weight: 500; transition: all var(--transition);
+  font-family: 'Inter', sans-serif; white-space: nowrap;
+}
+.tab-btn:hover { color: var(--text); background: var(--surface); }
+.tab-btn.active { background: var(--surface); color: var(--text); box-shadow: var(--shadow); font-weight: 600; }
+.tab-btn i { font-size: 1rem; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* CARDS */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; transition: box-shadow var(--transition), border-color var(--transition); }
+.card:hover { box-shadow: var(--shadow); border-color: var(--border-strong); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+.card-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+
+/* SECTION HEADER */
+.section-header { margin-bottom: 2.5rem; }
+.eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--text); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+.section-sub { font-size: 1rem; color: var(--text-2); max-width: 600px; line-height: 1.7; }
+
+/* ICON BADGE */
+.icon-badge { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; flex-shrink: 0; }
+.ib-blue { background: var(--accent-bg); color: var(--accent); }
+.ib-green { background: var(--success-bg); color: var(--success); }
+.ib-purple { background: var(--purple-bg); color: var(--purple); }
+.ib-amber { background: var(--warning-bg); color: var(--warning); }
+.ib-red { background: var(--danger-bg); color: var(--danger); }
+.ib-teal { background: var(--teal-bg); color: var(--teal); }
+
+/* DOMAIN CARDS */
+.domain-card { border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid var(--border); background: var(--surface); }
+.domain-card .tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 5px; display: inline-block; margin-bottom: 0.75rem; }
+.domain-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+.domain-card p { font-size: 0.875rem; color: var(--text-2); line-height: 1.6; margin-bottom: 1rem; }
+.control-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.control-list li { font-size: 0.82rem; color: var(--text-2); display: flex; align-items: flex-start; gap: 7px; }
+.control-list li::before { content: '→'; color: var(--accent); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+
+/* CROSSWALK TABLE */
+.crosswalk-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.crosswalk-table th { text-align: left; padding: 10px 14px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--text-3); border-bottom: 2px solid var(--border); background: var(--surface-2); }
+.crosswalk-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.crosswalk-table tr:last-child td { border-bottom: none; }
+.crosswalk-table tr:hover td { background: var(--surface-2); }
+.crosswalk-table .domain-label { font-weight: 600; color: var(--text); }
+.crosswalk-table .ref { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+
+/* BADGES */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 9px; border-radius: 5px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; }
+.badge-blue { background: var(--accent-bg); color: var(--accent-text); }
+.badge-green { background: var(--success-bg); color: var(--success); }
+.badge-amber { background: var(--warning-bg); color: var(--warning); }
+.badge-red { background: var(--danger-bg); color: var(--danger); }
+.badge-purple { background: var(--purple-bg); color: var(--purple); }
+.badge-gray { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+
+/* RCM TABLE */
+.rcm-filters { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem; align-items: center; }
+.filter-select { padding: 7px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.85rem; font-family: 'Inter', sans-serif; cursor: pointer; outline: none; }
+.filter-select:focus { border-color: var(--accent); }
+.rcm-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+.rcm-table th { padding: 10px 12px; text-align: left; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-3); background: var(--surface-2); border-bottom: 2px solid var(--border); white-space: nowrap; }
+.rcm-table td { padding: 11px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text-2); line-height: 1.5; }
+.rcm-table tr:last-child td { border-bottom: none; }
+.rcm-table tr:hover td { background: var(--surface-2); }
+.rcm-table .control-id { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--accent); font-weight: 500; }
+.rcm-count { font-size: 0.82rem; color: var(--text-3); margin-top: 0.75rem; }
+.risk-H { color: var(--danger); font-weight: 600; }
+.risk-M { color: var(--warning); font-weight: 600; }
+.risk-L { color: var(--success); font-weight: 600; }
+
+/* DEFICIENCY TOOL */
+.def-tool { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+.def-scale { display: flex; gap: 1px; border-radius: 10px; overflow: hidden; margin-bottom: 2rem; }
+.def-level { flex: 1; padding: 1rem; text-align: center; transition: all var(--transition); }
+.def-level h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.25rem; }
+.def-level p { font-size: 0.75rem; opacity: 0.85; }
+.def-level.cd { background: var(--success-bg); color: var(--success); }
+.def-level.sd { background: var(--warning-bg); color: var(--warning); }
+.def-level.mw { background: var(--danger-bg); color: var(--danger); }
+.def-question { margin-bottom: 1.5rem; }
+.def-question label { display: block; font-size: 0.9rem; font-weight: 500; color: var(--text); margin-bottom: 0.75rem; }
+.def-options { display: flex; flex-direction: column; gap: 0.5rem; }
+.def-opt { display: flex; align-items: flex-start; gap: 10px; padding: 12px; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; transition: all var(--transition); }
+.def-opt:hover { border-color: var(--accent); background: var(--accent-bg); }
+.def-opt input { margin-top: 2px; accent-color: var(--accent); }
+.def-opt span { font-size: 0.875rem; color: var(--text-2); }
+.def-result { padding: 1.25rem; border-radius: 10px; margin-top: 1rem; display: none; }
+.def-result.show { display: block; }
+.def-result h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.def-result p { font-size: 0.875rem; opacity: 0.9; line-height: 1.6; }
+
+/* ASSURANCE / ADVISORY */
+.three-lines { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+.line-card { border-radius: var(--radius-lg); padding: 1.5rem; border: 2px solid; }
+.line-1 { border-color: rgba(26,92,255,0.25); background: var(--accent-bg); }
+.line-2 { border-color: rgba(13,148,97,0.25); background: var(--success-bg); }
+.line-3 { border-color: rgba(107,63,160,0.25); background: var(--purple-bg); }
+.line-card .line-num { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.line-1 .line-num { color: var(--accent-text); }
+.line-2 .line-num { color: var(--success); }
+.line-3 .line-num { color: var(--purple); }
+.line-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+.line-card ul { list-style: none; }
+.line-card ul li { font-size: 0.82rem; color: var(--text-2); padding: 3px 0; display: flex; gap: 6px; }
+.line-card ul li::before { content: '·'; font-weight: 700; flex-shrink: 0; }
+.line-1 ul li::before { color: var(--accent); }
+.line-2 ul li::before { color: var(--success); }
+.line-3 ul li::before { color: var(--purple); }
+
+/* BEST PRACTICES */
+.practice-card { display: flex; gap: 1rem; padding: 1.25rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.75rem; transition: all var(--transition); }
+.practice-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow); }
+.practice-num { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-bg); color: var(--accent-text); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 700; flex-shrink: 0; }
+.practice-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+.practice-card p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; }
+.practice-card .refs { margin-top: 0.5rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* AI SECTION */
+.ai-risk-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.ai-card { border-radius: var(--radius); padding: 1.25rem; border: 1px solid var(--border); background: var(--surface); }
+.ai-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 7px; }
+.ai-card p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; }
+.ai-card .sub-list { list-style: none; margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.ai-card .sub-list li { font-size: 0.8rem; color: var(--text-2); display: flex; gap: 6px; }
+.ai-card .sub-list li::before { content: '›'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+/* IPO TIMELINE */
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 11px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+.timeline-item { position: relative; margin-bottom: 1.75rem; }
+.timeline-item::before { content: ''; position: absolute; left: -1.65rem; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--accent); }
+.timeline-item h4 { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
+.timeline-item .month { font-size: 0.75rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.timeline-item p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; }
+
+/* MW CASE STUDY */
+.case-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.case-header { padding: 1.25rem 1.5rem; background: var(--surface-2); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+.case-header h4 { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+.case-body { padding: 1.25rem 1.5rem; }
+.case-row { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem 1.25rem; font-size: 0.85rem; margin-bottom: 0.6rem; }
+.case-row label { color: var(--text-3); font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; padding-top: 2px; white-space: nowrap; }
+
+/* STANDARDS TRACKER */
+.standards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.std-card { border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid var(--border); background: var(--surface); position: relative; overflow: hidden; }
+.std-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.std-card.active::after { background: var(--success); }
+.std-card.upcoming::after { background: var(--warning); }
+.std-card.critical::after { background: var(--danger); }
+.std-card .std-status { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.75rem; }
+.std-card.active .std-status { color: var(--success); }
+.std-card.upcoming .std-status { color: var(--warning); }
+.std-card.critical .std-status { color: var(--danger); }
+.std-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+.std-card .ref { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); margin-bottom: 0.75rem; }
+.std-card p { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; }
+.std-card .effective { font-size: 0.75rem; color: var(--text-3); margin-top: 0.75rem; font-weight: 500; }
+
+/* GLOSSARY */
+.glossary-search { width: 100%; padding: 10px 14px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 0.9rem; font-family: 'Inter', sans-serif; outline: none; margin-bottom: 1.25rem; }
+.glossary-search:focus { border-color: var(--accent); }
+.glossary-item { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+.glossary-item:last-child { border-bottom: none; }
+.glossary-item dt { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; display: flex; align-items: center; gap: 8px; }
+.glossary-item dd { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
+
+/* FOOTER */
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 3rem 2rem; text-align: center; }
+footer .foot-brand { font-weight: 700; color: var(--text); margin-bottom: 0.5rem; font-size: 1rem; }
+footer p { font-size: 0.85rem; color: var(--text-3); line-height: 1.7; }
+footer .foot-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+footer .foot-links a { font-size: 0.83rem; color: var(--text-3); }
+footer .foot-links a:hover { color: var(--accent); }
+
+/* ALERT BANNER */
+.alert { display: flex; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 9px; margin-bottom: 1.25rem; font-size: 0.85rem; line-height: 1.5; }
+.alert-info { background: var(--accent-bg); color: var(--accent-text); border: 1px solid rgba(26,92,255,0.15); }
+.alert-warn { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(180,83,9,0.15); }
+.alert i { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+/* UTILS */
+.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.text-muted { color: var(--text-3); }
+.text-sm { font-size: 0.875rem; }
+.mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; } .mt-4 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 0.5rem; } .mb-2 { margin-bottom: 1rem; } .mb-3 { margin-bottom: 1.5rem; }
+.flex { display: flex; } .items-center { align-items: center; } .gap-1 { gap: 0.5rem; } .gap-2 { gap: 1rem; }
+.hidden { display: none; }
+.full-w { width: 100%; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .three-lines { grid-template-columns: 1fr; }
+  .ai-risk-matrix { grid-template-columns: 1fr; }
+  section { padding: 3rem 1.25rem; }
+  .card-grid, .card-grid-3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .hero-stats { gap: 1.25rem; }
+  .def-scale { flex-direction: column; gap: 0.5rem; border-radius: 0; }
+  .tab-btn { min-width: 80px; font-size: 0.78rem; padding: 8px 10px; }
+  nav { padding: 0 1rem; }
+}
+
+/* SCROLL ANIMATIONS */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* BACK TO TOP */
+.back-top { position: fixed; bottom: 24px; right: 24px; z-index: 90; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; opacity: 0; transform: translateY(8px); transition: opacity .3s, transform .3s; box-shadow: 0 4px 16px rgba(26,92,255,.3); }
+.back-top.visible { opacity: 1; transform: none; }
+.back-top:hover { background: #1348cc; }
+
+/* SEARCH OVERLAY */
+.search-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.55); align-items: flex-start; justify-content: center; padding-top: 100px; }
+.search-overlay.open { display: flex; }
+.search-box { background: var(--surface); border-radius: var(--radius-lg); width: min(600px, 92vw); box-shadow: var(--shadow-lg); overflow: hidden; }
+.search-input { width: 100%; padding: 14px 18px; border: none; background: transparent; color: var(--text); font-size: 1rem; font-family: 'Inter', sans-serif; outline: none; border-bottom: 1px solid var(--border); }
+.search-results { max-height: 380px; overflow-y: auto; }
+.search-result-item { padding: 10px 18px; cursor: pointer; border-bottom: 1px solid var(--border); font-size: .875rem; }
+.search-result-item:hover { background: var(--surface-2); }
+.sr-section { font-size: .7rem; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.sr-title { color: var(--text); font-weight: 600; }
+.sr-preview { color: var(--text-3); font-size: .78rem; margin-top: 2px; line-height: 1.4; }
+.search-empty { padding: 2rem; text-align: center; color: var(--text-3); font-size: .875rem; }
+
+/* SOX COST CALCULATOR */
+.calc-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.calc-field { margin-bottom: 1.25rem; }
+.calc-field label { display: block; font-size: .83rem; font-weight: 500; color: var(--text-2); margin-bottom: .5rem; }
+.calc-val { font-size: .83rem; font-weight: 700; color: var(--accent); margin-left: .4rem; }
+.calc-field input[type=range] { width: 100%; accent-color: var(--accent); }
+.calc-result { background: var(--accent-bg); border: 1px solid rgba(26,92,255,.2); border-radius: var(--radius); padding: 1.25rem; text-align: center; margin-bottom: .75rem; }
+.calc-result .big-num { font-size: 2rem; font-weight: 700; color: var(--accent-text); }
+.calc-result .big-label { font-size: .75rem; color: var(--accent-text); opacity: .8; text-transform: uppercase; letter-spacing: .05em; }
+
+/* SOD MATRIX */
+.sod-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.sod-table { width: 100%; border-collapse: collapse; font-size: .79rem; }
+.sod-table th { padding: 9px 10px; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); background: var(--surface-2); border: 1px solid var(--border); white-space: nowrap; }
+.sod-table td { padding: 8px 10px; border: 1px solid var(--border); text-align: center; }
+.sod-table .role-label { text-align: left; font-weight: 600; color: var(--text); white-space: nowrap; padding-left: 12px; font-size: .8rem; background: var(--surface-2); }
+.sod-c { background: var(--danger-bg); color: var(--danger); font-weight: 700; }
+.sod-r { background: var(--warning-bg); color: var(--warning); font-weight: 600; }
+.sod-ok { background: var(--success-bg); color: var(--success); }
+.sod-na { background: var(--surface-2); color: var(--text-3); }
+.sod-legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .75rem; font-size: .78rem; color: var(--text-2); }
+
+/* JE TESTING */
+.je-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: .75rem; }
+.je-card h4 { font-size: .9rem; font-weight: 600; color: var(--text); margin-bottom: .4rem; display: flex; align-items: center; gap: 7px; }
+.je-card p { font-size: .83rem; color: var(--text-2); line-height: 1.6; }
+.je-card .sub-list { list-style: none; margin-top: .6rem; display: flex; flex-direction: column; gap: .3rem; }
+.je-card .sub-list li { font-size: .79rem; color: var(--text-2); display: flex; gap: 6px; }
+.je-card .sub-list li::before { content: '›'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+/* AUDIT PROGRAM */
+.ap-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1rem; }
+.ap-header { padding: 1rem 1.25rem; background: var(--surface-2); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; cursor: pointer; user-select: none; }
+.ap-header h4 { font-size: .9rem; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 8px; }
+.ap-body { padding: 1.25rem; display: none; }
+.ap-body.open { display: block; }
+.ap-step { display: flex; gap: .75rem; padding: .6rem 0; border-bottom: 1px solid var(--border); font-size: .83rem; }
+.ap-step:last-child { border-bottom: none; }
+.ap-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--accent-bg); color: var(--accent-text); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.ap-step h5 { font-size: .83rem; font-weight: 600; color: var(--text); margin-bottom: .2rem; }
+.ap-step p { font-size: .78rem; color: var(--text-2); line-height: 1.5; }
+
+/* COSO GRID */
+.coso-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: .75rem; }
+.coso-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; display: flex; gap: .75rem; }
+.coso-num { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; flex-shrink: 0; }
+.coso-card h4 { font-size: .83rem; font-weight: 600; color: var(--text); margin-bottom: .2rem; }
+.coso-card p { font-size: .76rem; color: var(--text-2); line-height: 1.5; }
+
+/* PCAOB FINDINGS BARS */
+.finding-bar { display: flex; flex-direction: column; gap: .6rem; }
+.finding-row { display: flex; align-items: center; gap: .75rem; }
+.finding-label { font-size: .82rem; color: var(--text-2); width: 220px; flex-shrink: 0; }
+.finding-track { flex: 1; height: 8px; background: var(--surface-2); border-radius: 4px; overflow: hidden; }
+.finding-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1s ease; }
+.finding-pct { font-size: .78rem; font-weight: 600; color: var(--text-2); width: 35px; text-align: right; flex-shrink: 0; }
+@media(max-width:600px){ .finding-label { width: 140px; font-size: .76rem; } .calc-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <i class="ti ti-shield-check" style="font-size:1.25rem;color:var(--accent)"></i>
+    <span>SOX IT Audit</span>
+    <span style="background:var(--success);color:#fff;font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:.04em">v2</span>
+    <span style="background:var(--accent);color:#fff;font-size:.6rem;font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:.04em">2026</span>
+  </div>
+  <div class="nav-links">
+    <a href="#itgc" class="nav-link">ITGC</a>
+    <a href="#assurance" class="nav-link">Assurance</a>
+    <a href="#rcm" class="nav-link">Tools</a>
+    <a href="#standards" class="nav-link">Standards</a>
+    <a href="#glossary" class="nav-link">Glossary</a>
+    <a href="pages/workpapers.html" class="nav-link" style="color:var(--success);font-weight:600">Workpapers</a>
+    <a href="pages/mistakes.html" class="nav-link" style="color:var(--success);font-weight:600">Mistakes</a>
+    <a href="pages/remediation.html" class="nav-link" style="color:var(--success);font-weight:600">Remediation</a>
+    <a href="pages/scoping.html" class="nav-link" style="color:var(--success);font-weight:600">Scoping</a>
+    <a href="pages/sample-calc.html" class="nav-link" style="color:var(--success);font-weight:600">Sample Calc</a>
+    <a href="pages/cloud-itgc.html" class="nav-link" style="color:var(--success);font-weight:600">Cloud ITGC</a>
+    <a href="pages/interview-prep.html" class="nav-link" style="color:var(--success);font-weight:600">Interview Prep</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-btn" id="searchBtn" title="Search (Ctrl+K)" aria-label="Search site" style="width:38px;height:38px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:1rem;transition:all var(--transition)"><i class="ti ti-search"></i></button>
+    <button class="theme-btn" id="themeBtn" title="Toggle dark/light mode" aria-label="Toggle theme">
+      <i class="ti ti-sun" id="themeIcon"></i>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <i class="ti ti-menu-2"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+  <div class="search-box">
+    <input type="search" class="search-input" id="searchInput" placeholder="Search controls, standards, terms… (Esc to close)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="search-empty">Start typing to search across all controls, glossary terms, and standards.</div></div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="ti ti-arrow-up"></i></button>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:8px 12px 2px">On this page</div>
+  <a href="#itgc">ITGC Domains</a>
+  <a href="#assurance">Advisory & Assurance</a>
+  <a href="#rcm">RCM & Tools</a>
+  <a href="#ai">AI Controls</a>
+  <a href="#standards">Standards Tracker</a>
+  <a href="#glossary">Glossary</a>
+  <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);padding:10px 12px 2px;margin-top:.25rem;border-top:1px solid var(--border)">Deep-dive pages</div>
+  <a href="pages/workpapers.html" style="color:var(--accent)"><i class="ti ti-file-description" style="margin-right:5px"></i>Evidence Workpapers</a>
+  <a href="pages/app-controls.html" style="color:var(--success)"><i class="ti ti-layers-difference" style="margin-right:5px"></i>App Controls vs. ITGC</a>
+  <a href="pages/mistakes.html" style="color:var(--danger)"><i class="ti ti-alert-triangle" style="margin-right:5px"></i>Common Mistakes</a>
+  <a href="pages/remediation.html" style="color:var(--warning)"><i class="ti ti-tool" style="margin-right:5px"></i>Remediation Playbook</a>
+  <a href="pages/cyber-sox.html" style="color:var(--teal)"><i class="ti ti-arrows-cross" style="margin-right:5px"></i>Cyber → SOX Bridge</a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" class="full" style="max-width:100%;padding:0;">
+  <div class="hero-grid-bg"></div>
+  <div style="max-width:1200px;margin:0 auto;padding:5rem 2rem 6rem;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;">
+    <div class="hero-eyebrow">
+      <i class="ti ti-shield-check"></i>
+      Integrated SOX IT Audit & ITGC Reference Platform
+    </div>
+    <h1 class="hero-title">
+      The complete field guide for<br><span>SOX IT Audit & ITGC</span>
+    </h1>
+    <p class="hero-sub">
+      Built for auditors, advisors, and finance professionals. Covers ITGC domains, advisory vs. assurance, AI controls, IPO readiness, deficiency classification, and live framework cross-walks — all in one place.
+    </p>
+    <div class="framework-bar">
+      <span class="fw-pill pcaob"><i class="ti ti-certificate"></i> PCAOB AS 2201</span>
+      <span class="fw-pill coso"><i class="ti ti-chart-dots"></i> COSO 2013</span>
+      <span class="fw-pill cobit"><i class="ti ti-sitemap"></i> COBIT 2019</span>
+      <span class="fw-pill iia"><i class="ti ti-users"></i> IIA Standards</span>
+      <span class="fw-pill sec"><i class="ti ti-building-bank"></i> SEC Rules</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#itgc" class="btn btn-primary"><i class="ti ti-arrow-down"></i> Explore ITGC Domains</a>
+      <a href="#rcm" class="btn btn-outline"><i class="ti ti-table"></i> Open RCM</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Pages & tools</div></div>
+      <div class="stat"><div class="stat-num">5</div><div class="stat-label">Frameworks mapped</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Control objectives</div></div>
+      <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Standards current</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM NAVIGATION HUB -->
+<section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:4rem 2rem;" class="full reveal">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-header" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center"><i class="ti ti-layout-grid"></i> Platform pages</div>
+      <h2 class="section-title" style="font-size:clamp(1.4rem,2.5vw,2rem)">Everything in one platform</h2>
+      <p class="section-sub" style="margin:0 auto">This page covers ITGC fundamentals, tools, and standards. The five pages below go deeper on documentation, classification, deficiencies, remediation, and framework mapping.</p>
+    </div>
+
+    <!-- ROW 1: 3 cards -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:1rem">
+      <a href="pages/workpapers.html" style="text-decoration:none;display:flex;flex-direction:column;gap:.6rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .18s ease;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--accent)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#7aaeff)"></div>
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--accent)"><i class="ti ti-file-description"></i></div>
+        <div>
+          <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.2rem">Documentation</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">Evidence Workpapers</h3>
+          <p style="font-size:.8rem;color:var(--text-2);line-height:1.6">Printable workpaper shells for all 5 ITGC domains. PCAOB AS 1215 & AS 2201 aligned. LA, CM, CO, PD, and JE templates.</p>
+        </div>
+        <span style="font-size:.79rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:4px;margin-top:auto">Open <i class="ti ti-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/app-controls.html" style="text-decoration:none;display:flex;flex-direction:column;gap:.6rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .18s ease;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--success)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--success),#34d399)"></div>
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--success-bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--success)"><i class="ti ti-layers-difference"></i></div>
+        <div>
+          <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--success);margin-bottom:.2rem">Control classification</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">App Controls vs. ITGC</h3>
+          <p style="font-size:.8rem;color:var(--text-2);line-height:1.6">The most misunderstood SOX distinction. Automated vs. manual vs. IT-dependent controls — with testing guidance for each type.</p>
+        </div>
+        <span style="font-size:.79rem;font-weight:600;color:var(--success);display:flex;align-items:center;gap:4px;margin-top:auto">Open <i class="ti ti-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/mistakes.html" style="text-decoration:none;display:flex;flex-direction:column;gap:.6rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .18s ease;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--danger)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--danger),#f87171)"></div>
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--danger-bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--danger)"><i class="ti ti-alert-triangle"></i></div>
+        <div>
+          <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--danger);margin-bottom:.2rem">Deficiency patterns</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">Common ITGC Mistakes</h3>
+          <p style="font-size:.8rem;color:var(--text-2);line-height:1.6">30+ recurring failures from PCAOB inspections, by domain — with the exact fix for each one. LA, CM, CO, PD, JE, and documentation.</p>
+        </div>
+        <span style="font-size:.79rem;font-weight:600;color:var(--danger);display:flex;align-items:center;gap:4px;margin-top:auto">Open <i class="ti ti-arrow-right"></i></span>
+      </a>
+    </div>
+
+    <!-- ROW 2: 2 cards centered -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;max-width:820px;margin:0 auto">
+      <a href="pages/remediation.html" style="text-decoration:none;display:flex;flex-direction:column;gap:.6rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .18s ease;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--warning)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--warning),#fbbf24)"></div>
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--warning-bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--warning)"><i class="ti ti-tool"></i></div>
+        <div>
+          <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--warning);margin-bottom:.2rem">Crisis response</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">Remediation Playbook</h3>
+          <p style="font-size:.8rem;color:var(--text-2);line-height:1.6">Step-by-step playbooks for CD, SD, and MW — escalation paths, audit committee communication, and re-testing timelines.</p>
+        </div>
+        <span style="font-size:.79rem;font-weight:600;color:var(--warning);display:flex;align-items:center;gap:4px;margin-top:auto">Open <i class="ti ti-arrow-right"></i></span>
+      </a>
+
+      <a href="pages/cyber-sox.html" style="text-decoration:none;display:flex;flex-direction:column;gap:.6rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.4rem;transition:all .18s ease;position:relative;overflow:hidden" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--teal)';this.style.transform='translateY(-2px)'" onmouseover="this.style.boxShadow='0 4px 24px rgba(15,22,35,.1)';this.style.borderColor='var(--teal)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='var(--border)';this.style.transform=''">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),#22d3ee)"></div>
+        <div style="width:40px;height:40px;border-radius:10px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--teal)"><i class="ti ti-arrows-cross"></i></div>
+        <div>
+          <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:.2rem">Framework mapping</div>
+          <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.3rem">Cyber → SOX Bridge</h3>
+          <p style="font-size:.8rem;color:var(--text-2);line-height:1.6">SOC 2, ISO 27001, NIST CSF, and CIS Controls mapped to SOX ITGC — with gap analysis showing where security evidence can't substitute.</p>
+        </div>
+        <span style="font-size:.79rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:4px;margin-top:auto">Open <i class="ti ti-arrow-right"></i></span>
+      </a>
+    </div>
+
+    <!-- Quick reference bar -->
+    <div style="margin-top:2rem;padding:1rem 1.25rem;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+      <span style="font-size:.8rem;color:var(--text-2)"><i class="ti ti-scroll" style="color:var(--accent)"></i> Also on this page:</span>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+        <a href="#itgc" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">ITGC Domains</a>
+        <a href="#assurance" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">Advisory & Assurance</a>
+        <a href="#rcm" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">Interactive RCM</a>
+        <a href="#ai" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">AI Controls</a>
+        <a href="#standards" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">PCAOB Standards</a>
+        <a href="#glossary" style="font-size:.77rem;padding:4px 10px;border-radius:6px;background:var(--surface);border:1px solid var(--border);color:var(--text-2);font-weight:500">Glossary</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO / WHAT IS SOX -->
+<section id="intro" class="reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-book"></i> Getting started</div>
+    <h2 class="section-title">What is SOX IT Audit?</h2>
+    <p class="section-sub">A structured primer for anyone new to the Sarbanes-Oxley Act and its IT implications.</p>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon-badge ib-blue"><i class="ti ti-gavel"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Why SOX exists</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">The Sarbanes-Oxley Act (2002) was enacted after major corporate fraud at Enron and WorldCom. It requires public companies to maintain and attest to reliable internal controls over financial reporting (ICFR). CEOs and CFOs personally certify financial statements under Sections 302 and 906.</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge ib-green"><i class="ti ti-server"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Why IT is in scope</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">Financial data flows through IT systems. If the underlying systems — ERP, databases, access controls, change management — are unreliable, financial reports cannot be trusted. IT General Controls (ITGCs) are the foundational layer that make application controls trustworthy.</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge ib-purple"><i class="ti ti-file-certificate"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Section 404 — the core requirement</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;"><strong>404(a)</strong>: Management must assess and report on ICFR effectiveness annually. <strong>404(b)</strong>: External auditors (for accelerated filers) must independently attest to that assessment. ITGCs are tested as part of both obligations. Non-accelerated filers and EGCs are exempt from 404(b).</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge ib-amber"><i class="ti ti-users"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Key players</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;"><strong>Management</strong> designs and operates controls. <strong>Internal Audit</strong> tests controls and provides assurance (and advisory). <strong>External Auditors</strong> (PCAOB-registered firms) independently attest. <strong>Audit Committee</strong> provides governance oversight. Each role has distinct responsibilities under IIA and PCAOB standards.</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge ib-red"><i class="ti ti-alert-triangle"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">What can go wrong</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">Control weaknesses are classified as <strong>Control Deficiencies</strong>, <strong>Significant Deficiencies</strong>, or <strong>Material Weaknesses</strong>. A material weakness requires public disclosure and can trigger SEC enforcement. Roughly 20–25% of U.S. public companies disclose at least one material weakness annually.</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge ib-teal"><i class="ti ti-trending-up"></i></div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">2026 landscape</h3>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">AI, cloud ERP, multi-cloud identity, and third-party supply chain risk have fundamentally expanded ITGC scope. New PCAOB standards (AS 1000, AS 1105, QC 1000 effective Dec 2026) raise evidence standards. SOX programs now cost $2.3M+ and 15,000+ hours on average per KPMG's 2025 survey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ITGC DOMAINS -->
+<section id="itgc" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding-top:5rem;padding-bottom:5rem;" class="full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-server"></i> IT General Controls</div>
+      <h2 class="section-title">ITGC domains</h2>
+      <p class="section-sub">The four core ITGC domains auditors test under SOX Section 404, each mapped to COSO components, COBIT domains, and PCAOB paragraphs.</p>
+    </div>
+
+    <!-- Domain Cards -->
+    <div class="card-grid mb-3">
+      <div class="domain-card">
+        <span class="tag badge-blue">LA · Logical Access</span>
+        <h3>Access management</h3>
+        <p>Controls ensuring only authorized users access financially significant systems, data, and reports — from provisioning to deprovisioning.</p>
+        <ul class="control-list">
+          <li>User provisioning & deprovisioning</li>
+          <li>Role-based access control (RBAC)</li>
+          <li>Privileged access management (PAM)</li>
+          <li>Periodic access reviews (user recertification)</li>
+          <li>Multi-factor authentication (MFA)</li>
+          <li>Segregation of duties (SoD) enforcement</li>
+          <li>Non-human identity (NHI) governance</li>
+          <li>Remote access controls</li>
+        </ul>
+        <div class="refs mt-2">
+          <span class="badge badge-blue">COSO CC6.1</span>
+          <span class="badge badge-green">COBIT DSS05</span>
+          <span class="badge badge-purple">PCAOB .26</span>
+        </div>
+      </div>
+      <div class="domain-card">
+        <span class="tag badge-green">CM · Change Management</span>
+        <h3>Change management</h3>
+        <p>Controls ensuring all changes to financially significant applications, infrastructure, and configurations are authorized, tested, and documented before promotion to production.</p>
+        <ul class="control-list">
+          <li>Change request & authorization</li>
+          <li>Segregation of development & production</li>
+          <li>Testing & quality assurance gates</li>
+          <li>Emergency / break-glass change controls</li>
+          <li>Release management & version control</li>
+          <li>Patch management</li>
+          <li>Configuration management baseline</li>
+        </ul>
+        <div class="refs mt-2">
+          <span class="badge badge-blue">COSO CC7.1</span>
+          <span class="badge badge-green">COBIT BAI06</span>
+          <span class="badge badge-purple">PCAOB .28</span>
+        </div>
+      </div>
+      <div class="domain-card">
+        <span class="tag badge-amber">CO · Computer Operations</span>
+        <h3>Computer operations</h3>
+        <p>Controls over the day-to-day operation of systems supporting financial processes — ensuring jobs run, failures are detected, and data is protected.</p>
+        <ul class="control-list">
+          <li>Batch job scheduling & monitoring</li>
+          <li>Incident & problem management</li>
+          <li>Backup & recovery controls</li>
+          <li>Business continuity / DR testing</li>
+          <li>Capacity monitoring</li>
+          <li>Network monitoring & alerting</li>
+          <li>Data integrity controls</li>
+        </ul>
+        <div class="refs mt-2">
+          <span class="badge badge-blue">COSO CC7.4</span>
+          <span class="badge badge-green">COBIT DSS01</span>
+          <span class="badge badge-purple">PCAOB .27</span>
+        </div>
+      </div>
+      <div class="domain-card">
+        <span class="tag badge-purple">PD · Program Development</span>
+        <h3>Program development</h3>
+        <p>Controls over the development and acquisition of new systems and major enhancements — ensuring proper design, testing, approval, and cutover for financially significant applications.</p>
+        <ul class="control-list">
+          <li>SDLC methodology & governance</li>
+          <li>Requirements & design review</li>
+          <li>UAT & parallel testing</li>
+          <li>Data conversion controls</li>
+          <li>Go-live & post-implementation review</li>
+          <li>Third-party software acquisition controls</li>
+        </ul>
+        <div class="refs mt-2">
+          <span class="badge badge-blue">COSO CC8.1</span>
+          <span class="badge badge-green">COBIT BAI02</span>
+          <span class="badge badge-purple">PCAOB .29</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Framework Crosswalk -->
+    <div class="section-header mt-4">
+      <div class="eyebrow"><i class="ti ti-arrows-cross"></i> Framework integration</div>
+      <h2 class="section-title">Framework cross-walk</h2>
+      <p class="section-sub">How ITGC domains map across COSO, COBIT, PCAOB, IIA, and SEC in one view.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="crosswalk-table">
+        <thead>
+          <tr>
+            <th>ITGC domain</th>
+            <th>COSO 2013</th>
+            <th>COBIT 2019</th>
+            <th>PCAOB AS 2201</th>
+            <th>IIA Standards</th>
+            <th>SEC guidance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="domain-label">Logical access</td>
+            <td><span class="ref">CC6.1–CC6.8</span><br><span class="text-muted text-sm">Logical & Physical Access</span></td>
+            <td><span class="ref">DSS05.03–05.04</span><br><span class="text-muted text-sm">Managed Identity</span></td>
+            <td><span class="ref">Para .26, .A5</span><br><span class="text-muted text-sm">Control env. assessment</span></td>
+            <td><span class="ref">Std. 2120</span><br><span class="text-muted text-sm">Risk management assurance</span></td>
+            <td><span class="ref">Rule 13a-15</span><br><span class="text-muted text-sm">ICFR maintenance</span></td>
+          </tr>
+          <tr>
+            <td class="domain-label">Change management</td>
+            <td><span class="ref">CC7.1–CC7.2</span><br><span class="text-muted text-sm">Systems Operations</span></td>
+            <td><span class="ref">BAI06.01–06.04</span><br><span class="text-muted text-sm">Managed IT Changes</span></td>
+            <td><span class="ref">Para .28, .A8</span><br><span class="text-muted text-sm">Change controls testing</span></td>
+            <td><span class="ref">Std. 2130</span><br><span class="text-muted text-sm">Control assurance</span></td>
+            <td><span class="ref">SEC FR-77</span><br><span class="text-muted text-sm">ICFR guidance</span></td>
+          </tr>
+          <tr>
+            <td class="domain-label">Computer operations</td>
+            <td><span class="ref">CC7.3–CC7.5</span><br><span class="text-muted text-sm">Incident Response</span></td>
+            <td><span class="ref">DSS01.01–01.05</span><br><span class="text-muted text-sm">Managed Operations</span></td>
+            <td><span class="ref">Para .27, .A7</span><br><span class="text-muted text-sm">Ops controls assessment</span></td>
+            <td><span class="ref">Std. 2100</span><br><span class="text-muted text-sm">Nature of work</span></td>
+            <td><span class="ref">Rule 15d-15</span><br><span class="text-muted text-sm">ICFR evaluation</span></td>
+          </tr>
+          <tr>
+            <td class="domain-label">Program development</td>
+            <td><span class="ref">CC8.1</span><br><span class="text-muted text-sm">Change Management</span></td>
+            <td><span class="ref">BAI02–BAI04</span><br><span class="text-muted text-sm">Solution Delivery</span></td>
+            <td><span class="ref">Para .29, .A9</span><br><span class="text-muted text-sm">System dev. controls</span></td>
+            <td><span class="ref">Std. 2110</span><br><span class="text-muted text-sm">Governance assurance</span></td>
+            <td><span class="ref">SEC FRR 48</span><br><span class="text-muted text-sm">System reporting</span></td>
+          </tr>
+          <tr>
+            <td class="domain-label">AI & automated controls</td>
+            <td><span class="ref">CC7.1, CC8.1</span><br><span class="text-muted text-sm">Monitoring & Change</span></td>
+            <td><span class="ref">BAI09, DSS05</span><br><span class="text-muted text-sm">Managed Assets</span></td>
+            <td><span class="ref">Para .26–.29, AS 2110</span><br><span class="text-muted text-sm">Automated control risk</span></td>
+            <td><span class="ref">IIA GTAG AI</span><br><span class="text-muted text-sm">AI governance guidance</span></td>
+            <td><span class="ref">SEC AI Guidance 2025</span><br><span class="text-muted text-sm">AI disclosure obligations</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ADVISORY & ASSURANCE -->
+<section id="assurance" class="reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-scale"></i> Advisory & Assurance</div>
+    <h2 class="section-title">Advisory vs. assurance — the critical distinction</h2>
+    <p class="section-sub">Understanding the IIA's Three Lines model and where advisory ends and assurance begins is foundational to an effective SOX program.</p>
+  </div>
+
+  <div class="tab-nav" id="assuranceTabs">
+    <button class="tab-btn active" data-tab="three-lines"><i class="ti ti-sitemap"></i> Three Lines</button>
+    <button class="tab-btn" data-tab="assurance-detail"><i class="ti ti-shield-check"></i> Assurance</button>
+    <button class="tab-btn" data-tab="advisory-detail"><i class="ti ti-bulb"></i> Advisory</button>
+    <button class="tab-btn" data-tab="best-practices"><i class="ti ti-star"></i> Best practices</button>
+    <button class="tab-btn" data-tab="independence"><i class="ti ti-lock"></i> Independence</button>
+  </div>
+
+  <!-- Three Lines -->
+  <div class="tab-panel active" id="tab-three-lines">
+    <div class="alert alert-info"><i class="ti ti-info-circle"></i> The IIA's Three Lines Model (2020) replaces the older "Three Lines of Defense." The shift from "defense" to "lines" emphasizes collaboration and value creation, not just risk prevention.</div>
+    <div class="three-lines">
+      <div class="line-card line-1">
+        <div class="line-num">First line</div>
+        <h3>Management & control owners</h3>
+        <ul>
+          <li>Owns and operates ITGC controls</li>
+          <li>Performs self-assessments (CSA)</li>
+          <li>Responsible for remediation</li>
+          <li>Provides evidence to auditors</li>
+          <li>Certifies control effectiveness</li>
+        </ul>
+      </div>
+      <div class="line-card line-2">
+        <div class="line-num">Second line</div>
+        <h3>Risk & compliance functions</h3>
+        <ul>
+          <li>SOX program management office</li>
+          <li>Risk framework oversight (COSO, COBIT)</li>
+          <li>Policy & procedure governance</li>
+          <li>Compliance monitoring</li>
+          <li>Control design advisory support</li>
+        </ul>
+      </div>
+      <div class="line-card line-3">
+        <div class="line-num">Third line</div>
+        <h3>Internal audit</h3>
+        <ul>
+          <li>Independent assurance on ICFR</li>
+          <li>ITGC testing (TOC)</li>
+          <li>Deficiency identification & escalation</li>
+          <li>Advisory services (within independence limits)</li>
+          <li>Reliance by external auditors</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="background:var(--surface-2);margin-top:0.5rem;">
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;"><strong style="color:var(--text);">Governing body (board/audit committee)</strong> sits above all three lines. It provides oversight of the entire governance structure, receives reports from Internal Audit, and approves the external auditor engagement under SEC audit committee independence rules (Section 301).</p>
+    </div>
+  </div>
+
+  <!-- Assurance -->
+  <div class="tab-panel" id="tab-assurance-detail">
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon-badge ib-blue"><i class="ti ti-clipboard-check"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Walkthroughs</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Required by PCAOB AS 2201.34. Trace one transaction end-to-end through each significant process to confirm design understanding. Not a test of operating effectiveness — a test of understanding. Identifies design gaps before testing begins.</p>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201.34</span><span class="badge badge-blue">IIA 2110</span></div>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-green"><i class="ti ti-chart-bar"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Testing of design effectiveness</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Does the control, if performed as described, prevent or detect a material misstatement? Design testing is typically done through inquiry, observation, and inspection of the control documentation — before operating effectiveness is tested.</p>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201.42</span><span class="badge badge-blue">COSO Principle 10</span></div>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-amber"><i class="ti ti-repeat"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Testing of operating effectiveness (TOE)</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Has the control operated as designed throughout the period? TOE requires sample testing with appropriate sample sizes based on control frequency. High-frequency daily controls require larger samples than quarterly management review controls. PCAOB AS 2315 governs sampling.</p>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201.44, AS 2315</span></div>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-purple"><i class="ti ti-calendar-stats"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Interim vs. year-end testing</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Interim testing (Q1–Q3) allows early deficiency detection and time for remediation before year-end. If deficiencies are remediated and re-tested before year-end, auditors may be able to issue a clean opinion. Year-end testing confirms controls operated through the full period.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-red"><i class="ti ti-file-text"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">IPE — information produced by entity</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Under updated AS 1105, system-generated reports used in controls must be validated for completeness and accuracy. Auditors now require stronger corroboration of IPE reliability. Spreadsheets used as controls require their own ITGC-level validation. This is among the top PCAOB inspection findings.</p>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 1105.10A</span></div>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-teal"><i class="ti ti-link"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Reliance on internal audit work</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">PCAOB AS 2201.16–.19 allows external auditors to rely on IA work for low-risk controls. To qualify, IA must be adequately supervised, competent, and objective. External auditors must re-perform a portion of IA's work to validate quality. Per KPMG's survey, 56% of external auditors test fewer controls than management.</p>
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1rem;">Sample size guidance by control frequency</h3>
+      <div class="table-wrap">
+        <table class="crosswalk-table">
+          <thead><tr><th>Control frequency</th><th>IIA / Big 4 guidance</th><th>Typical external auditor sample</th><th>High-risk uplift</th></tr></thead>
+          <tbody>
+            <tr><td>Daily / continuous</td><td>25–40 items</td><td>25 items (min)</td><td>40+ items</td></tr>
+            <tr><td>Weekly</td><td>10–15 items</td><td>10 items</td><td>15 items</td></tr>
+            <tr><td>Monthly</td><td>3–5 items</td><td>3 items</td><td>5 items</td></tr>
+            <tr><td>Quarterly</td><td>2 items</td><td>2 items</td><td>3 items</td></tr>
+            <tr><td>Annual</td><td>1 item</td><td>1 item</td><td>2 items</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Advisory -->
+  <div class="tab-panel" id="tab-advisory-detail">
+    <div class="alert alert-warn"><i class="ti ti-alert-triangle"></i> Advisory services do not produce an opinion on control effectiveness. Internal Audit must document advisory engagements separately and manage independence impairment per IIA Standard 1130.</div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="icon-badge ib-blue"><i class="ti ti-tools"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Control design consulting</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Advising management on control design before controls are implemented. IA can recommend control structures without impairment, provided management retains decision-making authority. Reviewing control narratives and documenting design choices are common advisory activities.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-green"><i class="ti ti-rocket"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">SOX readiness assessments</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">For pre-IPO companies or post-acquisition integration, IA and external advisors assess control gaps against SOX requirements 12–18 months before first audit. Identifies scoping, design, and documentation gaps before external audit scrutiny begins.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-amber"><i class="ti ti-minimize"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Control rationalization</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Reducing the total number of controls without increasing risk. Combines redundant controls, eliminates low-value controls, and re-scopes materiality thresholds. Typically reduces testing burden by 15–30% while maintaining coverage. An advisory deliverable — not an audit opinion.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-purple"><i class="ti ti-search"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Root cause analysis</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">When a control fails, advisory goes beyond identifying the failure to diagnosing systemic causes: lack of training, process design flaw, resource constraints, or technology gaps. Root cause analysis informs remediation strategy and prevents recurrence — a different deliverable from the audit finding itself.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-teal"><i class="ti ti-settings"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">ERP go-live control advisory</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Pre-go-live advisory on ITGC control design for new ERP implementations (SAP S/4HANA, Oracle Fusion, Workday). Covers access control architecture, SoD rule sets, data migration controls, and cutover procedures. Differs fundamentally from post-go-live testing of those same controls.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-red"><i class="ti ti-school"></i></div>
+        <h4 style="font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.5rem;">Control owner training</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Training control owners on what their control is designed to prevent, what evidence is required, and how to document performance. Reduces evidence gaps and control failures caused by lack of understanding — the most common root cause of ITGC deficiencies at first-time SOX filers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Best practices -->
+  <div class="tab-panel" id="tab-best-practices">
+    <div class="practice-card">
+      <div class="practice-num">1</div>
+      <div>
+        <h4>Apply a top-down, risk-based scoping approach</h4>
+        <p>Start with financial statement risks → identify significant accounts → map to processes → identify in-scope applications → scope ITGC domains. PCAOB AS 2201.22 and SEC guidance both require risk-based scoping. Over-scoping wastes resources; under-scoping creates audit exposure.</p>
+        <div class="refs"><span class="badge badge-purple">AS 2201.22</span><span class="badge badge-blue">COSO Principle 7</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">2</div>
+      <div>
+        <h4>Separate advisory and assurance engagements formally</h4>
+        <p>Document each type of engagement separately. IA teams that design a control and later test it create an independence impairment that must be disclosed to the audit committee (IIA Standard 1130.A1). External auditors cannot rely on IA work where independence is impaired.</p>
+        <div class="refs"><span class="badge badge-amber">IIA Std. 1130</span><span class="badge badge-purple">AS 2201.17</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">3</div>
+      <div>
+        <h4>Test interim controls — not just year-end</h4>
+        <p>Interim testing (Q1–Q3) identifies deficiencies while there is still time to remediate and re-test before year-end. PCAOB expects auditors to evaluate whether roll-forward procedures adequately cover the remaining period. Build a testing calendar with interim milestones, not a single Q4 crunch.</p>
+        <div class="refs"><span class="badge badge-purple">AS 2201.49</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">4</div>
+      <div>
+        <h4>Validate all IPE used in key controls</h4>
+        <p>Every system-generated report, data extract, or spreadsheet used in a key control must be validated for completeness and accuracy. Document the source, the parameters, and the validation procedure. This is the single most commonly cited deficiency in PCAOB inspection reports (2023–2025).</p>
+        <div class="refs"><span class="badge badge-purple">AS 1105.10A</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">5</div>
+      <div>
+        <h4>Review vendor SOC 1 reports annually — not just at onboarding</h4>
+        <p>If a vendor processes financially material data, obtain their SOC 1 Type II report annually. Evaluate complementary user entity controls (CUECs). Ensure your controls address every CUEC listed in the report. Gap in CUECs = gap in your ITGC coverage.</p>
+        <div class="refs"><span class="badge badge-purple">AS 2601</span><span class="badge badge-blue">COBIT APO10</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">6</div>
+      <div>
+        <h4>Implement continuous monitoring between audit cycles</h4>
+        <p>Auditors increasingly scrutinize whether management monitors controls year-round, not just before audit. Automated access review alerts, change management exception reports, and anomaly detection tools provide real-time evidence of operating effectiveness — reducing last-minute evidence scrambles.</p>
+        <div class="refs"><span class="badge badge-blue">COSO Principle 16</span><span class="badge badge-green">COBIT MEA01</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">7</div>
+      <div>
+        <h4>Classify deficiencies promptly and escalate appropriately</h4>
+        <p>Not every control failure is a material weakness. Classify promptly using PCAOB AS 2201.62–.70 criteria. Evaluate compensating controls. Communicate significant deficiencies to the audit committee in writing before the fiscal year-end. Timeliness of classification and escalation is itself an audit finding area.</p>
+        <div class="refs"><span class="badge badge-purple">AS 2201.62–.70</span><span class="badge badge-amber">IIA Std. 2060</span></div>
+      </div>
+    </div>
+    <div class="practice-card">
+      <div class="practice-num">8</div>
+      <div>
+        <h4>Align control documentation with how controls actually operate</h4>
+        <p>Control narratives must reflect current practice — not legacy documentation. Auditors perform walkthroughs specifically to test whether controls operate as documented. Outdated RCMs and narratives are a leading cause of walkthrough findings and design deficiencies in PCAOB inspections.</p>
+        <div class="refs"><span class="badge badge-purple">AS 2201.34</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Independence -->
+  <div class="tab-panel" id="tab-independence">
+    <div class="alert alert-warn"><i class="ti ti-alert-triangle"></i> SOX Section 201 prohibits external audit firms from performing certain non-audit services for their audit clients — including designing ITGC controls, implementing systems, or providing management consulting. These are hard legal prohibitions, not just best practices.</div>
+    <div class="card-grid">
+      <div class="card" style="border-top:3px solid var(--accent);">
+        <h4 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px;"><i class="ti ti-building" style="color:var(--accent)"></i> Management</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;margin-bottom:0.75rem;">Owns controls — neither advisory nor assurance. Responsible for design, operation, and documentation. Cannot assess its own controls — that's the auditor's role.</p>
+        <div><span class="badge badge-blue">Section 302 certifier</span> <span class="badge badge-blue">Section 404(a) responsible</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--success);">
+        <h4 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px;"><i class="ti ti-users" style="color:var(--success)"></i> Internal audit</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;margin-bottom:0.75rem;">Can perform both advisory AND assurance. Independence impairment occurs if IA designed a control it later tests. Must disclose impairments to the audit committee and note them in engagement records. External auditors reduce reliance on impaired IA work.</p>
+        <div><span class="badge badge-green">IIA Std. 1130</span> <span class="badge badge-green">AS 2201.17</span></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--danger);">
+        <h4 style="font-size:0.95rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;display:flex;align-items:center;gap:8px;"><i class="ti ti-certificate" style="color:var(--danger)"></i> External auditor</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;margin-bottom:0.75rem;"><strong>Cannot</strong> (for audit clients): design/implement systems, provide bookkeeping, perform internal audit outsourcing, provide management consulting, or design ITGC controls. These are prohibited under SOX Section 201 and PCAOB Rule 3523.</p>
+        <div><span class="badge badge-red">SOX §201</span> <span class="badge badge-red">PCAOB Rule 3523</span></div>
+      </div>
+    </div>
+    <div class="card mt-3" style="background:var(--surface-2);">
+      <h4 style="font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:0.75rem;">The co-sourcing question</h4>
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">Co-sourcing (a firm supplements an in-house IA team) is permissible for external audit firms, provided the co-sourced staff is not from the same firm as the external auditor, or independence safeguards are documented. Full outsourcing of the IA function to the external auditor is prohibited for public companies. Many organizations use a non-audit advisory firm for IA co-sourcing and ITGC advisory, keeping the external auditor relationship structurally separate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AI & EMERGING TECH -->
+<section id="ai" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:5rem 0;" class="full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-robot"></i> AI & Emerging Tech Controls</div>
+      <h2 class="section-title">AI controls within ITGC scope</h2>
+      <p class="section-sub">When AI influences financially material processes, it must be scoped into ITGC testing. PCAOB AS 2201 already covers AI-assisted controls — no new standard needed.</p>
+    </div>
+
+    <div class="alert alert-warn mb-3">
+      <i class="ti ti-alert-triangle"></i>
+      No authoritative ITGC framework for AI exists yet. The PCAOB's TIA Working Group identified AI audit documentation as a top strategic priority. Until formal guidance arrives, AS 2201's existing framework — change controls, access controls, computer operations, program development — applies directly to AI systems.
+    </div>
+
+    <div class="ai-risk-matrix mb-4">
+      <div class="ai-card">
+        <h4><i class="ti ti-brain" style="color:var(--accent)"></i> AI change management</h4>
+        <p>AI models in ICFR must have the same change controls as any other financially significant application.</p>
+        <ul class="sub-list">
+          <li>Model versioning and change log</li>
+          <li>Approval workflow for model updates</li>
+          <li>Separation of training and production environments</li>
+          <li>Rollback procedures for failed updates</li>
+          <li>Vendor model update notification controls</li>
+        </ul>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201 Para .28</span></div>
+      </div>
+      <div class="ai-card">
+        <h4><i class="ti ti-lock-access" style="color:var(--success)"></i> AI access controls</h4>
+        <p>Who can access the model, its training data, its outputs, and its configuration must be governed and tested.</p>
+        <ul class="sub-list">
+          <li>Access to model configuration & hyperparameters</li>
+          <li>Access to training datasets (data poisoning risk)</li>
+          <li>API key governance for AI service accounts</li>
+          <li>Human review access for override decisions</li>
+          <li>Audit logging of model interactions</li>
+        </ul>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201 Para .26</span></div>
+      </div>
+      <div class="ai-card">
+        <h4><i class="ti ti-activity" style="color:var(--warning)"></i> AI computer operations</h4>
+        <p>AI systems must be monitored for availability, accuracy drift, and anomalous output in financial processes.</p>
+        <ul class="sub-list">
+          <li>Model performance monitoring (accuracy, drift)</li>
+          <li>Batch inference job scheduling & alerting</li>
+          <li>Output anomaly detection</li>
+          <li>Fallback procedures when model is unavailable</li>
+          <li>Data quality controls for model inputs</li>
+        </ul>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201 Para .27</span></div>
+      </div>
+      <div class="ai-card">
+        <h4><i class="ti ti-code" style="color:var(--purple)"></i> AI program development</h4>
+        <p>Initial deployment of an AI model into a financial process is equivalent to a system implementation and requires full SDLC controls.</p>
+        <ul class="sub-list">
+          <li>Model selection & validation documentation</li>
+          <li>UAT with finance stakeholders</li>
+          <li>Bias & fairness testing</li>
+          <li>Model cards & risk documentation</li>
+          <li>Post-implementation review (60/90 days)</li>
+        </ul>
+        <div class="refs mt-2"><span class="badge badge-purple">AS 2201 Para .29</span></div>
+      </div>
+    </div>
+
+    <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1rem;">Third-party AI as a service organization</h3>
+    <div class="card mb-3">
+      <p class="text-sm" style="color:var(--text-2);line-height:1.7;">When a company uses a third-party AI platform (e.g. an AI-powered revenue forecasting tool) in ICFR, that vendor may qualify as a <strong style="color:var(--text)">service organization under AS 2601 and Auditing Interpretation AI 18</strong>. This means auditors need to obtain and evaluate a SOC 1 report from the vendor. The problem: standard SOC 1 Type II reports were not designed for AI systems. They do not address model drift, training data governance, foundation model dependencies, or adversarial input risks. If no SOC 1 is available, auditors must perform alternative procedures to gain comfort over the vendor controls.</p>
+    </div>
+
+    <div class="card-grid-3">
+      <div class="card">
+        <div class="icon-badge ib-blue"><i class="ti ti-cpu"></i></div>
+        <h4 style="font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Non-human identities (NHI)</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">Service accounts, bots, RPA agents, and API keys now carry the same access risk as human users. Audit NHI provisioning, privilege levels, and decommissioning with the same rigor as human access reviews.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-amber"><i class="ti ti-arrows-shuffle"></i></div>
+        <h4 style="font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">RPA in ICFR</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">RPA bots performing financial reconciliations or journal postings are automated controls — they require change management, access controls, and monitoring just like ERP modules. Bot failure = control failure.</p>
+      </div>
+      <div class="card">
+        <div class="icon-badge ib-teal"><i class="ti ti-cloud"></i></div>
+        <h4 style="font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:0.4rem;">Cloud & SaaS ITGC</h4>
+        <p class="text-sm" style="color:var(--text-2);line-height:1.6;">When ERP or financial systems are SaaS-hosted, traditional ITGC testing shifts to reviewing vendor SOC 1 reports and testing complementary user entity controls (CUECs). Organizations retain responsibility for access, change, and configuration controls in their SaaS environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IPO READINESS -->
+<section id="ipo" class="reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-trending-up"></i> IPO Readiness & Case Studies</div>
+    <h2 class="section-title">SOX readiness for pre-IPO companies</h2>
+    <p class="section-sub">Building a SOX-ready control environment from scratch requires 12–18 months of preparation. Most first-time filers underestimate the ITGC component significantly.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+    <div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1.25rem;">18-month readiness timeline</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="month">Month 1–3</div>
+          <h4>Scoping & risk assessment</h4>
+          <p>Identify significant accounts and disclosures. Map financial processes. Identify in-scope applications and IT systems. Perform preliminary materiality threshold analysis. Engage external advisors.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="month">Month 4–6</div>
+          <h4>Control design & documentation</h4>
+          <p>Design ITGC control frameworks for each domain. Document control narratives and RCM. Identify and close design gaps. Establish SDLC and change management procedures. Implement access review cadence.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="month">Month 7–9</div>
+          <h4>Control implementation & training</h4>
+          <p>Implement controls and begin operating. Train control owners on evidence requirements. Establish SOC 1 review process for key vendors. Begin tracking access review completion rates.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="month">Month 10–12</div>
+          <h4>Internal readiness testing</h4>
+          <p>Perform first internal walkthrough of all significant processes. Conduct preliminary TOE testing. Identify and remediate deficiencies. Document remediation and re-test. Build deficiency log.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="month">Month 13–15</div>
+          <h4>External auditor onboarding</h4>
+          <p>Engage PCAOB-registered external auditor. Perform integrated audit planning. Agree on testing approach, sample sizes, and evidence formats. Address auditor walkthroughs and design effectiveness reviews.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="month">Month 16–18</div>
+          <h4>Year-end testing & S-1/10-K readiness</h4>
+          <p>Complete year-end TOE testing. Address deficiencies and obtain management remediation evidence. External auditor issues integrated audit opinion. CFO/CEO certification of Section 302 and 906. File with SEC.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:1rem;font-weight:600;color:var(--text);margin-bottom:1.25rem;">Material weakness case studies</h3>
+
+      <div class="case-card mb-2">
+        <div class="case-header">
+          <h4>Access control failure — financial services company</h4>
+          <span class="badge badge-red">Material weakness</span>
+        </div>
+        <div class="case-body">
+          <div class="case-row"><label>Root cause</label><span class="text-sm" style="color:var(--text-2)">Terminated employees retained ERP access for 30–90 days post-termination. Access reviews not performed quarterly as documented.</span></div>
+          <div class="case-row"><label>PCAOB finding</label><span class="text-sm" style="color:var(--text-2)">Logical access control designed but not operating effectively (AS 2201 Para .26).</span></div>
+          <div class="case-row"><label>Remediation</label><span class="text-sm" style="color:var(--text-2)">Automated deprovisioning workflow. Weekly access review reports. Quarterly full certification. Remediaton took 2 quarters.</span></div>
+          <div class="case-row"><label>Timeline</label><span class="text-sm" style="color:var(--text-2)">Disclosed Q4 · Remediated by following Q2 · Clean opinion following year</span></div>
+        </div>
+      </div>
+
+      <div class="case-card mb-2">
+        <div class="case-header">
+          <h4>Change management breakdown — SaaS company</h4>
+          <span class="badge badge-red">Material weakness</span>
+        </div>
+        <div class="case-body">
+          <div class="case-row"><label>Root cause</label><span class="text-sm" style="color:var(--text-2)">Developers deploying code changes directly to production without documented approval or testing. Emergency change process used for 40% of changes.</span></div>
+          <div class="case-row"><label>PCAOB finding</label><span class="text-sm" style="color:var(--text-2)">Insufficient separation between development and production. Change authorization controls not operating (Para .28).</span></div>
+          <div class="case-row"><label>Remediation</label><span class="text-sm" style="color:var(--text-2)">CI/CD pipeline with mandatory approval gates. Production access restricted. Emergency change SLA tightened to 5% threshold. 3-quarter remediation period.</span></div>
+          <div class="case-row"><label>Timeline</label><span class="text-sm" style="color:var(--text-2)">Disclosed Year 1 · Significant deficiency Year 2 · Clean Year 3</span></div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-header">
+          <h4>IPE validation gap — manufacturing company</h4>
+          <span class="badge badge-amber">Significant deficiency</span>
+        </div>
+        <div class="case-body">
+          <div class="case-row"><label>Root cause</label><span class="text-sm" style="color:var(--text-2)">Inventory reconciliation control relied on an ERP-generated report. Report parameters and completeness were never validated. Report excluded certain SKUs.</span></div>
+          <div class="case-row"><label>PCAOB finding</label><span class="text-sm" style="color:var(--text-2)">IPE used in key control not validated per AS 1105.10A. Control reliance could not be placed.</span></div>
+          <div class="case-row"><label>Remediation</label><span class="text-sm" style="color:var(--text-2)">IPE validation procedure documented. Report parameters frozen and approved quarterly. Independent trace-to-source validation added. 1-quarter remediation.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS HUB -->
+<section id="rcm" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:5rem 0;" class="full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-tool"></i> Interactive tools</div>
+      <h2 class="section-title">Audit tools & references</h2>
+      <p class="section-sub">Six practitioner tools — RCM (50+ controls), SoD matrix, JE testing guide, audit programs by domain, deficiency classifier, and SOX cost estimator.</p>
+    </div>
+
+    <div class="tab-nav" id="toolsTabs">
+      <button class="tab-btn active" data-tab="tt-rcm"><i class="ti ti-table"></i> RCM</button>
+      <button class="tab-btn" data-tab="tt-sod"><i class="ti ti-arrows-split-2"></i> SoD Matrix</button>
+      <button class="tab-btn" data-tab="tt-je"><i class="ti ti-file-invoice"></i> JE Testing</button>
+      <button class="tab-btn" data-tab="tt-ap"><i class="ti ti-clipboard-list"></i> Audit Programs</button>
+      <button class="tab-btn" data-tab="tt-def"><i class="ti ti-alert-circle"></i> Deficiency Tool</button>
+      <button class="tab-btn" data-tab="tt-calc"><i class="ti ti-calculator"></i> Cost Estimator</button>
+    </div>
+
+    <!-- RCM -->
+    <div class="tab-panel active" id="tab-tt-rcm">
+      <div class="rcm-filters">
+        <select class="filter-select" id="filterDomain"><option value="">All domains</option><option value="LA">Logical Access</option><option value="CM">Change Management</option><option value="CO">Computer Operations</option><option value="PD">Program Development</option><option value="JE">Journal Entry</option></select>
+        <select class="filter-select" id="filterRisk"><option value="">All risk ratings</option><option value="H">High</option><option value="M">Medium</option><option value="L">Low</option></select>
+        <select class="filter-select" id="filterType"><option value="">All control types</option><option value="Preventive">Preventive</option><option value="Detective">Detective</option><option value="Corrective">Corrective</option></select>
+        <select class="filter-select" id="filterAssertion"><option value="">All assertions</option><option value="Completeness">Completeness</option><option value="Accuracy">Accuracy</option><option value="Existence">Existence</option><option value="Authorization">Authorization</option></select>
+        <button id="exportRCM" style="margin-left:auto;display:flex;align-items:center;gap:5px;padding:7px 13px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text-2);font-size:.8rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .18s ease"><i class="ti ti-download"></i> Export CSV</button>
+      </div>
+      <div class="table-wrap">
+        <table class="rcm-table" id="rcmTable">
+          <thead><tr><th>Control ID</th><th>Domain</th><th>Control objective</th><th>Risk</th><th>Type</th><th>Assertion</th><th>Evidence required</th><th>Frequency</th></tr></thead>
+          <tbody id="rcmBody"></tbody>
+        </table>
+      </div>
+      <div class="rcm-count" id="rcmCount"></div>
+    </div>
+
+    <!-- SOD MATRIX -->
+    <div class="tab-panel" id="tab-tt-sod">
+      <div class="alert alert-warn"><i class="ti ti-alert-triangle"></i> SoD conflicts occur when one person can both initiate and approve a transaction, or develop and deploy code to production. C = Conflict (high risk — must mitigate), R = Review recommended, ✓ = Generally permissible, — = N/A.</div>
+      <div class="sod-table-wrap"><table class="sod-table" id="sodTable"></table></div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:.75rem;font-size:.78rem;color:var(--text-2)">
+        <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:12px;height:12px;background:var(--danger-bg);border-radius:2px"></span>C = Conflict</span>
+        <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:12px;height:12px;background:var(--warning-bg);border-radius:2px"></span>R = Review</span>
+        <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:12px;height:12px;background:var(--success-bg);border-radius:2px"></span>✓ = OK</span>
+        <span style="display:flex;align-items:center;gap:5px"><span style="display:inline-block;width:12px;height:12px;background:var(--surface-2);border-radius:2px;border:1px solid var(--border)"></span>— = N/A</span>
+      </div>
+    </div>
+
+    <!-- JE TESTING -->
+    <div class="tab-panel" id="tab-tt-je">
+      <div class="alert alert-info"><i class="ti ti-info-circle"></i> JE testing is a required fraud risk procedure under AS 2110. The JE population is IPE — validate it per AS 1105.10A before any selection or testing begins.</div>
+      <div id="jeContent"></div>
+    </div>
+
+    <!-- AUDIT PROGRAMS -->
+    <div class="tab-panel" id="tab-tt-ap">
+      <div style="margin-bottom:1.25rem"><select class="filter-select" id="apDomain"><option value="all">All domains</option><option value="LA">Logical Access</option><option value="CM">Change Management</option><option value="CO">Computer Operations</option><option value="PD">Program Development</option></select></div>
+      <div id="auditProgramContent"></div>
+    </div>
+
+    <!-- DEFICIENCY TOOL -->
+    <div class="tab-panel" id="tab-tt-def">
+      <div class="def-tool">
+        <div class="def-scale">
+          <div class="def-level cd"><h4>Control deficiency</h4><p>Design or operation gap — low misstatement likelihood</p></div>
+          <div class="def-level sd"><h4>Significant deficiency</h4><p>Less severe than MW — communicate to audit committee</p></div>
+          <div class="def-level mw"><h4>Material weakness</h4><p>Reasonable possibility of material misstatement — public disclosure</p></div>
+        </div>
+        <div class="def-progress" id="defProgress" style="display:flex;gap:4px;margin-bottom:1.5rem"></div>
+        <div id="defQuestions"></div>
+        <div class="def-result" id="defResult"></div>
+        <button class="btn btn-outline" onclick="resetDef()" style="font-size:.85rem;padding:8px 16px;margin-top:1rem"><i class="ti ti-refresh"></i> Reset</button>
+      </div>
+    </div>
+
+    <!-- COST ESTIMATOR -->
+    <div class="tab-panel" id="tab-tt-calc">
+      <div class="calc-card">
+        <div class="calc-grid">
+          <div>
+            <div class="calc-field"><label>In-scope ERP / financial systems <span class="calc-val" id="calcERPVal">3</span></label><input type="range" min="1" max="15" value="3" id="calcERP" step="1"></div>
+            <div class="calc-field"><label>Total in-scope ITGC controls <span class="calc-val" id="calcCtrlVal">80</span></label><input type="range" min="20" max="400" value="80" id="calcCtrl" step="5"></div>
+            <div class="calc-field"><label>External auditor reliance on IA <span class="calc-val" id="calcRelianceVal">40%</span></label><input type="range" min="0" max="80" value="40" id="calcReliance" step="5"></div>
+            <div class="calc-field"><label>Company revenue (USD millions) <span class="calc-val" id="calcRevVal">$500M</span></label><input type="range" min="75" max="10000" value="500" id="calcRev" step="25"></div>
+            <p style="font-size:.75rem;color:var(--text-3);line-height:1.5;margin-top:.75rem">Based on KPMG 2025 SOX Survey ($2.3M average, 15,581 hours average). Actual costs vary by industry, ERP complexity, and program maturity.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div class="calc-result"><div class="big-num" id="calcHours">—</div><div class="big-label">Estimated annual hours</div></div>
+            <div class="calc-result" style="background:var(--success-bg);border-color:rgba(13,148,97,.2)"><div class="big-num" style="color:var(--success)" id="calcCost">—</div><div class="big-label" style="color:var(--success)">Estimated annual cost</div></div>
+            <div class="calc-result" style="background:var(--purple-bg);border-color:rgba(107,63,160,.2)"><div class="big-num" style="color:var(--purple)" id="calcSaving">—</div><div class="big-label" style="color:var(--purple)">IA reliance cost saving</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STANDARDS TRACKER -->
+<section id="standards" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:5rem 0;" class="full reveal">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow"><i class="ti ti-calendar"></i> Standards tracker</div>
+      <h2 class="section-title">PCAOB 2024–2026 standards</h2>
+      <p class="section-sub">Every new and amended standard affecting ITGC and ICFR audits — with effective dates, key changes, and what auditors should be doing now.</p>
+    </div>
+    <div class="standards-grid">
+      <div class="std-card active">
+        <div class="std-status">✓ Active — Dec 17, 2024</div>
+        <h3>AS 1000</h3>
+        <div class="ref">General Responsibilities of the Auditor</div>
+        <p>Consolidates and modernizes foundational auditor principles: professional skepticism, due care, engagement quality review. Reaffirms that ICFR audit obligations apply with the same rigor as financial statement audits. Replaces multiple legacy foundational standards.</p>
+        <div class="effective">Effective: fiscal years ending on or after Dec 15, 2024</div>
+      </div>
+      <div class="std-card active">
+        <div class="std-status">✓ Active — Dec 2024</div>
+        <h3>AS 1105 Amendment</h3>
+        <div class="ref">Audit Evidence — Para .10A</div>
+        <p>New requirement to evaluate reliability of company-provided external electronic information (IPE). Auditors must understand the source, receiving process, and maintenance. Requires separate testing of reliability in many circumstances. Heavily inspected in 2025–2026 cycle.</p>
+        <div class="effective">Effective: fiscal years beginning on or after Dec 15, 2025</div>
+      </div>
+      <div class="std-card active">
+        <div class="std-status">✓ Active — Dec 2024</div>
+        <h3>AS 2301 Amendment</h3>
+        <div class="ref">Technology-Assisted Data Analysis</div>
+        <p>Specifies auditor responsibilities when using technology-assisted analytical tools including AI, data analytics, and automated testing tools. Addresses 100% population testing and the evidentiary standards that apply.</p>
+        <div class="effective">Effective: fiscal years beginning on or after Dec 15, 2025</div>
+      </div>
+      <div class="std-card upcoming">
+        <div class="std-status">↗ Upcoming — Dec 15, 2026</div>
+        <h3>AS 2201 Amendment</h3>
+        <div class="ref">ICFR Integrated Audit</div>
+        <p>Amendments to paragraph .09 and new paragraph .99 strengthen the link between ICFR control testing and financial statement audit conclusions. Clarifies how top-down risk-based scoping applies to entity-level controls. Effective Dec 15, 2026 per PCAOB Release 2024-005.</p>
+        <div class="effective">Effective: fiscal years beginning on or after Dec 15, 2026</div>
+      </div>
+      <div class="std-card upcoming">
+        <div class="std-status">↗ Upcoming — Dec 15, 2026</div>
+        <h3>AS 2101 Amendment</h3>
+        <div class="ref">Audit Planning</div>
+        <p>Updated planning requirements clarifying how auditors determine locations and business units for procedures. Reinforces use of IA and other specialists in planning decisions. Aligned with new AS 2201 scoping requirements.</p>
+        <div class="effective">Effective: fiscal years beginning on or after Dec 15, 2026</div>
+      </div>
+      <div class="std-card critical">
+        <div class="std-status">⚠ Critical — Dec 15, 2026</div>
+        <h3>QC 1000</h3>
+        <div class="ref">Quality Control Standard</div>
+        <p>New firm-level quality control regime. Requires firms to design, implement, and operate a quality control system. Form QC reports due November 30, 2027. Delayed one year from 2025 effective date due to implementation challenges. Aligns with AICPA SQMS No. 1.</p>
+        <div class="effective">Form QC filing due: Nov 30, 2027</div>
+      </div>
+      <div class="std-card active">
+        <div class="std-status">✓ Active — Aug 2024</div>
+        <h3>AS 2315 Amendment</h3>
+        <div class="ref">Audit Sampling</div>
+        <p>Updates align sampling requirements with the broader focus on sufficient appropriate audit evidence. Clarifies documentation basis for sample size decisions. Particularly relevant to ITGC TOE testing where sample size methodology is frequently inspected.</p>
+        <div class="effective">Effective: fiscal years ending on or after Dec 15, 2024</div>
+      </div>
+      <div class="std-card active">
+        <div class="std-status">✓ Active</div>
+        <h3>AS 2601 / AI 18</h3>
+        <div class="ref">Service Organizations</div>
+        <p>Governs how auditors evaluate service organizations (including SaaS, cloud ERP, and now AI vendors) that affect ICFR. AI 18 extends coverage to subservice organizations — critical when AI platforms rely on third-party LLM APIs.</p>
+        <div class="effective">Ongoing — applies to all current audits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOSSARY -->
+<section id="glossary" class="reveal">
+  <div class="section-header">
+    <div class="eyebrow"><i class="ti ti-book-2"></i> Glossary</div>
+    <h2 class="section-title">SOX & ITGC glossary</h2>
+    <p class="section-sub">Key terms in SOX IT audit context — not generic definitions, but what these mean for practitioners.</p>
+  </div>
+  <input type="search" class="glossary-search" id="glossarySearch" placeholder="Search terms — e.g. walkthrough, IPE, material weakness...">
+  <dl id="glossaryList"></dl>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-brand"><i class="ti ti-shield-check" style="color:var(--accent)"></i> SOX IT Audit & ITGC Platform <span style="font-size:.65rem;font-weight:600;padding:2px 7px;border-radius:4px;background:var(--success);color:#fff;margin-left:4px">v2 · 2026</span></div>
+  <p>Built for auditors, advisors, and finance professionals. Not legal or accounting advice — always verify against primary sources and your external auditor's methodology.</p>
+
+  <div style="display:flex;gap:2.5rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
+    <div>
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:.5rem">Platform pages</div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <a href="pages/workpapers.html" style="font-size:.8rem;color:var(--text-3)">Evidence Workpapers</a>
+        <a href="pages/app-controls.html" style="font-size:.8rem;color:var(--text-3)">App Controls vs. ITGC</a>
+        <a href="pages/mistakes.html" style="font-size:.8rem;color:var(--text-3)">Common Mistakes</a>
+        <a href="pages/remediation.html" style="font-size:.8rem;color:var(--text-3)">Remediation Playbook</a>
+        <a href="pages/cyber-sox.html" style="font-size:.8rem;color:var(--text-3)">Cyber → SOX Bridge</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:.5rem">On this page</div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <a href="#itgc" style="font-size:.8rem;color:var(--text-3)">ITGC Domains</a>
+        <a href="#assurance" style="font-size:.8rem;color:var(--text-3)">Advisory & Assurance</a>
+        <a href="#rcm" style="font-size:.8rem;color:var(--text-3)">RCM & Tools</a>
+        <a href="#standards" style="font-size:.8rem;color:var(--text-3)">Standards Tracker</a>
+        <a href="#glossary" style="font-size:.8rem;color:var(--text-3)">Glossary</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);margin-bottom:.5rem">External references</div>
+      <div style="display:flex;flex-direction:column;gap:.3rem">
+        <a href="https://pcaobus.org" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--text-3)">PCAOB <i class="ti ti-external-link" style="font-size:.7rem"></i></a>
+        <a href="https://www.coso.org" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--text-3)">COSO <i class="ti ti-external-link" style="font-size:.7rem"></i></a>
+        <a href="https://www.isaca.org/resources/cobit" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--text-3)">COBIT <i class="ti ti-external-link" style="font-size:.7rem"></i></a>
+        <a href="https://www.theiia.org" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--text-3)">IIA Standards <i class="ti ti-external-link" style="font-size:.7rem"></i></a>
+        <a href="https://www.sec.gov" target="_blank" rel="noopener" style="font-size:.8rem;color:var(--text-3)">SEC <i class="ti ti-external-link" style="font-size:.7rem"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--text-3)">
+    © 2026 · MIT License · <a href="https://github.com/logan23info/sox-itgc-audit" target="_blank" rel="noopener" style="color:var(--text-3)"><i class="ti ti-brand-github"></i> GitHub</a>
+  </div>
+</footer>
+
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// SOX IT AUDIT PLATFORM v2 — unified JS
+// ═══════════════════════════════════════════════════════════════════
+
+// ── DATA ─────────────────────────────────────────────────────────────────────
+
+const RCM_DATA = [
+  {id:'LA-01',domain:'LA',obj:'User access provisioning follows least-privilege principle with documented approval before system access is granted',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'Access request tickets, approver sign-off, provisioning log',freq:'Per event'},
+  {id:'LA-02',domain:'LA',obj:'Periodic user access reviews are performed quarterly to validate appropriateness of access to financially significant systems',risk:'H',type:'Detective',assertion:'Existence',evidence:'Access review report, manager certification, remediation tickets',freq:'Quarterly'},
+  {id:'LA-03',domain:'LA',obj:'Terminated employee access is revoked within 24 hours of HR notification across all in-scope systems',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'Termination log, deprovisioning tickets, HR termination dates',freq:'Per event'},
+  {id:'LA-04',domain:'LA',obj:'Privileged and admin access is restricted to authorized IT personnel and reviewed monthly',risk:'H',type:'Detective',assertion:'Authorization',evidence:'Privileged account listing, monthly review sign-off',freq:'Monthly'},
+  {id:'LA-05',domain:'LA',obj:'MFA is enforced for all remote access and privileged accounts on in-scope systems',risk:'M',type:'Preventive',assertion:'Completeness',evidence:'MFA configuration screenshots, exception report',freq:'Continuous'},
+  {id:'LA-06',domain:'LA',obj:'SoD conflicts are identified, resolved or mitigated with documented compensating controls',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'SoD matrix, conflict report, compensating control documentation',freq:'Quarterly'},
+  {id:'LA-07',domain:'LA',obj:'Non-human identities (service accounts, bots, API keys) are inventoried, governed, and reviewed quarterly',risk:'M',type:'Detective',assertion:'Existence',evidence:'NHI registry, quarterly review sign-off, decommission log',freq:'Quarterly'},
+  {id:'LA-08',domain:'LA',obj:'Password policy enforces minimum length, complexity, and expiration on all in-scope systems',risk:'M',type:'Preventive',assertion:'Authorization',evidence:'Password policy config, system settings screenshot',freq:'Continuous'},
+  {id:'LA-09',domain:'LA',obj:'Shared and generic accounts are prohibited; all access to financially significant systems is attributed to a named individual',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'Account listing, prohibition policy, exception log',freq:'Quarterly'},
+  {id:'LA-10',domain:'LA',obj:'Remote access via VPN is restricted to authorized users with MFA enforced and sessions logged',risk:'M',type:'Preventive',assertion:'Authorization',evidence:'VPN user list, MFA config, session logs',freq:'Monthly'},
+  {id:'CM-01',domain:'CM',obj:'All changes to financially significant systems require documented authorization before implementation',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'Change tickets, approver log, change advisory board minutes',freq:'Per change'},
+  {id:'CM-02',domain:'CM',obj:'Development and production environments are segregated; developers do not have direct production access',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'Access matrix, environment config, developer access list',freq:'Continuous'},
+  {id:'CM-03',domain:'CM',obj:'All changes are tested in a QA/UAT environment with results documented before production promotion',risk:'H',type:'Preventive',assertion:'Accuracy',evidence:'Test results, UAT sign-off, test plan',freq:'Per change'},
+  {id:'CM-04',domain:'CM',obj:'Emergency changes follow an expedited but documented approval process and are reviewed post-implementation within 5 business days',risk:'M',type:'Detective',assertion:'Authorization',evidence:'Emergency change log, post-implementation review, emergency % of total',freq:'Monthly'},
+  {id:'CM-05',domain:'CM',obj:'Critical security patches are applied to in-scope systems within defined SLAs (Critical: 30 days, High: 60 days)',risk:'M',type:'Preventive',assertion:'Completeness',evidence:'Patch scan report, SLA compliance rate, exception list',freq:'Monthly'},
+  {id:'CM-06',domain:'CM',obj:'Version control is used for all code changes to in-scope applications with commit history maintained',risk:'M',type:'Preventive',assertion:'Accuracy',evidence:'Repository config, commit log, branching policy',freq:'Continuous'},
+  {id:'CM-07',domain:'CM',obj:'Cloud and SaaS configuration changes to in-scope systems follow the documented change management process',risk:'M',type:'Preventive',assertion:'Authorization',evidence:'Cloud change tickets, SaaS config change log, approver records',freq:'Per change'},
+  {id:'CO-01',domain:'CO',obj:'Critical financial batch jobs are monitored for successful completion and failures trigger timely alert and resolution',risk:'H',type:'Detective',assertion:'Completeness',evidence:'Batch job log, failure alert tickets, resolution documentation',freq:'Daily'},
+  {id:'CO-02',domain:'CO',obj:'Data backups are performed on schedule, tested for restore capability quarterly, and stored per retention policy',risk:'H',type:'Preventive',assertion:'Completeness',evidence:'Backup job logs, restore test results, retention policy',freq:'Daily/Quarterly'},
+  {id:'CO-03',domain:'CO',obj:'Incidents affecting financially significant systems are logged, categorized, and resolved per SLA with root cause documented',risk:'M',type:'Detective',assertion:'Accuracy',evidence:'Incident register, resolution log, SLA compliance report',freq:'Per event'},
+  {id:'CO-04',domain:'CO',obj:'Business continuity and DR plans are tested annually for systems supporting financial reporting',risk:'M',type:'Corrective',assertion:'Completeness',evidence:'DR test plan, test results, lessons learned log',freq:'Annual'},
+  {id:'CO-05',domain:'CO',obj:'System availability is monitored continuously and SLA breaches are documented and escalated',risk:'M',type:'Detective',assertion:'Completeness',evidence:'Uptime monitoring dashboard, SLA report, escalation tickets',freq:'Monthly'},
+  {id:'CO-06',domain:'CO',obj:'Data transmission between financially significant systems uses encrypted channels with integrity checks',risk:'M',type:'Preventive',assertion:'Accuracy',evidence:'Encryption config, transmission log, integrity check results',freq:'Continuous'},
+  {id:'PD-01',domain:'PD',obj:'New system implementations follow a documented SDLC with phase-gate approvals including business and IT sign-off',risk:'H',type:'Preventive',assertion:'Accuracy',evidence:'SDLC documentation, gate approval records, project charter',freq:'Per project'},
+  {id:'PD-02',domain:'PD',obj:'UAT is performed and signed off by business owners before financial system go-lives',risk:'H',type:'Preventive',assertion:'Accuracy',evidence:'UAT test scripts, defect log, business sign-off',freq:'Per project'},
+  {id:'PD-03',domain:'PD',obj:'Data migration controls ensure completeness and accuracy of converted data in new financial systems',risk:'H',type:'Detective',assertion:'Completeness',evidence:'Data migration plan, reconciliation reports, pre/post record counts',freq:'Per migration'},
+  {id:'PD-04',domain:'PD',obj:'Post-implementation reviews are conducted 60–90 days after major system go-lives to validate controls operating as designed',risk:'M',type:'Detective',assertion:'Accuracy',evidence:'PIR report, open items log, management sign-off',freq:'Per project'},
+  {id:'JE-01',domain:'JE',obj:'A complete and accurate population of all journal entries is obtained and validated per AS 1105.10A (IPE validation required)',risk:'H',type:'Detective',assertion:'Completeness',evidence:'JE population extract, IPE validation documentation, source reconciliation',freq:'Monthly'},
+  {id:'JE-02',domain:'JE',obj:'Manual journal entries require documented approval by an authorized individual before posting',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'JE approval workflow, approver listing, exception report',freq:'Per entry'},
+  {id:'JE-03',domain:'JE',obj:'Journal entries posted outside normal business hours (nights, weekends) are reviewed and approved by management',risk:'H',type:'Detective',assertion:'Authorization',evidence:'After-hours JE report, management review sign-off',freq:'Monthly'},
+  {id:'JE-04',domain:'JE',obj:'Journal entries posted in the final 3 business days of a month, quarter, or year-end are subject to enhanced review',risk:'H',type:'Detective',assertion:'Authorization',evidence:'Period-end JE listing, enhanced review sign-off',freq:'Monthly'},
+  {id:'JE-05',domain:'JE',obj:'Automated system-generated journal entries are validated to ensure they post as designed with exception monitoring',risk:'H',type:'Detective',assertion:'Accuracy',evidence:'Automated JE configuration, exception log, system-generated listing',freq:'Monthly'},
+  {id:'JE-06',domain:'JE',obj:'Recurring journal entry templates are reviewed and approved at least annually for continued appropriateness',risk:'M',type:'Detective',assertion:'Authorization',evidence:'Recurring JE template listing, annual review sign-off',freq:'Annual'},
+  {id:'JE-07',domain:'JE',obj:'Access to post journal entries is restricted to authorized personnel and reviewed quarterly',risk:'H',type:'Preventive',assertion:'Authorization',evidence:'JE posting access list, quarterly access review certification',freq:'Quarterly'},
+];
+
+const GLOSSARY_DATA = [
+  {term:'Assurance',domain:'IIA',def:'An objective examination of evidence for the purpose of providing an independent assessment on governance, risk management, and control processes. Produces a formal opinion or conclusion.'},
+  {term:'Advisory',domain:'IIA',def:'Consulting and related services to management — not an audit opinion. Includes control design consultation, readiness assessments, and root cause analysis. Must not impair Internal Audit\'s independence for subsequent assurance work on the same area.'},
+  {term:'Control deficiency (CD)',domain:'PCAOB',def:'A deficiency exists when the design or operation of a control does not allow management or employees to prevent or detect misstatements on a timely basis. Not all CDs are significant deficiencies or material weaknesses.'},
+  {term:'Complementary user entity controls (CUEC)',domain:'SOC',def:'Controls the service organization expects the user entity to have in place for the service organization\'s controls to be effective. Every CUEC in a vendor\'s SOC 1 report must be tested as part of your ITGC program.'},
+  {term:'Design effectiveness',domain:'PCAOB',def:'Whether a control, if it operated as prescribed, would prevent or detect material misstatements. Tested via walkthrough and observation — before operating effectiveness testing begins.'},
+  {term:'Entity-level controls (ELC)',domain:'COSO',def:'Controls that operate at the entity level rather than process level — e.g., tone at the top, audit committee oversight, risk assessment process, competency standards. Strong ELCs can reduce the need for lower-level controls.'},
+  {term:'ICFR',domain:'SOX',def:'Internal Control over Financial Reporting. The set of policies and procedures designed to provide reasonable assurance that financial statements are reliable and prepared in conformity with GAAP. Section 404 requires management and (for accelerated filers) external auditors to assess ICFR effectiveness annually.'},
+  {term:'IPE — Information produced by the entity',domain:'PCAOB',def:'Reports, extracts, or data files generated from systems that are used as audit evidence or inputs to key controls. Under AS 1105.10A, auditors must validate IPE completeness and accuracy. The top PCAOB inspection deficiency 2023–2026.'},
+  {term:'ITGC — IT General Controls',domain:'SOX',def:'Policies and procedures that apply to all or many application systems and support the effective functioning of application controls. The four primary domains are: logical access (LA), change management (CM), computer operations (CO), and program development (PD).'},
+  {term:'Journal entry (JE) testing',domain:'PCAOB',def:'A required fraud risk procedure where auditors test journal entries for unusual characteristics — after-hours posting, round-dollar amounts, unusual accounts, entries near period-end. Requires a validated complete population (IPE) from the general ledger system.'},
+  {term:'Material weakness (MW)',domain:'PCAOB',def:'A deficiency, or combination of deficiencies, such that there is a reasonable possibility that a material misstatement of annual or interim financial statements will not be prevented or detected on a timely basis. Must be publicly disclosed in the 10-K.'},
+  {term:'Non-human identity (NHI)',domain:'IT Security',def:'Service accounts, bots, RPA agents, API keys, certificates, and other machine identities that require access governance. NHIs are now audited with the same rigor as human user accounts under ITGC logical access testing.'},
+  {term:'Operating effectiveness',domain:'PCAOB',def:'Whether the control has operated as designed throughout the audit period. Tested via sampling of evidence showing the control performed. Sample size depends on control frequency and risk rating per PCAOB AS 2315.'},
+  {term:'PCAOB AS 2201',domain:'PCAOB',def:'The primary standard governing external audit of ICFR integrated with a financial statement audit (formerly AS5). Establishes requirements for planning, walkthroughs, testing, deficiency evaluation, and reporting. Key amendments effective Dec 15, 2026.'},
+  {term:'Reasonable possibility',domain:'PCAOB',def:'The threshold for material weakness classification. A reasonable possibility exists when the likelihood of a misstatement occurring is more than remote. Intentionally a lower bar than "probable" or "more likely than not."'},
+  {term:'Segregation of duties (SoD)',domain:'COSO',def:'Dividing key tasks among different people so no single individual can both execute and conceal errors or fraud. In IT: the person who initiates, approves, and records a transaction should be different individuals; developers cannot promote to production.'},
+  {term:'Significant deficiency (SD)',domain:'PCAOB',def:'A deficiency less severe than a material weakness, yet important enough to merit attention by those charged with governance. Must be communicated in writing to the audit committee before the fiscal year-end.'},
+  {term:'SOC 1 Type II',domain:'AICPA',def:'A report on a service organization\'s controls relevant to user entities\' ICFR, covering a period of time (typically 6–12 months). Type I covers design only; Type II includes operating effectiveness testing. Includes complementary user entity controls (CUECs).'},
+  {term:'Top-down approach',domain:'PCAOB',def:'The required scoping methodology under AS 2201. Begin with entity-level controls → identify significant accounts and disclosures → map to significant processes → identify key controls → scope ITGC. Risk-based — not all systems are necessarily in scope.'},
+  {term:'Walkthrough',domain:'PCAOB',def:'A procedure where the auditor traces a transaction from origination through financial reporting, observing controls being performed and confirming design understanding. Required by AS 2201.34. Identifies design gaps before testing begins.'},
+  {term:'QC 1000',domain:'PCAOB',def:'New PCAOB quality control standard effective Dec 15, 2026. Requires registered audit firms to design, implement, and operate a formal quality control system. Form QC annual reports due Nov 30, 2027. Aligns with AICPA SQMS No. 1 and IAASB ISQM 1.'},
+  {term:'Zero trust architecture',domain:'IT Security',def:'A security model that assumes no implicit trust — every access request is authenticated, authorized, and continuously validated regardless of network location. Under SOX ITGC, zero trust principles strengthen logical access controls by requiring continuous verification rather than perimeter-based trust.'},
+];
+
+// ── INIT ON DOM READY ────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+
+// ── RCM ──────────────────────────────────────────────────────────────────────
+const domColor = {LA:'badge-blue',CM:'badge-green',CO:'badge-amber',PD:'badge-purple',JE:'badge-red'};
+
+function renderRCM() {
+  const dom  = (document.getElementById('filterDomain') || {}).value || '';
+  const risk = (document.getElementById('filterRisk')   || {}).value || '';
+  const type = (document.getElementById('filterType')   || {}).value || '';
+  const assr = (document.getElementById('filterAssertion') || {}).value || '';
+  const filtered = RCM_DATA.filter(r =>
+    (!dom  || r.domain    === dom)  &&
+    (!risk || r.risk      === risk) &&
+    (!type || r.type      === type) &&
+    (!assr || r.assertion === assr)
+  );
+  const tbody = document.getElementById('rcmBody');
+  if (!tbody) return;
+  tbody.innerHTML = filtered.map(r => `
+    <tr>
+      <td><span class="control-id">${r.id}</span></td>
+      <td><span class="badge ${domColor[r.domain]||'badge-gray'}">${r.domain}</span></td>
+      <td style="color:var(--text);max-width:280px">${r.obj}</td>
+      <td><span class="risk-${r.risk}">${r.risk==='H'?'High':r.risk==='M'?'Medium':'Low'}</span></td>
+      <td style="white-space:nowrap">${r.type}</td>
+      <td>${r.assertion}</td>
+      <td class="text-sm" style="max-width:200px">${r.evidence}</td>
+      <td style="white-space:nowrap">${r.freq}</td>
+    </tr>
+  `).join('');
+  const cnt = document.getElementById('rcmCount');
+  if (cnt) cnt.textContent = `Showing ${filtered.length} of ${RCM_DATA.length} controls`;
+}
+
+['filterDomain','filterRisk','filterType','filterAssertion'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('change', renderRCM);
+});
+renderRCM();
+
+// CSV Export
+const exportBtn = document.getElementById('exportRCM');
+if (exportBtn) {
+  exportBtn.addEventListener('click', () => {
+    const rows = [['Control ID','Domain','Control Objective','Risk','Type','Assertion','Evidence','Frequency']];
+    RCM_DATA.forEach(r => rows.push([
+      r.id, r.domain, '"'+r.obj+'"',
+      r.risk==='H'?'High':r.risk==='M'?'Medium':'Low',
+      r.type, r.assertion, '"'+r.evidence+'"', r.freq
+    ]));
+    const a = document.createElement('a');
+    a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(rows.map(r=>r.join(',')).join('\n'));
+    a.download = 'sox-itgc-rcm-2026.csv';
+    a.click();
+  });
+}
+
+// ── SoD MATRIX ───────────────────────────────────────────────────────────────
+const SOD_ROLES = ['AP Clerk','AR Clerk','GL Accountant','Cash Manager','Payroll Admin','IT Admin','Developer','Auditor'];
+const SOD_MATRIX = [
+  ['—','R','C','C','R','C','C','—'],
+  ['R','—','C','C','R','C','C','—'],
+  ['C','C','—','C','C','C','C','—'],
+  ['C','C','C','—','C','C','C','—'],
+  ['R','R','C','C','—','C','C','—'],
+  ['C','C','C','C','C','—','C','—'],
+  ['C','C','C','C','C','C','—','—'],
+  ['—','—','—','—','—','—','—','—'],
+];
+const sodEl = document.getElementById('sodTable');
+if (sodEl) {
+  let h = '<thead><tr><th style="text-align:left;padding:9px 12px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border)">Role ↓ / Role →</th>';
+  h += SOD_ROLES.map(r=>`<th style="padding:9px 8px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text-3);background:var(--surface-2);border:1px solid var(--border);white-space:nowrap">${r}</th>`).join('');
+  h += '</tr></thead><tbody>';
+  SOD_ROLES.forEach((role,i) => {
+    h += `<tr><td style="text-align:left;font-weight:600;color:var(--text);white-space:nowrap;padding:8px 12px;background:var(--surface-2);border:1px solid var(--border);font-size:.8rem">${role}</td>`;
+    SOD_MATRIX[i].forEach(cell => {
+      const bg = cell==='C'?'var(--danger-bg)':cell==='R'?'var(--warning-bg)':cell==='✓'?'var(--success-bg)':'var(--surface-2)';
+      const fc = cell==='C'?'var(--danger)':cell==='R'?'var(--warning)':cell==='✓'?'var(--success)':'var(--text-3)';
+      const fw = cell==='C'?'700':'500';
+      h += `<td style="border:1px solid var(--border);text-align:center;padding:8px;font-size:.79rem;font-weight:${fw};background:${bg};color:${fc}">${cell}</td>`;
+    });
+    h += '</tr>';
+  });
+  sodEl.innerHTML = h + '</tbody>';
+}
+
+// ── JE TESTING CONTENT ───────────────────────────────────────────────────────
+const JE_STEPS = [
+  {icon:'ti-database',color:'var(--accent)',title:'Step 1: Obtain and validate the JE population (IPE)',body:'The foundation of JE testing. Extract all journal entries from the GL system. Per AS 1105.10A, this population is IPE and must be validated for completeness and accuracy before any selection begins.',subs:['Reconcile JE count to GL trial balance totals','Validate extract parameters — date range, entity, ledger code','Confirm automated entries are included, not just manual','Document the IPE validation procedure in the workpaper']},
+  {icon:'ti-clock',color:'var(--warning)',title:'Step 2: Test after-hours and weekend entries',body:'JEs posted outside normal business hours carry elevated fraud risk. Fewer supervisory controls operate and fewer people can detect manipulation.',subs:['Extract all JEs posted outside 8am–6pm and on weekends/holidays','Cross-reference to approver listing — were reviewers actually present?','Investigate round-dollar amounts, unusual accounts, new preparers','Obtain management explanation for all flagged entries']},
+  {icon:'ti-calendar-event',color:'var(--danger)',title:'Step 3: Focus on period-end entries',body:'The final 3 days of a month, quarter, or year-end carry the highest risk of earnings management. Accruals, revenue cutoff entries, and reserve adjustments cluster here.',subs:['Define period-end window (typically final 3 business days)','Pull all JEs within window for each period tested','Apply criteria: round numbers, unusual accounts, new preparers, large amounts','Obtain supporting documentation for all selected entries']},
+  {icon:'ti-user-check',color:'var(--purple)',title:'Step 4: Test authorization controls',body:'Every manual JE should have documented approval by a different person from the preparer. This is an ITGC control (access + SoD) intersecting financial process controls.',subs:['Verify JE workflow enforces preparer ≠ approver (SoD)','Sample JEs and confirm each has documented approval on file','Verify approver had appropriate authority level for the entry','Test that system configuration prevents self-approval']},
+  {icon:'ti-robot',color:'var(--success)',title:'Step 5: Validate automated and recurring entries',body:'System-generated JEs are automated controls under AS 2201. They require change management controls, access controls, and operating effectiveness testing of the automation itself — not just its output.',subs:['Obtain inventory of all automated JE types in scope','Confirm change management covers automated JE config changes','Test that automated entries post correctly vs. expected calculation','Verify recurring entry templates reviewed and approved annually']},
+];
+const jeEl = document.getElementById('jeContent');
+if (jeEl) {
+  jeEl.innerHTML = JE_STEPS.map(j => `
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:.75rem">
+      <h4 style="font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.4rem;display:flex;align-items:center;gap:7px">
+        <i class="ti ${j.icon}" style="color:${j.color}"></i>${j.title}
+      </h4>
+      <p style="font-size:.83rem;color:var(--text-2);line-height:1.6;margin-bottom:.6rem">${j.body}</p>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem">
+        ${j.subs.map(s=>`<li style="font-size:.79rem;color:var(--text-2);display:flex;gap:6px"><span style="color:var(--accent);font-weight:700;flex-shrink:0">›</span>${s}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
+}
+
+// ── AUDIT PROGRAMS ───────────────────────────────────────────────────────────
+const AUDIT_PROGRAMS = {
+  LA:[
+    {n:1,t:'Obtain user access listing and validate as IPE',b:'Extract complete user access listing from all in-scope systems. Validate completeness per AS 1105.10A — reconcile user counts to HR system, confirm parameters, document validation in the workpaper.'},
+    {n:2,t:'Test access provisioning sample',b:'Select a sample of provisioning events during the period. Verify each has a documented request, business justification, and approval by an authorized individual before access was granted.'},
+    {n:3,t:'Test termination deprovisioning',b:'Obtain the terminated employee list from HR. Select a sample. Verify access was revoked within 24 hours of the termination date across all in-scope systems.'},
+    {n:4,t:'Evaluate SoD conflicts',b:'Run the access listing against the SoD conflict matrix. For each conflict identified, determine whether a compensating control exists and is operating effectively. Test compensating controls for a sample of conflicts.'},
+    {n:5,t:'Test privileged access governance',b:'Obtain the listing of all privileged/admin accounts. Verify each has documented business justification. Verify monthly access review was performed with evidence retained.'},
+    {n:6,t:'Test NHI (non-human identity) governance',b:'Obtain inventory of all service accounts, API keys, and bots with access to in-scope systems. Verify quarterly review was performed. Test that decommissioned NHIs have had access revoked.'},
+  ],
+  CM:[
+    {n:1,t:'Obtain change population and validate as IPE',b:'Extract all change tickets from the change management system. Validate completeness — reconcile ticket counts, confirm parameters cover the full period and all system types (normal, emergency, patch, cloud).'},
+    {n:2,t:'Test normal change authorization',b:'Sample normal changes. For each verify: documented change request, testing evidence, approval by an authorized individual, and no production deployment prior to approval sign-off.'},
+    {n:3,t:'Test development/production segregation',b:'Verify developers do not have direct production access. Cross-reference the developer access listing to the production system access list. Document all exceptions and test compensating controls.'},
+    {n:4,t:'Test emergency change process',b:'Obtain all emergency changes for the period. Verify the emergency change rate does not exceed the defined threshold (typically 5–10%). For a sample, verify post-implementation review was completed within SLA.'},
+    {n:5,t:'Test patch management compliance',b:'Obtain patch management scan report. Verify critical patches applied within 30 days and high-severity patches within 60 days. Document the exception rate and remediation for any missed SLAs.'},
+  ],
+  CO:[
+    {n:1,t:'Test batch job monitoring',b:'Obtain listing of all financially significant batch jobs. Verify each is monitored for successful completion. For a sample of failures during the period, verify an alert was received and resolution was documented within SLA.'},
+    {n:2,t:'Test backup and recovery controls',b:'Obtain backup job logs for the period. Verify backups ran as scheduled for all in-scope systems. Obtain evidence of the most recent quarterly restore test. Verify backup storage complies with the retention policy.'},
+    {n:3,t:'Test incident management',b:'Obtain the incident register for the period. Verify all incidents affecting in-scope systems are documented with severity classification, resolution details, and root cause analysis. Test SLA compliance for a sample.'},
+    {n:4,t:'Test DR plan and annual test',b:'Obtain the DR plan and test results from the most recent annual DR exercise. Verify the test covered all in-scope systems. Verify results were communicated to management and lessons learned were addressed.'},
+  ],
+  PD:[
+    {n:1,t:'Obtain project and implementation inventory',b:'Identify all significant system implementations, major enhancements, and ERP changes during the audit period. For each, obtain SDLC documentation and determine which ITGC controls are in scope.'},
+    {n:2,t:'Test SDLC phase-gate approvals',b:'Select a sample of significant implementations. For each, verify that phase-gate approvals were obtained at each checkpoint: requirements, design, build, testing, and go-live authorization.'},
+    {n:3,t:'Test UAT and go-live authorization',b:'For each sampled implementation, verify UAT was performed by business users (not IT), results were documented, defects were resolved, and business owners signed off before go-live.'},
+    {n:4,t:'Test data migration controls',b:'For implementations with data migration, verify the migration plan was documented, pre/post record counts were reconciled, and data integrity was validated both before and after cutover.'},
+  ],
+};
+
+function renderAuditProgram() {
+  const dom = (document.getElementById('apDomain') || {}).value || 'all';
+  const doms = dom === 'all' ? ['LA','CM','CO','PD'] : [dom];
+  const label = {LA:'Logical Access',CM:'Change Management',CO:'Computer Operations',PD:'Program Development'};
+  const el = document.getElementById('auditProgramContent');
+  if (!el) return;
+  el.innerHTML = doms.map(d => `
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:1rem">
+      <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'||!this.nextElementSibling.style.display?'block':'none'" style="padding:1rem 1.25rem;background:var(--surface-2);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;cursor:pointer">
+        <h4 style="font-size:.9rem;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px">
+          <i class="ti ti-clipboard-list" style="color:var(--accent)"></i>${label[d]} — audit program
+        </h4>
+        <span class="badge badge-gray">${AUDIT_PROGRAMS[d].length} steps <i class="ti ti-chevron-down" style="font-size:.85rem"></i></span>
+      </div>
+      <div style="padding:1.25rem;display:block">
+        ${AUDIT_PROGRAMS[d].map(s=>`
+          <div style="display:flex;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border)">
+            <div style="width:22px;height:22px;border-radius:50%;background:var(--accent-bg);color:var(--accent-text);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:1px">${s.n}</div>
+            <div>
+              <div style="font-size:.84rem;font-weight:600;color:var(--text);margin-bottom:.2rem">${s.t}</div>
+              <div style="font-size:.78rem;color:var(--text-2);line-height:1.5">${s.b}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+const apDom = document.getElementById('apDomain');
+if (apDom) apDom.addEventListener('change', renderAuditProgram);
+renderAuditProgram();
+
+// ── DEFICIENCY TOOL ──────────────────────────────────────────────────────────
+const DEF_QS = [
+  {q:'Does the control failure relate to a financially significant account, disclosure, or process?',yes:'Continue',no:'Control deficiency — low risk. Document in the deficiency log and monitor.'},
+  {q:'Could this failure result in a misstatement in the financial statements, even if one has not yet occurred?',yes:'Continue',no:'Control deficiency — design gap with limited financial reporting impact. Document and monitor.'},
+  {q:'If a misstatement occurred, would it be material to the financial statements?',yes:'Continue',no:'Significant deficiency — important enough to communicate in writing to the audit committee before year-end.'},
+  {q:'Is there a reasonable possibility (more than remote) that a material misstatement would not be prevented or detected on a timely basis?',yes:'Material weakness — public disclosure in 10-K required. Immediate audit committee escalation. Begin remediation tracking.',no:'Significant deficiency — communicate to the audit committee in writing before fiscal year-end. Track remediation status.'},
+];
+let defStep = 0;
+
+function renderDefProgress() {
+  const prog = document.getElementById('defProgress');
+  if (!prog) return;
+  prog.innerHTML = DEF_QS.map((_,i) =>
+    `<div style="flex:1;height:4px;border-radius:2px;background:${i<defStep?'var(--accent)':i===defStep?'rgba(26,92,255,.35)':'var(--border)'}"></div>`
+  ).join('');
+}
+
+function renderDef() {
+  const el = document.getElementById('defQuestions');
+  if (!el || defStep >= DEF_QS.length) return;
+  const q = DEF_QS[defStep];
+  el.innerHTML = `
+    <div class="def-question">
+      <label>Question ${defStep+1} of ${DEF_QS.length}: ${q.q}</label>
+      <div class="def-options">
+        <label class="def-opt"><input type="radio" name="defq" value="yes"> <span><strong>Yes</strong> — this condition applies</span></label>
+        <label class="def-opt"><input type="radio" name="defq" value="no"> <span><strong>No</strong> — this condition does not apply</span></label>
+      </div>
+      <button class="btn btn-primary" onclick="nextDef()" style="margin-top:1rem;font-size:.85rem;padding:9px 20px">Next →</button>
+    </div>
+  `;
+  const res = document.getElementById('defResult');
+  if (res) res.className = 'def-result';
+  renderDefProgress();
+}
+
+window.nextDef = function() {
+  const sel = document.querySelector('input[name="defq"]:checked');
+  if (!sel) return;
+  const result = sel.value === 'yes' ? DEF_QS[defStep].yes : DEF_QS[defStep].no;
+  if (result === 'Continue') { defStep++; renderDef(); return; }
+  const isMW = result.includes('Material weakness');
+  const isSD = result.includes('Significant deficiency');
+  const res = document.getElementById('defResult');
+  if (!res) return;
+  res.className = `def-result show ${isMW?'def-level mw':isSD?'def-level sd':'def-level cd'}`;
+  res.innerHTML = `
+    <h4>${result.split('—')[0].trim()}</h4>
+    <p>${result.split('—').slice(1).join('—').trim()}
+    ${isMW?' Escalate to the audit committee and begin remediation tracking immediately. External auditors must be notified. Public disclosure is required in the annual 10-K.':
+      isSD?' Write a formal written communication to the audit committee. Include in management\'s 404(a) assessment discussion. Track remediation status through resolution.':
+      ' Document in the deficiency log. Include in periodic Internal Audit reporting. Consider whether compensating controls reduce residual risk.'}</p>
+  `;
+  const qEl = document.getElementById('defQuestions');
+  if (qEl) qEl.innerHTML = '';
+  defStep = DEF_QS.length; // mark complete
+  renderDefProgress();
+};
+
+window.resetDef = function() {
+  defStep = 0;
+  renderDef();
+  const res = document.getElementById('defResult');
+  if (res) res.className = 'def-result';
+};
+
+renderDef();
+
+// ── SOX COST CALCULATOR ───────────────────────────────────────────────────────
+function calcSOX() {
+  const erp      = +(document.getElementById('calcERP')     ||{value:3}).value;
+  const ctrl     = +(document.getElementById('calcCtrl')    ||{value:80}).value;
+  const reliance = +(document.getElementById('calcReliance')||{value:40}).value / 100;
+  const rev      = +(document.getElementById('calcRev')     ||{value:500}).value;
+  const base     = ctrl * 18 + erp * 120 + (rev > 1000 ? 2000 : 500);
+  const hours    = Math.round(base * (1 - reliance * 0.4));
+  const rate     = rev > 5000 ? 185 : rev > 1000 ? 155 : 125;
+  const cost     = hours * rate;
+  const saving   = Math.round(base * reliance * 0.4 * rate);
+  const set = (id, val) => { const e = document.getElementById(id); if(e) e.textContent = val; };
+  set('calcHours',   hours.toLocaleString());
+  set('calcCost',    '$' + (cost/1000).toFixed(0) + 'K');
+  set('calcSaving',  '$' + (saving/1000).toFixed(0) + 'K');
+  set('calcERPVal',      erp);
+  set('calcCtrlVal',     ctrl);
+  set('calcRelianceVal', (reliance*100).toFixed(0) + '%');
+  set('calcRevVal',      '$' + rev + 'M');
+}
+['calcERP','calcCtrl','calcReliance','calcRev'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', calcSOX);
+});
+calcSOX();
+
+// ── GLOSSARY ─────────────────────────────────────────────────────────────────
+function renderGlossary(q) {
+  const ql = (q||'').toLowerCase();
+  const filtered = GLOSSARY_DATA.filter(g =>
+    !ql || g.term.toLowerCase().includes(ql) || g.def.toLowerCase().includes(ql)
+  );
+  const el = document.getElementById('glossaryList');
+  if (!el) return;
+  el.innerHTML = filtered.length
+    ? filtered.map(g => `
+        <div class="glossary-item">
+          <dt>${g.term} <span class="badge badge-gray">${g.domain}</span></dt>
+          <dd>${g.def}</dd>
+        </div>
+      `).join('')
+    : '<div style="padding:2rem;text-align:center;color:var(--text-3);font-size:.875rem">No terms match your search.</div>';
+}
+const gsEl = document.getElementById('glossarySearch');
+if (gsEl) gsEl.addEventListener('input', e => renderGlossary(e.target.value));
+renderGlossary();
+
+// ── TABS (all tab navs) ───────────────────────────────────────────────────────
+document.querySelectorAll('.tab-nav').forEach(nav => {
+  nav.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      nav.closest('section').querySelectorAll('.tab-panel').forEach(p => {
+        p.classList.toggle('active', p.id === 'tab-' + tab);
+      });
+    });
+  });
+});
+
+// ── THEME ────────────────────────────────────────────────────────────────────
+const themeBtn  = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  if (themeIcon) themeIcon.className = t === 'dark' ? 'ti ti-moon' : 'ti ti-sun';
+  localStorage.setItem('sox-theme', t);
+}
+if (themeBtn) themeBtn.addEventListener('click', () =>
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark')
+);
+setTheme(localStorage.getItem('sox-theme') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+// ── MOBILE MENU ──────────────────────────────────────────────────────────────
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'))
+  );
+}
+
+// ── BACK TO TOP ───────────────────────────────────────────────────────────────
+const backTop = document.getElementById('backTop');
+if (backTop) {
+  window.addEventListener('scroll', () =>
+    backTop.classList.toggle('visible', window.scrollY > 500), {passive:true}
+  );
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+}
+
+// ── ACTIVE NAV LINK ON SCROLL ─────────────────────────────────────────────────
+const navLinks = document.querySelectorAll('.nav-link');
+document.querySelectorAll('section[id]').forEach(sec => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting)
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id));
+    });
+  }, {threshold:.15, rootMargin:'-64px 0px -60% 0px'}).observe(sec);
+});
+
+// ── REVEAL ON SCROLL ──────────────────────────────────────────────────────────
+document.querySelectorAll('.reveal').forEach(el => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, {threshold:.06}).observe(el);
+});
+
+// ── SEARCH OVERLAY ────────────────────────────────────────────────────────────
+const SEARCH_INDEX = [
+  ...RCM_DATA.map(r => ({section:'RCM control', title:`${r.id} — ${r.domain}`, preview:r.obj, href:'#rcm'})),
+  ...GLOSSARY_DATA.map(g => ({section:'Glossary', title:g.term, preview:g.def.substring(0,100)+'…', href:'#glossary'})),
+  {section:'Section',title:'ITGC Domains',preview:'Logical Access, Change Management, Computer Operations, Program Development',href:'#itgc'},
+  {section:'Section',title:'Advisory & Assurance',preview:'Three Lines model, IIA independence, best practices',href:'#assurance'},
+  {section:'Section',title:'AI & Emerging Tech Controls',preview:'AI in ICFR, NHI, RPA, third-party AI as service org',href:'#ai'},
+  {section:'Section',title:'IPO Readiness',preview:'18-month SOX readiness timeline, material weakness case studies',href:'#ipo'},
+  {section:'Section',title:'PCAOB Standards Tracker',preview:'AS 1000, AS 1105, AS 2201, QC 1000 effective dates',href:'#standards'},
+];
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput   = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const searchBtn     = document.getElementById('searchBtn');
+
+function openSearch() {
+  if (searchOverlay) { searchOverlay.classList.add('open'); if (searchInput) searchInput.focus(); }
+}
+if (searchBtn)    searchBtn.addEventListener('click', openSearch);
+if (searchOverlay) searchOverlay.addEventListener('click', e => {
+  if (e.target === searchOverlay) searchOverlay.classList.remove('open');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && searchOverlay) searchOverlay.classList.remove('open');
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+});
+if (searchInput) {
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) {
+      if (searchResults) searchResults.innerHTML = '<div class="search-empty">Start typing to search across all controls, glossary terms, and sections.</div>';
+      return;
+    }
+    const hits = SEARCH_INDEX.filter(i =>
+      i.title.toLowerCase().includes(q) || i.preview.toLowerCase().includes(q)
+    ).slice(0, 8);
+    if (searchResults) searchResults.innerHTML = hits.length
+      ? hits.map(h => `
+          <div class="search-result-item" onclick="if(searchOverlay)searchOverlay.classList.remove('open');window.location='${h.href}'">
+            <div class="sr-section">${h.section}</div>
+            <div class="sr-title">${h.title}</div>
+            <div class="sr-preview">${h.preview}</div>
+          </div>
+        `).join('')
+      : '<div class="search-empty">No results found. Try a different term.</div>';
+  });
+}
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>
